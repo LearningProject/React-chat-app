@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import {NgFor} from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 import {
   CdkDragDrop,
   CdkDrag,
@@ -25,6 +27,7 @@ import {
 @NgModule({
   declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent],
   imports: [
+    MatCardModule, MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

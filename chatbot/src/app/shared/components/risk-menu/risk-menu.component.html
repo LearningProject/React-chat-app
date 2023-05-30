@@ -10,12 +10,20 @@
 </style>
 <div class="toolbar" role="banner">
 
-    <h1> Risk Playground </h1>
+    <!-- <h1> Risk Playground </h1> -->
   </div>
+  <div>
+  <mat-card class="example-card">
+    <mat-card-header  class="mat-header">
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title><h1>Risk Playground </h1></mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content>
   <div class="leftmenu row">
     <div cdkDropListGroup>
       <div class="example-container col-md-4">
-        <h2 style="color:white ; font-size:18px">Online Risks</h2>
+        <h2 style="color: #000; ; font-size:18px">Online Risks</h2>
         <mat-accordion>
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
             <mat-expansion-panel-header>
@@ -55,7 +63,7 @@
       <div class="chat-container col-md-4">
         <p class="chat-box-support">Our support staff will take you through the payment process and decrypt your files.
           Information about the attack can be found in the FAQs above</p>
-        <h1 style="color:white ; font-size:18px">Risk Playground Support</h1>
+        <h1 style="color:#000 ; font-size:18px">Risk Playground Support</h1>
   
         <div class="row"  cdkDropList [cdkDropListData]="done" class="chat-list" (cdkDropListDropped)="showchat($event)" >
               
@@ -64,7 +72,7 @@
         </div>
       </div>
       <div class="example-container col-md-4">
-        <h2 style="color:white ; font-size:18px">Key Learning Points Risks</h2>
+        <h2 style="color:#000 ; font-size:18px">Key Learning Points Risks</h2>
         <div cdkDropList [cdkDropListData]="test" class="example-list" (cdkDropListDropped)="drop($event)" 
           [cdkDropListEnterPredicate]="noReturnPredicate">
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
@@ -72,3 +80,6 @@
       </div>
     </div>
   </div>
+</mat-card-content>
+</mat-card>
+</div>

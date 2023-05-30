@@ -1,12 +1,33 @@
 
+
+.example-card {
+  opacity:0.9;
+  max-width: 80%;
+  border:1px solid white;
+  height:80vh;
+  margin: auto;
+  color:#000;
+  background-color: white;
+    top: 20vh;
+    position: relative;
+    border: 1px solid #80808047;
+    border-radius: 18px;
+}
+
+.mat-header{
+      margin: 0 auto;
+
+  // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  // background-size: cover;
+}
 .toolbar {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 10vh;
-  background-color: #1976d2;
-  color: yellow;
+  height: 30vh;
+  // background-color: #1976d2;
+  background:url(https://netsys.surrey.ac.uk/risk_playground/risk-playground/assets/media/patterns/header-bg.jpg);  color: yellow;
   /* display: flex; */
   text-align: center;
   align-items: center;
@@ -34,8 +55,8 @@
   opacity: 0.8;
 }
 .leftmenu{
-    position : fixed;
-     top:10vh;
+    // position : fixed;
+    //  top:10vh;
      /* width:500px;
      height: auto; */
  }
@@ -55,7 +76,7 @@
    }
    .example-list {
     margin-top:20px;
-     background: #3b414f;
+     background: #0070c4;
      border: solid 1px #ccc;
      min-height: 60px;
      /* background: white; */
@@ -100,7 +121,7 @@
    
    
    .example-box {
-     background: #3b414f;
+     background: #0070c4;
      padding: 10px 10px;
      border-bottom: solid 1px #ccc;
      color: #fff;
@@ -142,7 +163,7 @@
      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
    }
    .chat-box-support {
-     background-color: #3b414f;
+     background-color: #0070c4;
      color: #fff;
      /* display: none; */
      padding: 20px 16px 16px;
@@ -226,12 +247,12 @@
     width: 100%;
   }
   .panel{
-    background: #424242;
+    background: #0070c4; 
     color: #fff;
     padding:10px 20px;
     margin-bottom: 10px;
     margin-top:10px;
-  }
+   }
   .user_icon{
     float: right;
     margin: 0 20px;
