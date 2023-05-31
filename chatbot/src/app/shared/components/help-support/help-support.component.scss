@@ -2,23 +2,24 @@
 #helpdesk {
   font-family: "Roboto", sans-serif;
   #helpdesk-popup-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    z-index: 1000;
+    // position: fixed;
+    // bottom: 20px;
+    // right: 20px;
+     padding: 10px 20px;
+     background-color: #042346;
+     color: #ffffff;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 14px;
+     z-index: 1000;
   }
 
   #helpdesk-popup {
-    position: fixed;
+   position: fixed;
     bottom: 40px;
-    right: 20px;
+    left:50%;
+   // right: 20px;
     width: 300px;
     height: 50vh;
     min-height: 450px;
@@ -28,7 +29,7 @@
     z-index: 1000;
     display: none;
     #helpdesk-popup-header {
-      background-color: #333;
+      background-color:#042346;
       color: white;
       font-size: 18px;
       padding: 10px;

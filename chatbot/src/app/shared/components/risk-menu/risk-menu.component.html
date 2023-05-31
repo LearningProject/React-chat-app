@@ -22,7 +22,7 @@
     <mat-card-content>
   <div class="leftmenu row">
     <div cdkDropListGroup>
-      <div class="example-container col-md-4">
+      <div class="example-container col-md-6">
         <h2 style="color: #000; ; font-size:18px">Online Risks</h2>
         <mat-accordion>
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
@@ -60,24 +60,23 @@
         </mat-accordion>
       </div>
   
-      <div class="chat-container col-md-4">
+      <div class="chat-container col-md-6">
         <p class="chat-box-support">Our support staff will take you through the payment process and decrypt your files.
           Information about the attack can be found in the FAQs above</p>
+          <div><app-help-support></app-help-support></div>
         <h1 style="color:#000 ; font-size:18px">Risk Playground Support</h1>
-  
         <div class="row"  cdkDropList [cdkDropListData]="done" class="chat-list" (cdkDropListDropped)="showchat($event)" >
-              
           <div class="chat-box col-md-6 message" *ngFor="let item of messages" cdkDrag  [ngClass]="item.type"> <mat-icon class="col-md-4"  [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'" aria-hidden="false"
               aria-label="Example face icon" fontIcon="face" ></mat-icon>{{item.message}}</div>
         </div>
       </div>
-      <div class="example-container col-md-4">
+      <!-- <div class="example-container col-md-4">
         <h2 style="color:#000 ; font-size:18px">Key Learning Points Risks</h2>
         <div cdkDropList [cdkDropListData]="test" class="example-list" (cdkDropListDropped)="drop($event)" 
           [cdkDropListEnterPredicate]="noReturnPredicate">
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </mat-card-content>

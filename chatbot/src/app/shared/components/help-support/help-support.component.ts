@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MessageService } from '../../service/message.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
+import AvatarJson from '../../Json/avatar.json';
 import {
   CdkDragDrop,
   CdkDrag,
@@ -28,14 +31,18 @@ export class HelpSupportComponent {
   chatForm = new FormGroup({
     message: new FormControl('', [Validators.required]),
   });
+  arr:any=[];
   @ViewChild('scrollMe') private myScrollContainer: any;
   security=['Hi, I am your support agent. How can I help you?','risk2'];
-  constructor(private messageService: MessageService) {
-   
+  constructor(private messageService: MessageService,private httpService:HttpClient) {
+    this.httpService.get('C:/Users/I038849/Desktop/Risk Support/chatbot/src/app/shared/Json/avatar.json').subscribe(data => console.log('value of data is ',data));
     this.messages.push({
       type: 'client',
-      message: 'Hi, I am your support agent. How can I help you?',
+      message: 'How long did you serve in the armed forces?',
     });
+  }
+  ngOnInit(){
+    this.httpService.get('C:/Users/I038849/Desktop/Risk Support/chatbot/src/app/shared/Json/avatar.json').subscribe(data => console.log('value of data is ',data));
   }
 
   openSupportPopup() {

@@ -69,7 +69,7 @@ export class RiskMenuComponent {
       this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1]});
       setTimeout( ()=>  this.messages.push({
         type: 'client',
-        message: 'getting data',
+        message: 'KPL related to corresponding risk.',
       }),1000);
     }
   }

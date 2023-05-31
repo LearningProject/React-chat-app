@@ -1,18 +1,18 @@
 <div id="helpdesk" cdkDropListGroup>
  
   <button id="helpdesk-popup-button" (click)="openSupportPopup()">
-    Need Help?
+    Want to create Persona Avatar?
   </button>
   <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
     <div id="helpdesk-popup-header">
-      Coding Nexus helpdesk
+      Persona Avatar
       <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
         Close
       </button>
     </div>
     <div id="helpdesk-popup-body" >
       <div class="messages" #scrollMe>
-        <div *ngFor="let message of messages" class="message" cdkDropList [cdkDropListData]="security" (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let message of messages" class="message">
           <div [class]="message.type" >
             {{ message.message }}
           </div>
