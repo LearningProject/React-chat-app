@@ -12,8 +12,11 @@
     </div>
     <div id="helpdesk-popup-body" >
       <div class="messages" #scrollMe>
-        <div *ngFor="let message of messages" class="message">
-          <div [class]="message.type" >
+        <div *ngFor="let message of messages;let i=index" class="message">
+          <div [class]="message.type"
+          [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }"
+          (click)="personaAnswer($event,message.type,i)" 
+         >
             {{ message.message }}
           </div>
         </div>
@@ -26,7 +29,7 @@
         </div>
       </div>
     </div>
-    <form id="helpdesk-popup-footer" [formGroup]="chatForm">
+    <!-- <form id="helpdesk-popup-footer" [formGroup]="chatForm">
       <input
         formControlName="message"
         type="text"
@@ -40,6 +43,7 @@
       >
         Send
       </button>
-    </form>
+    </form> -->
   </div>
 </div>
+<!-- [ngStyle]="{'background-color':isActiveAnswer? 'white' : '' }" -->

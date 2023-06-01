@@ -15,6 +15,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import {
   CdkDragDrop,
@@ -23,12 +24,14 @@ import {
   CdkDropListGroup,
   moveItemInArray,
   transferArrayItem,
+
 } from '@angular/cdk/drag-drop';
+import { AlertComponentComponent } from './shared/components/alert-component/alert-component.component';
 
 @NgModule({
-  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent],
+  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent],
   imports: [
-    MatCardModule, MatButtonModule,
+    MatCardModule, MatButtonModule,MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
