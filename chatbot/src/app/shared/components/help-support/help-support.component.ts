@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild ,ChangeDetectionStrategy} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MessageService } from '../../service/message.service';
 import { HttpClient } from '@angular/common/http';
@@ -27,12 +27,13 @@ export interface Message {
   selector: 'app-help-support',
   templateUrl: './help-support.component.html',
   styleUrls: ['./help-support.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HelpSupportComponent {
   intialId = 1;
   private example = avatarJson;
   isActiveAnswer = true;
-  isOpen = false;
+  isOpen = true;
   loading = false;
   messages: Message[] = [];
   chatForm = new FormGroup({
@@ -43,18 +44,20 @@ export class HelpSupportComponent {
   @ViewChild('scrollMe') private myScrollContainer: any;
   security = ['Hi, I am your support agent. How can I help you?', 'risk2'];
   constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog) {
+    
+  }
+  ngOnInit() {
     this.messages.push({
       type: 'client',
       message: 'How long did you serve in the armed forces?',
     });
-  }
-  ngOnInit() {
     const intialVal = this.example.evalData[0].answers;
     this.callAnswer(intialVal);
   }
 
   openSupportPopup() {
-    this.isOpen = !this.isOpen;
+   // this.isOpen = !this.isOpen;
+   this.isOpen = true;
   }
   drop(event: CdkDragDrop<string[]>) {
     console.log(event);
@@ -102,11 +105,15 @@ export class HelpSupportComponent {
   }
   callQuestion(questionId: number) {
     const intialVal = this.example.evalData[this.intialId] ? this.example.evalData[this.intialId].question : this.submitData();
+    if(this.example.evalData[this.intialId]){
     this.messages.push({ type: 'client', message: intialVal });
     this.callAnswer(this.example.evalData[this.intialId].answers);
     this.intialId = this.intialId + 1;
+    }
   }
   submitData() {
+    //this.messages =[];
+    this.openSupportPopup();
     this.dialogRef.open(AlertComponentComponent, {
       data: {
       },

@@ -8,10 +8,11 @@
   margin: auto;
   color:#000;
   background-color: white;
-    top: 20vh;
+    top: 10vh;
     position: relative;
     border: 1px solid #80808047;
     border-radius: 18px;
+    height: auto;
 }
 
 .mat-header{
@@ -166,7 +167,7 @@
      background-color: #0070c4;
      color: #fff;
      /* display: none; */
-     padding: 20px 16px 16px;
+     padding: 12px 16px 16px;
      margin-top: 10px;
      text-transform: uppercase;
  }

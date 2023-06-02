@@ -1,20 +1,22 @@
-<div id="helpdesk" cdkDropListGroup>
+<div id="helpdesk">
  
-  <button id="helpdesk-popup-button" (click)="openSupportPopup()">
+  <!-- <button id="helpdesk-popup-button" (click)="openSupportPopup()">
     Want to create Persona Avatar?
-  </button>
-  <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
+  </button> -->
+  <!-- [style.display]="isOpen ? 'block' : 'none'" -->
+  <div id="helpdesk-popup" >
     <div id="helpdesk-popup-header">
       Persona Avatar
-      <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
+      <!-- <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
         Close
-      </button>
+      </button> -->
+      <!-- [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }" -->
     </div>
     <div id="helpdesk-popup-body" >
       <div class="messages" #scrollMe>
         <div *ngFor="let message of messages;let i=index" class="message">
           <div [class]="message.type"
-          [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }"
+          [ngClass]="{'selectedAnswer': flipped[i]}"
           (click)="personaAnswer($event,message.type,i)" 
          >
             {{ message.message }}
