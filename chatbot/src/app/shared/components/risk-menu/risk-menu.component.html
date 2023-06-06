@@ -1,83 +1,111 @@
-<style> 
-:host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: #333;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>
 <div class="toolbar" role="banner">
-
-    <!-- <h1> Risk Playground </h1> -->
-  </div>
-  <div>
+  <!-- <h1> Risk Playground </h1> -->
+</div>
+<div>
   <mat-card class="example-card">
-    <mat-card-header  class="mat-header">
+    <mat-card-header class="mat-header">
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title><h1>Risk Playground </h1></mat-card-title>
+      <mat-card-title>
+        <h1>Risk Playground </h1>
+      </mat-card-title>
+      <div (click)="refresh()">
+        <i class="refresh-icon fa fa-refresh" aria-hidden="true"></i>
+      </div>
       <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
     </mat-card-header>
     <mat-card-content>
-  <div class="leftmenu row">
-    <div cdkDropListGroup>
-      <div class="example-container col">
-        <h2 style="color: #000; ; font-size:18px">Online Risks</h2>
-        <mat-accordion>
-          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="risk-header">
-                Personal Risks
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
-              [cdkDropListEnterPredicate]="noReturnPredicate">
-              <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
+      <div class="leftmenu row">
+
+        <div cdkDropListGroup>
+          <div class="example-container col">
+            <h2 style="color: #000; ; font-size:18px">Online Risks</h2>
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="risk-header">
+                    Financial Risk-(FR)
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
+                  [cdkDropListEnterPredicate]="noReturnPredicate">
+                  <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
+                </div>
+                <!-- </div> -->
+              </mat-expansion-panel>
+            </mat-accordion>
+
+            <!-- second Risk -->
+
+            <mat-accordion>
+
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="risk-header">
+                    Peronal Risk-(PR)
+                  </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
+                  [cdkDropListEnterPredicate]="noReturnPredicate">
+                  <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
+                </div>
+                <!-- </div> -->
+              </mat-expansion-panel>
+            </mat-accordion>
+            <!-- Third RIsk -->
+
+            <mat-accordion>
+
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="risk-header">
+                    CyberSecurity Risk -(CsR)
+                  </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div cdkDropList [cdkDropListData]="cyber" class="example-list" (cdkDropListDropped)="drop($event)"
+                  [cdkDropListEnterPredicate]="noReturnPredicate">
+                  <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
+                </div>
+                <!-- </div> -->
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+
+          <div class="chat-container col">
+            <p class="chat-box-support">An opportunity to explore possible risks during life transitions, first person
+              accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for user
+              input/interaction.</p>
+            <div><app-help-support></app-help-support></div>
+            <h1 style="color:#000 ; font-size:18px">Risk Playground Support</h1>
+            <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list"
+              (cdkDropListDropped)="showchat($event)">
+              <div class="chat-box col-md-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type">
+                <mat-icon class="col-md-4" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
+                  aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon>{{item.message}}</div>
             </div>
-            <!-- </div> -->
-          </mat-expansion-panel>
-        </mat-accordion>
-  
-        <!-- second Risk -->
-  
-        <mat-accordion>
-  
-          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"  class="panel">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="risk-header" >
-                Cyber Security Risk
-              </mat-panel-title>
-  
-            </mat-expansion-panel-header>
-            
-            <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)" 
-              [cdkDropListEnterPredicate]="noReturnPredicate">
-              <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
-            </div> 
-             <!-- </div> -->
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div>
-  
-      <div class="chat-container col">
-        <p class="chat-box-support">An opportunity to explore possible risks during life transitions, first person accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for user input/interaction.</p>
-          <div><app-help-support></app-help-support></div>
-        <h1 style="color:#000 ; font-size:18px">Risk Playground Support</h1>
-        <div class="row"  cdkDropList [cdkDropListData]="done" class="chat-list" (cdkDropListDropped)="showchat($event)" >
-          <div class="chat-box col-md-6 message" *ngFor="let item of messages" cdkDrag  [ngClass]="item.type"> <mat-icon class="col-md-4"  [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'" aria-hidden="false"
-              aria-label="Example face icon" fontIcon="face" ></mat-icon>{{item.message}}</div>
-        </div>
-      </div>
-      <!-- <div class="example-container col-md-4">
+          </div>
+          <!-- <div class="example-container col-md-4">
         <h2 style="color:#000 ; font-size:18px">Key Learning Points Risks</h2>
         <div cdkDropList [cdkDropListData]="test" class="example-list" (cdkDropListDropped)="drop($event)" 
           [cdkDropListEnterPredicate]="noReturnPredicate">
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
         </div>
       </div> -->
-    </div>
-  </div>
-</mat-card-content>
-</mat-card>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

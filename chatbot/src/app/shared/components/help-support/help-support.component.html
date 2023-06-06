@@ -1,32 +1,28 @@
 <div id="helpdesk">
- 
   <!-- <button id="helpdesk-popup-button" (click)="openSupportPopup()">
     Want to create Persona Avatar?
   </button> -->
   <!-- [style.display]="isOpen ? 'block' : 'none'" -->
-  <div id="helpdesk-popup" >
-    <div id="helpdesk-popup-header">
-      Persona Avatar
-      <!-- <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
-        Close
-      </button> -->
-      <!-- [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }" -->
-    </div>
-    <div id="helpdesk-popup-body" >
+
+  <div id="helpdesk-popup-header">
+    Persona Avatar
+    <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
+      <mat-icon>line_weight</mat-icon>
+    </button>
+    <!-- [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }" -->
+  </div>
+
+  <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
+
+    <div id="helpdesk-popup-body">
       <div class="messages" #scrollMe>
         <div *ngFor="let message of messages;let i=index" class="message">
-          <div [class]="message.type"
-          [ngClass]="{'selectedAnswer': flipped[i]}"
-          (click)="personaAnswer($event,message.type,i)" 
-         >
+          <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i]}"
+            (click)="personaAnswer($event,message.type,i)">
             {{ message.message }}
           </div>
         </div>
-        <div
-          *ngIf="loading"
-          class="message"
-          style="width: 100%; display: block"
-        >
+        <div *ngIf="loading" class="message" style="width: 100%; display: block">
           <div [class]="'client'">...</div>
         </div>
       </div>

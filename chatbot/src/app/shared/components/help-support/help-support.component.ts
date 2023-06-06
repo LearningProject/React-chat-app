@@ -33,7 +33,7 @@ export class HelpSupportComponent {
   intialId = 1;
   private example = avatarJson;
   isActiveAnswer = true;
-  isOpen = true;
+  isOpen = false;
   loading = false;
   messages: Message[] = [];
   chatForm = new FormGroup({
@@ -56,8 +56,8 @@ export class HelpSupportComponent {
   }
 
   openSupportPopup() {
-   // this.isOpen = !this.isOpen;
-   this.isOpen = true;
+    this.isOpen = !this.isOpen;
+   //this.isOpen = true;
   }
   drop(event: CdkDragDrop<string[]>) {
     console.log(event);
@@ -91,6 +91,8 @@ export class HelpSupportComponent {
     }, 150);
   }
   personaAnswer(event: any, type: string, i: number) {
+    console.log('event is',event);
+    console.log('message is ',this.messages);
     if (type === 'user') {
       this.flipped[i] = !this.flipped[i]
       this.callQuestion(this.intialId);
