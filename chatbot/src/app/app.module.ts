@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import {
   CdkDragDrop,
@@ -31,7 +32,7 @@ import { AlertComponentComponent } from './shared/components/alert-component/ale
 @NgModule({
   declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent],
   imports: [
-    MatCardModule, MatButtonModule,MatDialogModule,
+    MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

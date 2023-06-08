@@ -117,6 +117,9 @@ export class HelpSupportComponent {
     //this.messages =[];
     this.openSupportPopup();
     this.dialogRef.open(AlertComponentComponent, {
+      height: 'auto', 
+      width: '500px', 
+      position:{top: '-50px', left:'50%'} ,
       data: {
       },
     });

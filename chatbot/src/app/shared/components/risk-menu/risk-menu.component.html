@@ -36,9 +36,10 @@
                     Financial Risk-(FR)
                   </mat-panel-title>
                 </mat-expansion-panel-header>
-                <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
+                <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)" style="overflow-y: auto;
+                height: 300px;"
                   [cdkDropListEnterPredicate]="noReturnPredicate">
-                  <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
+                  <div class="example-box" *ngFor="let item of keys"  cdkDrag>{{item}}</div>
                 </div>
                 <!-- </div> -->
               </mat-expansion-panel>
@@ -57,7 +58,8 @@
                 </mat-expansion-panel-header>
 
                 <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
-                  [cdkDropListEnterPredicate]="noReturnPredicate">
+                  [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
+                  height: 300px;">
                   <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
                 </div>
                 <!-- </div> -->
@@ -76,7 +78,8 @@
                 </mat-expansion-panel-header>
 
                 <div cdkDropList [cdkDropListData]="cyber" class="example-list" (cdkDropListDropped)="drop($event)"
-                  [cdkDropListEnterPredicate]="noReturnPredicate">
+                  [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
+                  height: 300px;">
                   <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
                 </div>
                 <!-- </div> -->
@@ -107,5 +110,7 @@
         </div>
       </div>
     </mat-card-content>
+    <!-- <mat-progress-bar mode="determinate" value=50></mat-progress-bar> -->
   </mat-card>
+
 </div>
