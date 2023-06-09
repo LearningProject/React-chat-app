@@ -28,6 +28,8 @@ export class RiskMenuComponent {
   Prisk: Message[] = [];
   Crisk: Message[] = [];
   Klearning: Message[] = [];
+  msg:any;
+  startJourney= true;
   constructor(private messageService: MessageService) {
     this.messages.push({
       type: 'client',
@@ -85,7 +87,7 @@ export class RiskMenuComponent {
       this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
       setTimeout(() => this.messages.push({
         type: 'client',
-        message: 'KPL related to corresponding risk.',
+        message: 'Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.',
       }), 1000);
     }
   }
@@ -117,5 +119,14 @@ export class RiskMenuComponent {
   }
   refresh() {
     window.location.reload()
+  }
+  getRisk(event:any){
+    event.forEach((element:any)=> {
+      this.messages.push({type:'user',message:element})
+    });
+    console.log('event is',event);
+  }
+  open(){
+    this.startJourney = false;
   }
 }

@@ -88,6 +88,108 @@
                     }
                 ]
                
+            },
+            {
+                "id": "4",
+                "question": "For what reason did you leave the forces? ",
+                "answers": [
+                    {
+                        "text": "region called the Final Empire",
+                        "answer": "Retirement"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Physical injury"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Mental health issue"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Family reasons"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "To pursue a different career in civilian life"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "To become a full time student at university"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "The lifestyle wasn't compatible to creating a secure relationship"
+                    }
+                   
+                ]
+               
+            },
+            {
+                "id": "5",
+                "question": "Are you facing any of the following as secondary issues?",
+                "answers": [
+                    {
+                        "text": "region called the Final Empire",
+                        "answer": "Moving from one city to another"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Starting a new relationship"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Breaking up with partner"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Coming out as LGBTQ & exploring that."
+                    }
+                   
+                ]
+               
+            },
+            {
+                "id": "6",
+                "question": "Please select the challenges you faced/are facing after leaving the forces?",
+                "answers": [
+                    {
+                        "text": "region called the Final Empire",
+                        "answer": "Healthcare issues (insurance, access issues and coverage)"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Tax management problem"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Unemployment Issue"
+                    }
+                ]
+               
+            },
+            {
+                "id": "7",
+                "question": "What kind of information you shared or intend to share online??",
+                "answers": [
+                    {
+                        "text": "region called the Final Empire",
+                        "answer": "Qualifications, Job related experience while job hunting"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Elements of my personal life, emotions"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "My current financial situation and/or the pension I am entitled to"
+                    },
+                    {
+                        "text": "world called Scadrial",
+                        "answer": "Not shared, Just read posts and comments to find people who have similar experiences"
+                    }
+                ]
+               
             }
        
         ]

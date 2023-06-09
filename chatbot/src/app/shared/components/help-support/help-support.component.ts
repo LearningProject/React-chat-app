@@ -1,4 +1,4 @@
-import { Component, ViewChild ,ChangeDetectionStrategy} from '@angular/core';
+import { Component, ViewChild ,ChangeDetectionStrategy, EventEmitter, Output} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MessageService } from '../../service/message.service';
 import { HttpClient } from '@angular/common/http';
@@ -36,6 +36,7 @@ export class HelpSupportComponent {
   isOpen = false;
   loading = false;
   messages: Message[] = [];
+  @Output() riskDetail = new EventEmitter();
   chatForm = new FormGroup({
     message: new FormControl('', [Validators.required]),
   });
@@ -57,7 +58,6 @@ export class HelpSupportComponent {
 
   openSupportPopup() {
     this.isOpen = !this.isOpen;
-   //this.isOpen = true;
   }
   drop(event: CdkDragDrop<string[]>) {
     console.log(event);
@@ -115,6 +115,9 @@ export class HelpSupportComponent {
   }
   submitData() {
     //this.messages =[];
+    const currentMsgToParent = ['Unauthorized access to pension accounts',"Scenario: Hackers or cybercriminals may attempt to gain unauthorized access to the retired individual's pension accounts to steal funds or personal information",
+     'Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.'];
+     this.msgToParent(currentMsgToParent);
     this.openSupportPopup();
     this.dialogRef.open(AlertComponentComponent, {
       height: 'auto', 
@@ -123,6 +126,9 @@ export class HelpSupportComponent {
       data: {
       },
     });
+    
   }
+  msgToParent(detail:any) {
+    this.riskDetail.emit(detail);}
 }
 

@@ -28,9 +28,10 @@ import {
 
 } from '@angular/cdk/drag-drop';
 import { AlertComponentComponent } from './shared/components/alert-component/alert-component.component';
+import {HomeComponent} from './shared/components/home/home.component'
 
 @NgModule({
-  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent],
+  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent],
   imports: [
     MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,
     BrowserModule,
