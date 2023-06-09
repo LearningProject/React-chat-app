@@ -29,6 +29,7 @@ export class RiskMenuComponent {
   Crisk: Message[] = [];
   Klearning: Message[] = [];
   msg:any;
+  val= 20;
   startJourney= true;
   constructor(private messageService: MessageService) {
     this.messages.push({
@@ -128,5 +129,12 @@ export class RiskMenuComponent {
   }
   open(){
     this.startJourney = false;
+  }
+  getPromoStyles(){
+    return {width :this.val+'%'};
+  }
+  openRisk(event:any){
+    console.log('openRIsk event',event);
+    this.startJourney = event;
   }
 }

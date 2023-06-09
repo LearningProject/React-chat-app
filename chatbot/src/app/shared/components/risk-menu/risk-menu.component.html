@@ -11,9 +11,10 @@
 <div class="toolbar" role="banner">
   <!-- <h1> Risk Playground </h1> -->
 </div>
-<div>
+<app-home (showMain)="openRisk($event)" *ngIf="startJourney"></app-home>
+<div *ngIf="!startJourney">
   <mat-card class="example-card">
-    <mat-card-header class="mat-header">
+    <mat-card-header class="mat-header mb-5">
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
       <mat-card-title>
         <h1>Risk Playground </h1>
@@ -43,11 +44,8 @@
                 <!-- </div> -->
               </mat-expansion-panel>
             </mat-accordion>
-
             <!-- second Risk -->
-
             <mat-accordion>
-
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
@@ -67,7 +65,6 @@
             <!-- Third RIsk -->
 
             <mat-accordion>
-
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
@@ -84,67 +81,17 @@
                 <!-- </div> -->
               </mat-expansion-panel>
             </mat-accordion>
+            <!-- <div class="progress" *ngIf="!startJourney">
+              <div [ngClass]='val > 60 ? "bg-danger":"bg-success"' class="progress-bar" role="progressbar"
+                [ngStyle]="getPromoStyles()" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{val}}</div>
+
+            </div> -->
           </div>
           <div class="chat-container col-sm-6">
             <p class="chat-box-support">An opportunity to explore possible risks during life transitions, first person
               accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for user
               input/interaction.</p>
-            <!--begin::Row-->
-            <div class="row g-0" *ngIf="startJourney">
-              <!--begin::Col-->
-              <div class="col-md-6 mb-15" style="text-align: center;">
-                <div class="bg-light bg-opacity-50 rounded-3 mb-3">
-                  <div class="" style="margin: auto;">
-                    <div class="logo1"></div>
-                  </div>
-                  <h4 class="mb-2">Relationship Breakdown</h4>
-                  <a (click)="open()" class="btn btn-sm btn-primary">Yes</a>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-10" style="text-align: center;">
-                <div class="bg-light bg-opacity-50 rounded-3 mx-md-1">
-                  <div class="" style="margin: auto;">
-                    <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
-                    <div class="logo2"></div>
-                    <!-- <img src="../../assets/images/leaving-armed-force.png" /> -->
-                    <!--end::Svg Icon-->
-                  </div>
-                  <h4 class="mb-2">Leaving Armed Force</h4>
-                  <a (click)="open()" class="btn btn-sm btn-primary">Yes</a>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-10" style="text-align: center;">
-                <div class="bg-light bg-opacity-50 rounded-3 mx-md-1">
-                  <div class="" style="margin: auto;">
-                    <div class="logo3"></div>
-                    <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
-                    <!-- <img src="../../assets/images/serious-illnesss.png" /> -->
-                    <!--end::Svg Icon-->
-                  </div>
-                  <h4 class="mb-1">Serious Illness</h4>
-                  <a (click)="open()" class="btn btn-sm btn-primary">Yes</a>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-10" style="text-align: center;">
-                <div class="bg-light bg-opacity-50 rounded-3 mx-md-1">
-                  <div class="" style="margin: auto;">
-                    <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
-                    <div class="logo4"></div>
-                    <!-- <img src="../../assets/images/LGBTQ.png" /> -->
-                    <!--end::Svg Icon-->
-                  </div>
-                  <h4 class="mb-1">LGBTQ+</h4>
-                  <a (click)="open()" class="btn btn-sm btn-primary">Yes</a>
-                </div>
-              </div>
-
-
-            </div>
-            <!--end::Row-->
-            <div *ngIf="!startJourney">
+            <div>
               <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div>
               <h1 style="color:#000 ; font-size:18px">Risk Playground Support</h1>
               <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list"
