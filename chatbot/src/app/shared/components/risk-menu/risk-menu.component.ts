@@ -30,10 +30,10 @@ export class RiskMenuComponent {
   Klearning: Message[] = [];
   msg: any;
   val = 20;
-
   severity: number = 0;
-
   startJourney = true;
+  severityMsg :string = '';
+  
   constructor(private messageService: MessageService) {
     this.messages.push({
       type: 'client',
@@ -79,9 +79,7 @@ export class RiskMenuComponent {
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
-    console.log('showing chat');
     this.severity = this.severity + 30;
-    console.log('this.severity', this.severity);
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -92,6 +90,7 @@ export class RiskMenuComponent {
         event.currentIndex,
       ); const sentMessage = event.container.data[0];
       this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
+      this.severityMsg = event.container.data[event.container.data.length - 1];
       setTimeout(() => this.messages.push({
         type: 'client',
         message: 'Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.',

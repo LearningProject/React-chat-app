@@ -82,7 +82,20 @@
               </mat-expansion-panel>
             </mat-accordion>
 
-          </div>
+            <div class="risk-severity">
+              <div class="row mb-2">
+                <div class="col-*">Type of Risk :
+                </div>
+                <div class="col-*"  [ngClass]='severity < 40 ? "bg-success": severity >40 && severity < 70? "bg-warning":"bg-danger"'>{{severityMsg}}</div>
+              </div>
+              <div class="row">
+                <div class="col-*">Severity of Risk :
+                </div>
+                <div class="col-*">{{severity}}%</div>
+              </div>
+            </div>
+            </div>
+
           <div class="chat-container col-sm-6">
             <p class="chat-box-support">An opportunity to explore possible risks during life transitions, first person
               accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for user
@@ -109,7 +122,9 @@
       </div> -->
         </div>
       </div>
+
     </mat-card-content>
+
     <!-- <mat-progress-bar mode="determinate" value=50></mat-progress-bar> -->
   </mat-card>
 
