@@ -1,8 +1,13 @@
 .risk{
+    height: 2rem;
     background-color: rgba(0, 0, 0, 0.14);
     border:1px solid rgb(61, 58, 58);
    
 }
 .progress-bar{
     color:#000 !important;
+}
+.progress-header{
+    margin-top: 10px;
+    margin-bottom: -20px;
 }
