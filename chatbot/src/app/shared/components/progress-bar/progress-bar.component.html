@@ -1,0 +1,6 @@
+<div class="progress mt-4 risk">
+    <div [ngClass]='risk_severity < 40 ? "bg-success": risk_severity >40 && risk_severity < 70? "bg-warning":"bg-danger"'
+        class="progress-bar" role="progressbar" [ngStyle]="getPromoStyles()" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">{{risk_severity}}%</div>
+
+</div>

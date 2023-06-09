@@ -1,5 +1,5 @@
 
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import {
   CdkDragDrop,
   CdkDrag,
@@ -28,9 +28,12 @@ export class RiskMenuComponent {
   Prisk: Message[] = [];
   Crisk: Message[] = [];
   Klearning: Message[] = [];
-  msg:any;
-  val= 20;
-  startJourney= true;
+  msg: any;
+  val = 20;
+
+  severity: number = 0;
+
+  startJourney = true;
   constructor(private messageService: MessageService) {
     this.messages.push({
       type: 'client',
@@ -76,6 +79,9 @@ export class RiskMenuComponent {
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
+    console.log('showing chat');
+    this.severity = this.severity + 30;
+    console.log('this.severity', this.severity);
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -121,20 +127,17 @@ export class RiskMenuComponent {
   refresh() {
     window.location.reload()
   }
-  getRisk(event:any){
-    event.forEach((element:any)=> {
-      this.messages.push({type:'user',message:element})
+  getRisk(event: any) {
+    event.forEach((element: any) => {
+      this.messages.push({ type: 'user', message: element })
     });
-    console.log('event is',event);
+    console.log('event is', event);
   }
-  open(){
+  open() {
     this.startJourney = false;
   }
-  getPromoStyles(){
-    return {width :this.val+'%'};
-  }
-  openRisk(event:any){
-    console.log('openRIsk event',event);
+
+  openRisk(event: any) {
     this.startJourney = event;
   }
 }

@@ -9,19 +9,19 @@ import { Component, ViewChild, TemplateRef, OnInit, Output, EventEmitter } from 
 export class HomeComponent implements OnInit {
 
   @Output() showMain = new EventEmitter();
-   startJourney = true;
+  startJourney = true;
 
-constructor(){}
+  constructor() { }
   ngOnInit() {
-   
+
   }
 
-open(){
-  this.startJourney = !this.startJourney;
-  this.showMain.emit(this.startJourney);
-}
-startJourneyClick(){
-  this.startJourney = !this.startJourney;
-}
+  open() {
+    this.startJourney = !this.startJourney;
+    this.showMain.emit(this.startJourney);
+  }
+  startJourneyClick() {
+    this.startJourney = !this.startJourney;
+  }
 
- }
+}

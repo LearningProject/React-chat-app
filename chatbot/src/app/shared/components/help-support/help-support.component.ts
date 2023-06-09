@@ -1,4 +1,4 @@
-import { Component, ViewChild ,ChangeDetectionStrategy, EventEmitter, Output} from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MessageService } from '../../service/message.service';
 import { HttpClient } from '@angular/common/http';
@@ -45,7 +45,7 @@ export class HelpSupportComponent {
   @ViewChild('scrollMe') private myScrollContainer: any;
   security = ['Hi, I am your support agent. How can I help you?', 'risk2'];
   constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog) {
-    
+
   }
   ngOnInit() {
     this.messages.push({
@@ -91,8 +91,8 @@ export class HelpSupportComponent {
     }, 150);
   }
   personaAnswer(event: any, type: string, i: number) {
-    console.log('event is',event);
-    console.log('message is ',this.messages);
+    console.log('event is', event);
+    console.log('message is ', this.messages);
     if (type === 'user') {
       this.flipped[i] = !this.flipped[i]
       this.callQuestion(this.intialId);
@@ -107,28 +107,29 @@ export class HelpSupportComponent {
   }
   callQuestion(questionId: number) {
     const intialVal = this.example.evalData[this.intialId] ? this.example.evalData[this.intialId].question : this.submitData();
-    if(this.example.evalData[this.intialId]){
-    this.messages.push({ type: 'client', message: intialVal });
-    this.callAnswer(this.example.evalData[this.intialId].answers);
-    this.intialId = this.intialId + 1;
+    if (this.example.evalData[this.intialId]) {
+      this.messages.push({ type: 'client', message: intialVal });
+      this.callAnswer(this.example.evalData[this.intialId].answers);
+      this.intialId = this.intialId + 1;
     }
   }
   submitData() {
     //this.messages =[];
-    const currentMsgToParent = ['Unauthorized access to pension accounts',"Scenario: Hackers or cybercriminals may attempt to gain unauthorized access to the retired individual's pension accounts to steal funds or personal information",
-     'Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.'];
-     this.msgToParent(currentMsgToParent);
+    const currentMsgToParent = ['Unauthorized access to pension accounts', "Scenario: Hackers or cybercriminals may attempt to gain unauthorized access to the retired individual's pension accounts to steal funds or personal information",
+      'Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.'];
+    this.msgToParent(currentMsgToParent);
     this.openSupportPopup();
     this.dialogRef.open(AlertComponentComponent, {
-      height: 'auto', 
-      width: '500px', 
-      position:{top: '-50px', left:'50%'} ,
+      height: 'auto',
+      width: '500px',
+      position: { top: '-50px', left: '50%' },
       data: {
       },
     });
-    
+
   }
-  msgToParent(detail:any) {
-    this.riskDetail.emit(detail);}
+  msgToParent(detail: any) {
+    this.riskDetail.emit(detail);
+  }
 }
 
