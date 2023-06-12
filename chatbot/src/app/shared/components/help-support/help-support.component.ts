@@ -115,8 +115,8 @@ export class HelpSupportComponent {
   }
   submitData() {
     //this.messages =[];
-    const currentMsgToParent = ['Unauthorized access to pension accounts', "Scenario: Hackers or cybercriminals may attempt to gain unauthorized access to the retired individual's pension accounts to steal funds or personal information",
-      'Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.'];
+    const currentMsgToParent = ['Financial Risk->Unauthorized Access', "Scenario: Ex-army individuals may store tax-related documents electronically, such as scanned copies of receipts or tax forms. If these documents are not adequately protected, unauthorized individuals may gain access to them, potentially leading to identity theft or tax fraud.",
+     'Personal Risk->Identity Theft:',' Scenario: Ex-army individuals managing their own taxes may become targets for identity thieves who seek to steal personal information for fraudulent purposes. This can include using stolen identities to file false tax returns, claim refunds, or obtain financial benefits.' ];
     this.msgToParent(currentMsgToParent);
     this.openSupportPopup();
     this.dialogRef.open(AlertComponentComponent, {

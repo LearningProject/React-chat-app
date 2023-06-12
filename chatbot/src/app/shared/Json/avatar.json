@@ -26,19 +26,23 @@
     {
        
                 "id": "2",
-                "question": "To which gender do you most identidy?",
+                "question": "To which gender do you most identify?",
                 "answers": [
                     {
                         "text": "man",
-                        "answer": "Male"
+                        "answer": "Male “Man” "
                     },
                     {
                         "text": "woman",
-                        "answer": "Female"
+                        "answer": "Female “Woman” "
                     },
                     {
-                        "text": "transgende",
-                        "answer": "Transgender"
+                        "text": "transgendem",
+                        "answer": "Transgender “Male” "
+                    },
+                    {
+                        "text": "transgendef",
+                        "answer": "Transgender “Female” "
                     }
                 ]          
               },
