@@ -73,6 +73,7 @@ export class RiskMenuComponent {
     'Phishing Scams', 'Wi-Fi Security', 'Online scams and fraudulent activities',]
   test = ['Key Learning Point 1', 'Key Learning Point 2', 'Key Learning Point 3', 'Key Learning Point 4', 'Key Learning Point 5', 'Key Learning Point 6', 'Key Learning Point 7',
     'Key Learning Point 8', 'Key Learning Point 9', 'Key Learning Point 10'];
+  social = ['risk1'];
   keys = Object.keys(this.todo);
 
 
@@ -93,7 +94,7 @@ export class RiskMenuComponent {
       this.severityMsg = event.container.data[event.container.data.length - 1];
       setTimeout(() => this.messages.push({
         type: 'client',
-        message: 'Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.',
+        message: 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.',
       }), 1000);
     }
   }

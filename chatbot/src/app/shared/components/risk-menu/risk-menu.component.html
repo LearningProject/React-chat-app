@@ -54,12 +54,12 @@
                 </div>
                 <!-- </div> -->
               </mat-expansion-panel>
-              <!--Financial Risk tab ends-->
+            <!--Financial Risk tab ends-->
               <!--Personal Risk tab starts-->
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
-                    Peronal Risk-(PR)
+                    Personal Risk-(PR)
                   </mat-panel-title>
 
                 </mat-expansion-panel-header>
@@ -87,6 +87,7 @@
                   <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
                 </div>
                 <!-- </div> -->
+                
               </mat-expansion-panel>
               <!--Cyber security risk ends-->
               </mat-expansion-panel>
@@ -121,7 +122,7 @@
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
-                    Peronal Risk-(PR)
+                  Peronal Risk-(PR)
                   </mat-panel-title>
 
                 </mat-expansion-panel-header>
@@ -149,12 +150,11 @@
                   <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
                 </div>
                 <!-- </div> -->
+                
               </mat-expansion-panel>
               <!--Cyber security risk ends-->
               </mat-expansion-panel>
-            </mat-accordion>
-
-           <!--Risk By Life transition status-->
+            </mat-accordion> <!--Risk By Life transition status-->
            <mat-accordion>
             <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
               <mat-expansion-panel-header>
@@ -250,6 +250,8 @@
               </mat-expansion-panel>
             </mat-accordion> -->
 <!--Third risk end here-->
+
+      
             <div class="risk-severity">
               <div class="row mb-2">
                 <div class="col-*">Type of Risk :
