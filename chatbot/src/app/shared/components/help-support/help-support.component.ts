@@ -122,7 +122,7 @@ export class HelpSupportComponent {
     this.dialogRef.open(AlertComponentComponent, {
       height: 'auto',
       width: '500px',
-      position: { top: '-50px', left: '50%' },
+      panelClass: 'my-centered-dialog',
       data: {
       },
     });
