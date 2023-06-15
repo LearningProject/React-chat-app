@@ -30,19 +30,19 @@
                 "answers": [
                     {
                         "text": "man",
-                        "answer": "Male-Man"
+                        "answer": "Male"
                     },
                     {
                         "text": "woman",
-                        "answer": "Female-Woman"
+                        "answer": "Female"
                     },
                     {
                         "text": "transgendem",
-                        "answer": "Transgender-Male"
+                        "answer": "TransgenderMale"
                     },
                     {
                         "text": "transgendef",
-                        "answer": "Transgender-Female"
+                        "answer": "TransgenderFemale"
                     }
                 ]          
               },

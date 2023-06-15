@@ -95,9 +95,7 @@ export class HelpSupportComponent {
     this.selectedAnswer.push((event.target as HTMLInputElement).innerText);
     if (type === 'user') {
       this.flipped[i] = !this.flipped[i]
-     
-        await(this.removeElement(this.selectedAnswer));
-    
+     await(this.removeElement(this.selectedAnswer));
       this.callQuestion(this.intialId);
     }
   }
