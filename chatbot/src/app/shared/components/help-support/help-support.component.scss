@@ -113,6 +113,7 @@
 
     .selectedAnswer {
       background-color: yellow !important;
+      pointer-events: none;
     }
 
     .disableList {
@@ -148,7 +149,13 @@
           max-width: 80%;
           text-align: right;
           float: right;
-        }
+        //  animation-name: example;
+      }
+
+      @keyframes example {
+        from {left: 0px; background-color: yellow;}
+        to {left: 200px;}
+      }
       }
     }
   }

@@ -44,6 +44,7 @@ export class HelpSupportComponent {
   arr: any = [];
   @ViewChild('scrollMe') private myScrollContainer: any;
   security = ['Hi, I am your support agent. How can I help you?', 'risk2'];
+  selectedAnswer: any=[];
   constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog) {
 
   }
@@ -90,13 +91,29 @@ export class HelpSupportComponent {
       } catch (err) { }
     }, 150);
   }
-  personaAnswer(event: any, type: string, i: number) {
-    console.log('event is', event);
-    console.log('message is ', this.messages);
+  async personaAnswer(event: Event, type: string, i: number) {
+    this.selectedAnswer.push((event.target as HTMLInputElement).innerText);
     if (type === 'user') {
       this.flipped[i] = !this.flipped[i]
+     
+        await(this.removeElement(this.selectedAnswer));
+    
       this.callQuestion(this.intialId);
     }
+  }
+   removeElement(element: string) {
+    const testing = this.messages;
+    this.messages = [];
+    testing.forEach((ele, i) => {
+
+      if (ele.type === 'client') {
+        this.messages.push(ele)
+      } else {
+        if (element.includes(ele.message)) {
+          this.messages.push(ele);
+        }
+      }
+    })
   }
   callAnswer(answers: any) {
     answers.forEach((element: any, i: any) => {
