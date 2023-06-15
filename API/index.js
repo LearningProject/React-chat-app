@@ -1,40 +1,40 @@
-const {Configuration, OpenAIApi} = require('openai');
+const { MongoClient } = require('mongodb')
+const posts = require('./routes/questions');
+// Load express module
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
 
-require('dotenv').config();
-
+// Initialize app
 const app = express();
-app.use(bodyParser.json());
-app.use(cors());
+const router = express.Router();
 
-const config = new Configuration({
-    apiKey: process.env.API_TOKEN
+// Create Instance of MongoClient for mongodb
+const client = new MongoClient('mongodb://0.0.0.0:27017/risk_playground/questions')
+
+// Connect to database
+client.connect()
+    .then(() => console.log('Connected Successfully'))
+    .catch(error => console.log('Failed to connect', error))
+
+    // Route for home
+app.get('/', function (req, res) {
+    res.send('hello world')
 });
 
-const openai = new OpenAIApi(config);
 
-app.post('/message', (req, res) => {
-    // {prompt: "This is the message"}
-    const response = openai.createCompletion({
-        model: 'testing',
-        prompt: req.body.prompt,
-        temperature: 0,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-        max_tokens: 256
-    });
-
-    response.then((data) => {
-        res.send({message: 'hi'})
-    }).catch((err) => {
-        res.send({message: err})
-    })
-
+app.get('/questions', function (req, res) {
+    console.log('req',req);
+    res.send('home testing');
 });
+// router.get("/q", async (request, response) => {
+//    // const users = await userModel.find({});
+//     try {
+//       response.send("hello world");
+//     } catch (error) {
+//       response.status(500).send(error);
+//     }
+//   });
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
+// Start server with port 3000
+app.listen(3000, function(){
+    console.log("Server started on localhost:3000");
 });
