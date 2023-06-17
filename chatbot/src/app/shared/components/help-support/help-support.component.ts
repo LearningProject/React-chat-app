@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy, EventEmitter, Output ,NgZone} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MessageService } from '../../service/message.service';
 import { HttpClient } from '@angular/common/http';
@@ -45,9 +45,12 @@ export class HelpSupportComponent {
   @ViewChild('scrollMe') private myScrollContainer: any;
   security = ['Hi, I am your support agent. How can I help you?', 'risk2'];
   selectedAnswer: any=[];
-  constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog) {
+  constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog,private zone:NgZone) {
 
   }
+  ngAfterViewInit() {
+   
+}
   ngOnInit() {
     this.messages.push({
       type: 'client',
@@ -91,27 +94,38 @@ export class HelpSupportComponent {
       } catch (err) { }
     }, 150);
   }
-  async personaAnswer(event: Event, type: string, i: number) {
+   async personaAnswer(event: Event, type: string, i: number) {
     this.selectedAnswer.push((event.target as HTMLInputElement).innerText);
     if (type === 'user') {
-      this.flipped[i] = !this.flipped[i]
-     await(this.removeElement(this.selectedAnswer));
-      this.callQuestion(this.intialId);
+      this.flipped[i] = !this.flipped[i];
+      this.removeElement(this.selectedAnswer).then((res)=>{
+        console.log('res',res);
+        this.callQuestion(this);
+      });
     }
   }
    removeElement(element: string) {
+    // new Promise((resolve,reject)=>{
     const testing = this.messages;
     this.messages = [];
+    return new Promise(resolve => {
     testing.forEach((ele, i) => {
-
       if (ele.type === 'client') {
         this.messages.push(ele)
+      //  resolve(this.messages);
       } else {
         if (element.includes(ele.message)) {
           this.messages.push(ele);
+        //  resolve(this.messages);
         }
       }
-    })
+    // resolve(this.messages);
+    }
+    
+    )
+    resolve(true)
+  })
+  //  return this.messages;
   }
   callAnswer(answers: any) {
     answers.forEach((element: any, i: any) => {
@@ -120,7 +134,7 @@ export class HelpSupportComponent {
     });
 
   }
-  callQuestion(questionId: number) {
+  callQuestion(_questionId: this) {
     const intialVal = this.example.evalData[this.intialId] ? this.example.evalData[this.intialId].question : this.submitData();
     if (this.example.evalData[this.intialId]) {
       this.messages.push({ type: 'client', message: intialVal });

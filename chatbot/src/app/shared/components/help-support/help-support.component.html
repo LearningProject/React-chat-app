@@ -17,8 +17,8 @@
     <div id="helpdesk-popup-body">
       <div class="messages" #scrollMe>
         <div *ngFor="let message of messages;let i=index" class="message">
-          <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i]}"
-            (click)="personaAnswer($event,message.type,i)">
+          <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i] && message.type=== 'user'}"
+            (click)="personaAnswer($event,message.type,i)" >
             {{ message.message }}
           </div>
         </div>

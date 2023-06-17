@@ -29,10 +29,12 @@ import {
 } from '@angular/cdk/drag-drop';
 import { AlertComponentComponent } from './shared/components/alert-component/alert-component.component';
 import {HomeComponent} from './shared/components/home/home.component';
-import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component'
+import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
+import { KLPComponent } from './shared/components/klp/klp.component';
+//import { KLPComponent } from './shared/component/klp/klp.component'
 
 @NgModule({
-  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent],
+  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent],
   imports: [
     MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,
     BrowserModule,

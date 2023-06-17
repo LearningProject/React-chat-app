@@ -26,70 +26,71 @@
       <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
     </mat-card-header>
     <mat-card-content>
-      <div class="leftmenu row">
-        <div >
-          <div class="example-container col-sm-4">
+      <div class="container-fluid">
+        <div class="leftmenu row">
+
+          <div class="example-container col-*">
             <h2 style="color: #000; ; font-size:18px">Risk Classification</h2>
             <!-- Risk by Domain -->
-            
+
             <mat-accordion>
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
-                  Risk By Domain
+                    Risk By Domain
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <!-- Financial Risk tab starts-->
-              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="risk-header">
-                    Financial Risk-(FR)
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-              <!-- </mat-expansion-panel> -->
-                <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
-                  style="overflow-y: auto;
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Financial Risk-(FR)
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <!-- </mat-expansion-panel> -->
+                  <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
+                    style="overflow-y: auto;
                 height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
-                  <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
-                </div>
-                <!-- </div> -->
-              </mat-expansion-panel>
-            <!--Financial Risk tab ends-->
-              <!--Personal Risk tab starts-->
-              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="risk-header">
-                    Personal Risk-(PR)
-                  </mat-panel-title>
+                    <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
+                  </div>
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Financial Risk tab ends-->
+                <!--Personal Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Personal Risk-(PR)
+                    </mat-panel-title>
 
-                </mat-expansion-panel-header>
+                  </mat-expansion-panel-header>
 
-                <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
-                  [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
+                  <div cdkDropList [cdkDropListData]="securitys" class="example-list"
+                    (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
                   height: 300px;">
-                  <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
-                </div>
-                <!-- </div> -->
-              </mat-expansion-panel>
-              <!--Personal Risk tab ends-->
-               <!--Cyber security Risk tab starts-->
-               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="risk-header">
-                    CyberSecurity Risk -(CsR)
-                  </mat-panel-title>
+                    <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
+                  </div>
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Personal Risk tab ends-->
+                <!--Cyber security Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      CyberSecurity Risk -(CsR)
+                    </mat-panel-title>
 
-                </mat-expansion-panel-header>
+                  </mat-expansion-panel-header>
 
-                <div cdkDropList [cdkDropListData]="cyber" class="example-list" (cdkDropListDropped)="drop($event)"
-                  [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
+                  <div cdkDropList [cdkDropListData]="cyber" class="example-list" (cdkDropListDropped)="drop($event)"
+                    [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
                   height: 300px;">
-                  <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
-                </div>
-                <!-- </div> -->
-                
-              </mat-expansion-panel>
-              <!--Cyber security risk ends-->
+                    <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
+                  </div>
+                  <!-- </div> -->
+
+                </mat-expansion-panel>
+                <!--Cyber security risk ends-->
               </mat-expansion-panel>
             </mat-accordion>
 
@@ -99,184 +100,184 @@
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
-                  Risk By Controllability
+                    Risk By Controllability
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <!-- Financial Risk tab starts-->
-              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="risk-header">
-                  Controllable
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-              <!-- </mat-expansion-panel> -->
-                <!-- <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Controllable
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <!-- </mat-expansion-panel> -->
+                  <!-- <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
                   style="overflow-y: auto;
                 height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
                   <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
                 </div> -->
-                <!-- </div> -->
-              </mat-expansion-panel>
-              <!--Financial Risk tab ends-->
-              <!--Personal Risk tab starts-->
-              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="risk-header">
-                 Non Controllable
-                  </mat-panel-title>
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Financial Risk tab ends-->
+                <!--Personal Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Non Controllable
+                    </mat-panel-title>
 
-                </mat-expansion-panel-header>
+                  </mat-expansion-panel-header>
 
-                <!-- <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
+                  <!-- <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
                   [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
                   height: 300px;">
                   <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
                 </div> -->
-                <!-- </div> -->
-              </mat-expansion-panel>
-              <!--Personal Risk tab ends-->
-               <!--Cyber security Risk tab starts-->
-             
-              <!--Cyber security risk ends-->
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Personal Risk tab ends-->
+                <!--Cyber security Risk tab starts-->
+
+                <!--Cyber security risk ends-->
               </mat-expansion-panel>
             </mat-accordion> <!--Risk By Life transition status-->
-           <mat-accordion>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                Risk By Life Transition Status
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <!-- Financial Risk tab starts-->
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                  Anticipation
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-            <!-- </mat-expansion-panel> -->
-              <!-- <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="risk-header">
+                    Risk By Life Transition Status
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <!-- Financial Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Anticipation
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <!-- </mat-expansion-panel> -->
+                  <!-- <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
                 style="overflow-y: auto;
               height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
                 <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
               </div> -->
-              <!-- </div> -->
-            </mat-expansion-panel>
-            <!--Financial Risk tab ends-->
-            <!--Personal Risk tab starts-->
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                  Information Sharing
-                </mat-panel-title>
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Financial Risk tab ends-->
+                <!--Personal Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Information Sharing
+                    </mat-panel-title>
 
-              </mat-expansion-panel-header>
+                  </mat-expansion-panel-header>
 
-              <!-- <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
+                  <!-- <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
                 [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
                 height: 300px;">
                 <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
               </div> -->
-              <!-- </div> -->
-            </mat-expansion-panel>
-            <!--Personal Risk tab ends-->
-             <!--Cyber security Risk tab starts-->
-             <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                 New Normal
-                </mat-panel-title>
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Personal Risk tab ends-->
+                <!--Cyber security Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      New Normal
+                    </mat-panel-title>
 
-              </mat-expansion-panel-header>
-<!-- 
+                  </mat-expansion-panel-header>
+                  <!-- 
               <div cdkDropList [cdkDropListData]="cyber" class="example-list" (cdkDropListDropped)="drop($event)"
                 [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
                 height: 300px;">
                 <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
               </div> -->
-              <!-- </div> -->
-            </mat-expansion-panel>
-            <!--Cyber security risk ends-->
-            </mat-expansion-panel>
-          </mat-accordion>
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Cyber security risk ends-->
+              </mat-expansion-panel>
+            </mat-accordion>
 
 
 
-          <!--Last Risk-->
+            <!--Last Risk-->
             <!--Risk By Controllability-->
             <mat-accordion>
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
-                  Risk By Controllability
+                    Risk By Controllability
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <!-- Financial Risk tab starts-->
-              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="risk-header">
-                  Controllable
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-              <!-- </mat-expansion-panel> -->
-                <!-- <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Controllable
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <!-- </mat-expansion-panel> -->
+                  <!-- <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
                   style="overflow-y: auto;
                 height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
                   <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
                 </div> -->
-                <!-- </div> -->
-              </mat-expansion-panel>
-              <!--Financial Risk tab ends-->
-              <!--Personal Risk tab starts-->
-              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="risk-header">
-                 Non Controllable
-                  </mat-panel-title>
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Financial Risk tab ends-->
+                <!--Personal Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Non Controllable
+                    </mat-panel-title>
 
-                </mat-expansion-panel-header>
+                  </mat-expansion-panel-header>
 
-                <!-- <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
+                  <!-- <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
                   [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
                   height: 300px;">
                   <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
                 </div> -->
-                <!-- </div> -->
-              </mat-expansion-panel>
-              <!--Personal Risk tab ends-->
-               <!--Cyber security Risk tab starts-->
-             
-              <!--Cyber security risk ends-->
+                  <!-- </div> -->
+                </mat-expansion-panel>
+                <!--Personal Risk tab ends-->
+                <!--Cyber security Risk tab starts-->
+
+                <!--Cyber security risk ends-->
               </mat-expansion-panel>
             </mat-accordion> <!--Risk By Life transition status-->
-           <mat-accordion>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                Risk By Severity of Outcome
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <!-- Financial Risk tab starts-->
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                 High Severe
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                 Low Severe
-                </mat-panel-title>
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="risk-header">
+                    Risk By Severity of Outcome
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <!-- Financial Risk tab starts-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      High Severe
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="risk-header">
+                      Low Severe
+                    </mat-panel-title>
 
-              </mat-expansion-panel-header>
+                  </mat-expansion-panel-header>
 
-            </mat-expansion-panel>
-            </mat-expansion-panel>
-          </mat-accordion>
+                </mat-expansion-panel>
+              </mat-expansion-panel>
+            </mat-accordion>
 
-         
+
             <!-- second Risk -->
             <!-- <mat-accordion>
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
@@ -312,25 +313,27 @@
                 </div>
               </mat-expansion-panel>
             </mat-accordion> -->
-<!--Third risk end here-->
+            <!--Third risk end here-->
 
-      
+
             <div class="risk-severity">
               <div class="row mb-2">
                 <div class="col-*">Type of Risk :
                 </div>
-                <div class="col-*"  [ngClass]='severity < 40 ? "bg-success": severity >40 && severity < 70? "bg-warning":"bg-danger"'>{{severityMsg}}</div>
+                <div class="col-*"
+                  [ngClass]='severity < 40 ? "bg-success": severity >40 && severity < 70? "bg-warning":"bg-danger"'>
+                  {{severityMsg}}</div>
               </div>
               <div class="row">
                 <div class="col-*">Severity of Risk :
                 </div>
-                <div class="col-*">{{severity}}%</div>
+                <div class="col-*"> {{severity < 40 ? "Low": severity >40 && severity < 70? "Medium":"High"}}</div>
               </div>
             </div>
-            </div>
+          </div>
 
           <div class="chat-container col-*">
-            <p class="chat-box-support">An opportunity to explore possible risks during life transitions, first person
+            <p class="chat-box-support" style="display:none;">An opportunity to explore possible risks during life transitions, first person
               accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for user
               input/interaction.</p>
             <div>
@@ -353,7 +356,12 @@
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
         </div>
       </div> -->
+          <div class="col-*">
+            <app-klp [risk_kpl]="klpList"></app-klp>
+
+          </div>
         </div>
+
       </div>
 
     </mat-card-content>

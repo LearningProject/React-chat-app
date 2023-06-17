@@ -33,6 +33,7 @@ export class RiskMenuComponent {
   severity: number = 0;
   startJourney = true;
   severityMsg :string = '';
+  klpList:string[] = [];
   
   constructor(private messageService: MessageService) {
     this.messages.push({
@@ -80,6 +81,7 @@ export class RiskMenuComponent {
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
+    const klpDetail ='Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
     this.severity = this.severity + 30;
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -89,14 +91,19 @@ export class RiskMenuComponent {
         event.container.data,
         event.previousIndex,
         event.currentIndex,
-      ); const sentMessage = event.container.data[0];
+      ); 
+      const sentMessage = event.container.data[0];
       this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
       this.severityMsg = event.container.data[event.container.data.length - 1];
       setTimeout(() => this.messages.push({
         type: 'client',
-        message: 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.',
+        message: klpDetail,
       }), 1000);
+      this.klpList.push(klpDetail);
+      console.log('this.klp',this.klpList);
     }
+   
+   
   }
 
   drop(event: CdkDragDrop<string[]>) {
