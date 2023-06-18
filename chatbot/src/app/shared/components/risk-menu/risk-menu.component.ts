@@ -1,5 +1,6 @@
 
 import { Component, Input, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {
   CdkDragDrop,
   CdkDrag,
@@ -32,9 +33,14 @@ export class RiskMenuComponent {
   val = 20;
   severity: number = 0;
   startJourney = true;
-  severityMsg :string = '';
-  klpList:string[] = [];
-  
+  severityMsg: string = '';
+  klpList: string[] = [];
+  openStory = false;
+  chatForm = new FormGroup({
+    message: new FormControl('', [Validators.required]),
+  });
+  showtyping = false;
+
   constructor(private messageService: MessageService) {
     this.messages.push({
       type: 'client',
@@ -76,12 +82,13 @@ export class RiskMenuComponent {
     'Key Learning Point 8', 'Key Learning Point 9', 'Key Learning Point 10'];
   social = ['risk1'];
   keys = Object.keys(this.todo);
+  klpDetail = 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
 
 
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
-    const klpDetail ='Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
+
     this.severity = this.severity + 30;
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -91,19 +98,38 @@ export class RiskMenuComponent {
         event.container.data,
         event.previousIndex,
         event.currentIndex,
-      ); 
-      const sentMessage = event.container.data[0];
-      this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
-      this.severityMsg = event.container.data[event.container.data.length - 1];
-      setTimeout(() => this.messages.push({
-        type: 'client',
-        message: klpDetail,
-      }), 1000);
-      this.klpList.push(klpDetail);
-      console.log('this.klp',this.klpList);
+      );
+      this.callRiskStory(event).then((val) => {
+        this.showtyping = false;
+        this.klpList.push(this.klpDetail);
+      });
+
     }
-   
-   
+
+  }
+  callRiskStory(event: CdkDragDrop<string[]>) {
+    const sentMessage = event.container.data[0];
+    this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
+    this.severityMsg = event.container.data[event.container.data.length - 1];
+    this.showtyping = true;
+
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this.messages.push({
+          type: 'client',
+          message: this.klpDetail,
+        })
+        resolve('1'); // pass values
+      }, 5000);
+    });
+    // let promise = Promise.resolve (setTimeout(() => this.messages.push({
+    //   type: 'client',
+    //   message: klpDetail,
+    // }), 10000));
+
+
+
+
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -135,9 +161,11 @@ export class RiskMenuComponent {
     window.location.reload()
   }
   getRisk(event: any) {
-    event.forEach((element: any) => {
-      this.messages.push({ type: 'user', message: element })
-    });
+    console.log('calling');
+    this.openStory = true;
+    // event.forEach((element: any) => {
+    //   this.messages.push({ type: 'user', message: element })
+    // });
     console.log('event is', event);
   }
   open() {
@@ -147,4 +175,31 @@ export class RiskMenuComponent {
   openRisk(event: any) {
     this.startJourney = event;
   }
+  sendMessage() {
+    const sentMessage = this.chatForm.value.message!;
+    this.loading = true;
+    this.messages.push({
+      type: 'user',
+      message: sentMessage,
+    });
+    this.chatForm.reset();
+    this.scrollToBottom();
+    this.messageService.sendMessage(sentMessage).subscribe((response: any) => {
+      this.loading = false;
+      this.messages.push({
+        type: 'client',
+        message: response.message,
+      });
+      this.scrollToBottom();
+    });
+  }
+
+  // scrollToBottom() {
+  //   setTimeout(() => {
+  //     try {
+  //       this.myScrollContainer.nativeElement.scrollTop =
+  //         this.myScrollContainer.nativeElement.scrollHeight + 500;
+  //     } catch (err) {}
+  //   }, 150);
+  // }
 }

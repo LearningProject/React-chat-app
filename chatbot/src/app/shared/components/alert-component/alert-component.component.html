@@ -1,10 +1,36 @@
-<div class="story">
+<!-- <div class="story">
 <h1 mat-dialog-title>Story</h1>
 <mat-dialog-content>
   <p> Alex, a passionate and determined boy, dreamt of becoming a pilot in the Air Force. At the age of 19, he enlisted and embarked on a rigorous training program. However, a severe physical injury forced him to leave the armed forces, leaving him feeling lost and frustrated. Along with the emotional toll of leaving his military family, Alex faced the daunting challenge of tax management problems. With the support of loved ones and fellow servicemembers, he learned to navigate his financial responsibilities. Alex turned to writing as an outlet to express his emotions and found solace in helping other veterans facing similar challenges. Through his resilience and determination, he became an advocate for injured servicemembers, offering guidance in physical and emotional recovery, as well as financial matters. Alex's journey taught him that setbacks can lead to new beginnings, and he emerged as a source of inspiration and hope for others facing adversity.</p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close style="margin:18px">Cancel</button>
-  <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
 </mat-dialog-actions>
+</div> -->
+<div class="story" >
+  <div id="helpdesk-popup-header">
+    <p style='font-family: Roboto, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    display: inline-flex;'>Story Related to your Persona/Avatar</p>
+    <button class="helpdesk-popup-close-button" style='  float: right;
+    border: none;
+    background-color: transparent;
+    /* color: #fff; */
+    font-size: 14px;
+    cursor: pointer;'(click)="openSupportPopup()">
+      <mat-icon>line_weight</mat-icon>
+    </button>
+    <!-- [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }" -->
+  </div>
+  
+<p [style.display]="isOpen ? 'block' : 'none'"> Alex, a passionate and determined boy, dreamt of becoming a pilot in the Air Force. At the age of 19, he enlisted
+  and embarked on a rigorous training program. However, a severe physical injury forced him to leave the armed forces,
+  leaving him feeling lost and frustrated. Along with the emotional toll of leaving his military family, Alex faced the
+  daunting challenge of tax management problems. With the support of loved ones and fellow servicemembers, he learned to
+  navigate his financial responsibilities. Alex turned to writing as an outlet to express his emotions and found solace
+  in helping other veterans facing similar challenges. Through his resilience and determination, he became an advocate
+  for injured servicemembers, offering guidance in physical and emotional recovery, as well as financial matters. Alex's
+  journey taught him that setbacks can lead to new beginnings, and he emerged as a source of inspiration and hope for
+  others facing adversity.</p>
 </div>

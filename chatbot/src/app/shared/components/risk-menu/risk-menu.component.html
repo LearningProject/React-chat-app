@@ -338,14 +338,40 @@
               input/interaction.</p>
             <div>
               <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div>
+              <div><app-alert-component *ngIf="openStory"  [data]=true></app-alert-component></div>
               <h1 style="color:#000 ; font-size:18px;font-weight: bold;">Risk Playground Support</h1>
+              <!-- <div> -->
               <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list"
                 (cdkDropListDropped)="showchat($event)">
                 <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type">
-                  <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
+                  <mat-icon  class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
                     aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon>{{item.message}}
+                    
                 </div>
+                <div class="chat-bubble" *ngIf="showtyping">
+                  <div class="typing">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                  </div>
               </div>
+            <!-- </div> -->
+            <!-- <form id="helpdesk-popup-footer" [formGroup]="chatForm">
+              <input
+                formControlName="message"
+                type="text"
+                id="helpdesk-popup-input"
+                placeholder="Type your message here..."
+              />
+              <button
+                id="helpdesk-popup-submit-button"
+                [disabled]="!chatForm.valid"
+                (click)="sendMessage()"
+              >
+                Send
+              </button>
+            </form> -->
             </div>
             <app-progress-bar [risk_severity]="severity"></app-progress-bar>
           </div>

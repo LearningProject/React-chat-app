@@ -148,13 +148,13 @@ export class HelpSupportComponent {
      'Personal Risk->Identity Theft:',' Scenario: Ex-army individuals managing their own taxes may become targets for identity thieves who seek to steal personal information for fraudulent purposes. This can include using stolen identities to file false tax returns, claim refunds, or obtain financial benefits.' ];
     this.msgToParent(currentMsgToParent);
     this.openSupportPopup();
-    this.dialogRef.open(AlertComponentComponent, {
-      height: 'auto',
-      width: '500px',
-      panelClass: 'my-centered-dialog',
-      data: {
-      },
-    });
+    // this.dialogRef.open(AlertComponentComponent, {
+    //   height: 'auto',
+    //   width: '500px',
+    //   panelClass: 'my-centered-dialog',
+    //   data: {
+    //   },
+    // });
 
   }
   msgToParent(detail: any) {
