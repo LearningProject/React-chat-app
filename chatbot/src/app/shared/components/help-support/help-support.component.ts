@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy, EventEmitter, Output ,NgZone} from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy, EventEmitter, Output, NgZone } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MessageService } from '../../service/message.service';
 import { HttpClient } from '@angular/common/http';
@@ -37,6 +37,7 @@ export class HelpSupportComponent {
   loading = false;
   messages: Message[] = [];
   @Output() riskDetail = new EventEmitter();
+  @Output() persona = new EventEmitter();
   chatForm = new FormGroup({
     message: new FormControl('', [Validators.required]),
   });
@@ -44,13 +45,14 @@ export class HelpSupportComponent {
   arr: any = [];
   @ViewChild('scrollMe') private myScrollContainer: any;
   security = ['Hi, I am your support agent. How can I help you?', 'risk2'];
-  selectedAnswer: any=[];
-  constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog,private zone:NgZone) {
+  selectedAnswer: any = [];
+  personaDetail: any = [];
+  constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog, private zone: NgZone) {
 
   }
   ngAfterViewInit() {
-   
-}
+
+  }
   ngOnInit() {
     this.messages.push({
       type: 'client',
@@ -61,6 +63,7 @@ export class HelpSupportComponent {
   }
 
   openSupportPopup() {
+    console.log('open button', this.isOpen);
     this.isOpen = !this.isOpen;
   }
   drop(event: CdkDragDrop<string[]>) {
@@ -94,39 +97,47 @@ export class HelpSupportComponent {
       } catch (err) { }
     }, 150);
   }
-   async personaAnswer(event: Event, type: string, i: number) {
+  personaAnswer(event: Event, type: string, i: number) {
+    this.personaDetail.push((event.target as HTMLInputElement).innerText);
+    console.log((event.target as HTMLInputElement).innerText);
     this.selectedAnswer.push((event.target as HTMLInputElement).innerText);
     if (type === 'user') {
-      this.flipped[i] = !this.flipped[i];
-      this.removeElement(this.selectedAnswer).then((res)=>{
-        console.log('res',res);
-        this.callQuestion(this);
-      });
+      //  this.flipped[i] = !this.flipped[i];
+      this.removeElement(this.selectedAnswer);
+      // this.removeElement(this.selectedAnswer).then((res)=>{
+      //   this.callQuestion(this);
+      // });
+      this.callQuestion(this);
     }
   }
-   removeElement(element: string) {
-    // new Promise((resolve,reject)=>{
+  removeElement(element: string) {
+    // return new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     this.messages.push({
+    //       type: 'client',
+    //       message: this.klpDetail,
+    //     })
+    //     resolve('1'); // pass values
+    //   }, 5000);
+    // });
     const testing = this.messages;
     this.messages = [];
-    return new Promise(resolve => {
+    // return new Promise(resolve => {
+    //   setTimeout(() => {
     testing.forEach((ele, i) => {
       if (ele.type === 'client') {
         this.messages.push(ele)
-      //  resolve(this.messages);
       } else {
         if (element.includes(ele.message)) {
           this.messages.push(ele);
-        //  resolve(this.messages);
         }
       }
-    // resolve(this.messages);
-    }
-    
-    )
-    resolve(true)
-  })
-  //  return this.messages;
+    })
+    //  resolve(true)
+    // },500)
   }
+  //  return this.messages;
+  // }
   callAnswer(answers: any) {
     answers.forEach((element: any, i: any) => {
       this.messages.push({ type: 'user', message: element.answer });
@@ -145,7 +156,7 @@ export class HelpSupportComponent {
   submitData() {
     //this.messages =[];
     const currentMsgToParent = ['Financial Risk->Unauthorized Access', "Scenario: Ex-army individuals may store tax-related documents electronically, such as scanned copies of receipts or tax forms. If these documents are not adequately protected, unauthorized individuals may gain access to them, potentially leading to identity theft or tax fraud.",
-     'Personal Risk->Identity Theft:',' Scenario: Ex-army individuals managing their own taxes may become targets for identity thieves who seek to steal personal information for fraudulent purposes. This can include using stolen identities to file false tax returns, claim refunds, or obtain financial benefits.' ];
+      'Personal Risk->Identity Theft:', ' Scenario: Ex-army individuals managing their own taxes may become targets for identity thieves who seek to steal personal information for fraudulent purposes. This can include using stolen identities to file false tax returns, claim refunds, or obtain financial benefits.'];
     this.msgToParent(currentMsgToParent);
     this.openSupportPopup();
     // this.dialogRef.open(AlertComponentComponent, {
@@ -159,6 +170,7 @@ export class HelpSupportComponent {
   }
   msgToParent(detail: any) {
     this.riskDetail.emit(detail);
+    this.persona.emit(this.personaDetail);
   }
 }
 

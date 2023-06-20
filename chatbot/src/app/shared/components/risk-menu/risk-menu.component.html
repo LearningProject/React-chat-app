@@ -11,6 +11,7 @@
 <div class="toolbar" role="banner">
   <h1 class='header' style="font-weight: bold;
   padding-top: 26px;"> Risk Playground </h1>
+   <div><app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) *ngIf="!startJourney"></app-help-support></div>
 </div>
 <app-home (showMain)="openRisk($event)" *ngIf="startJourney"></app-home>
 <div *ngIf="!startJourney">
@@ -337,8 +338,8 @@
               accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for user
               input/interaction.</p>
             <div>
-              <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div>
-              <div><app-alert-component *ngIf="openStory"  [data]=true></app-alert-component></div>
+              <!-- <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div> -->
+              <!-- <div><app-alert-component *ngIf="openStory"  [data]=true></app-alert-component></div> -->
               <h1 style="color:#000 ; font-size:18px;font-weight: bold;">Risk Playground Support</h1>
               <!-- <div> -->
               <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list"
@@ -382,8 +383,9 @@
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
         </div>
       </div> -->
-          <div class="col-*">
-            <app-klp [risk_kpl]="klpList"></app-klp>
+          <div class="col-*" style="width: 500px;" >
+            <app-alert-component [persona_data]="data"></app-alert-component>
+            <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
 
           </div>
         </div>

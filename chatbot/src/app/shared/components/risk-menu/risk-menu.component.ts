@@ -40,6 +40,7 @@ export class RiskMenuComponent {
     message: new FormControl('', [Validators.required]),
   });
   showtyping = false;
+  data = [];
 
   constructor(private messageService: MessageService) {
     this.messages.push({
@@ -88,7 +89,6 @@ export class RiskMenuComponent {
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
-
     this.severity = this.severity + 30;
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -192,6 +192,10 @@ export class RiskMenuComponent {
       });
       this.scrollToBottom();
     });
+  }
+  getPersona(data:any){
+    this.data=data;
+    console.log('data is from risk ',this.data );
   }
 
   // scrollToBottom() {

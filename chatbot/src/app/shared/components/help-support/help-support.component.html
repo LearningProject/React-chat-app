@@ -1,16 +1,16 @@
 <div id="helpdesk">
-  <!-- <button id="helpdesk-popup-button" (click)="openSupportPopup()">
+  <!-- <button id="helpdesk-popup-button" (click)= "openSupportPopup()">
     Want to create Persona Avatar?
   </button> -->
   <!-- [style.display]="isOpen ? 'block' : 'none'" -->
-
-  <div id="helpdesk-popup-header">
-    Persona/Avatar
-    <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
-      <mat-icon>line_weight</mat-icon>
-    </button>
+  
+  <div id="helpdesk-popup-header" (click)="openSupportPopup()">
+     Create Persona/Avatar
+    <!-- <button id="helpdesk-popup-close-button" (click)="openSupportPopup()"> -->
+      <!-- <mat-icon>line_weight</mat-icon> -->
+    <!-- </button> -->
     <!-- [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }" -->
-  </div>
+    </div>
 
   <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
 
