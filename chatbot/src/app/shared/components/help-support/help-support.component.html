@@ -18,7 +18,7 @@
       <div class="messages" #scrollMe>
         <div *ngFor="let message of messages;let i=index" class="message">
           <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i] && message.type=== 'user'}"
-            (click)="personaAnswer($event,message.type,i)" >
+            (click)="!flipped[i] ? personaAnswer($event,message.type,i): '' ">
             {{ message.message }}
           </div>
         </div>

@@ -54,12 +54,15 @@ export class HelpSupportComponent {
 
   }
   ngOnInit() {
+    this.messages =[];
     this.messages.push({
       type: 'client',
       message: 'How long did you serve in the armed forces?',
     });
     const intialVal = this.example.evalData[0].answers;
+    console.log('intialVal is',intialVal);
     this.callAnswer(intialVal);
+    this.intialId = 1;
   }
 
   openSupportPopup() {
@@ -99,31 +102,20 @@ export class HelpSupportComponent {
   }
   personaAnswer(event: Event, type: string, i: number) {
     this.personaDetail.push((event.target as HTMLInputElement).innerText);
-    console.log((event.target as HTMLInputElement).innerText);
     this.selectedAnswer.push((event.target as HTMLInputElement).innerText);
     if (type === 'user') {
-      //  this.flipped[i] = !this.flipped[i];
-      this.removeElement(this.selectedAnswer);
-      // this.removeElement(this.selectedAnswer).then((res)=>{
-      //   this.callQuestion(this);
-      // });
-      this.callQuestion(this);
+      this.flipped[i] = !this.flipped[i];
+    //  this.removeElement(this.selectedAnswer);
+      this.removeElement(this.selectedAnswer).then((res)=>{
+        this.callQuestion(this);
+      });
+     // this.callQuestion(this);
     }
   }
   removeElement(element: string) {
-    // return new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     this.messages.push({
-    //       type: 'client',
-    //       message: this.klpDetail,
-    //     })
-    //     resolve('1'); // pass values
-    //   }, 5000);
-    // });
     const testing = this.messages;
     this.messages = [];
-    // return new Promise(resolve => {
-    //   setTimeout(() => {
+     return new Promise(resolve => {
     testing.forEach((ele, i) => {
       if (ele.type === 'client') {
         this.messages.push(ele)
@@ -133,11 +125,9 @@ export class HelpSupportComponent {
         }
       }
     })
-    //  resolve(true)
-    // },500)
-  }
-  //  return this.messages;
-  // }
+      resolve(1)
+  })
+}
   callAnswer(answers: any) {
     answers.forEach((element: any, i: any) => {
       this.messages.push({ type: 'user', message: element.answer });
@@ -154,11 +144,15 @@ export class HelpSupportComponent {
     }
   }
   submitData() {
-    //this.messages =[];
+    
+   // 
+    this.selectedAnswer = [];
     const currentMsgToParent = ['Financial Risk->Unauthorized Access', "Scenario: Ex-army individuals may store tax-related documents electronically, such as scanned copies of receipts or tax forms. If these documents are not adequately protected, unauthorized individuals may gain access to them, potentially leading to identity theft or tax fraud.",
       'Personal Risk->Identity Theft:', ' Scenario: Ex-army individuals managing their own taxes may become targets for identity thieves who seek to steal personal information for fraudulent purposes. This can include using stolen identities to file false tax returns, claim refunds, or obtain financial benefits.'];
     this.msgToParent(currentMsgToParent);
+    this.personaDetail=[];
     this.openSupportPopup();
+   // this.ngOnInit();
     // this.dialogRef.open(AlertComponentComponent, {
     //   height: 'auto',
     //   width: '500px',

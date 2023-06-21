@@ -11,11 +11,15 @@
 <div class="toolbar" role="banner">
   <h1 class='header' style="font-weight: bold;
   padding-top: 26px;"> Risk Playground </h1>
-   <div><app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) *ngIf="!startJourney"></app-help-support></div>
+  <div><app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)
+      *ngIf="!startJourney"></app-help-support></div>
 </div>
 <app-home (showMain)="openRisk($event)" *ngIf="startJourney"></app-home>
+
 <div *ngIf="!startJourney">
+  
   <mat-card class="example-card">
+    <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
     <mat-card-header class="mat-header mb-5">
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
       <!-- <mat-card-title>
@@ -30,7 +34,7 @@
       <div class="container-fluid">
         <div class="leftmenu row">
 
-          <div class="example-container col-*">
+          <div class="example-container col-sm-3">
             <h2 style="color: #000; ; font-size:18px">Risk Classification</h2>
             <!-- Risk by Domain -->
 
@@ -49,8 +53,8 @@
                     </mat-panel-title>
                   </mat-expansion-panel-header>
                   <!-- </mat-expansion-panel> -->
-                  <div cdkDropList [cdkDropListData]="keys" class="example-list" (cdkDropListDropped)="drop($event)"
-                    style="overflow-y: auto;
+                  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"
+                    (cdkDropListDropped)="drop($event)" style="overflow-y: auto;
                 height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
                     <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
                   </div>
@@ -328,37 +332,43 @@
               <div class="row">
                 <div class="col-*">Severity of Risk :
                 </div>
-                <div class="col-*"> {{severity < 40 ? "Low": severity >40 && severity < 70? "Medium":"High"}}</div>
+                <div class="col-*"> {{severity < 40 ? "Low" : severity>40 && severity < 70? "Medium" :"High"}}</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="chat-container col-*">
-            <p class="chat-box-support" style="display:none;">An opportunity to explore possible risks during life transitions, first person
-              accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for user
-              input/interaction.</p>
-            <div>
-              <!-- <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div> -->
-              <!-- <div><app-alert-component *ngIf="openStory"  [data]=true></app-alert-component></div> -->
-              <h1 style="color:#000 ; font-size:18px;font-weight: bold;">Risk Playground Support</h1>
-              <!-- <div> -->
-              <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list"
-                (cdkDropListDropped)="showchat($event)">
-                <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type">
-                  <mat-icon  class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
-                    aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon>{{item.message}}
-                    
+            <div class="chat-container col-sm-5">
+              <p class="chat-box-support" style="display:none;">An opportunity to explore possible risks during life
+                transitions, first person
+                accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for
+                user
+                input/interaction.</p>
+              <div>
+                <!-- <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div> -->
+                <!-- <div><app-alert-component *ngIf="openStory"  [data]=true></app-alert-component></div> -->
+                <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground Support</h1>
+                <button class="bg-success btn btn-submit" (click)="submitRisk()" style="position: absolute;
+              right: 5%;
+              top: -1%;
+          ">Submit </button>
+                <!-- <div> -->
+                <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list" style="position:absolute"
+                  (cdkDropListDropped)="showchat($event)" #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
+                  <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type">
+                    <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
+                      aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon>{{item.message}}
+                  </div>
+                  <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
+                    <div class="typing">
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="chat-bubble" *ngIf="showtyping">
-                  <div class="typing">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                  </div>
-                  </div>
-              </div>
-            <!-- </div> -->
-            <!-- <form id="helpdesk-popup-footer" [formGroup]="chatForm">
+
+                <!-- </div> -->
+                <!-- <form id="helpdesk-popup-footer" [formGroup]="chatForm">
               <input
                 formControlName="message"
                 type="text"
@@ -373,24 +383,24 @@
                 Send
               </button>
             </form> -->
+              </div>
+              <app-progress-bar [risk_severity]="severity"></app-progress-bar>
             </div>
-            <app-progress-bar [risk_severity]="severity"></app-progress-bar>
-          </div>
-          <!-- <div class="example-container col-md-4">
+            <!-- <div class="example-container col-md-4">
         <h2 style="color:#000 ; font-size:18px">Key Learning Points Risks</h2>
         <div cdkDropList [cdkDropListData]="test" class="example-list" (cdkDropListDropped)="drop($event)" 
           [cdkDropListEnterPredicate]="noReturnPredicate">
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
         </div>
       </div> -->
-          <div class="col-*" style="width: 500px;" >
-            <app-alert-component [persona_data]="data"></app-alert-component>
-            <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
+            <div class="col-sm-3" >
+              <app-alert-component [persona_data]="data" *ngIf="openStory"></app-alert-component>
+              <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
 
+            </div>
           </div>
-        </div>
 
-      </div>
+        </div>
 
     </mat-card-content>
 

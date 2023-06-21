@@ -72,7 +72,7 @@ mat-expansion-panel{
 .example-container {
   // width: 400px;
   // max-width: 100%;
-  margin: 0 2% 0 2%;
+  //margin: 0 2% 0 2%;
   display: inline-block;
   vertical-align: top;
 }
@@ -238,14 +238,14 @@ mat-expansion-panel{
 
 .client {
   background-color: #40b8ba;
-  color: white;
+  color: black;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
   display: inline-block;
   max-width: 80%;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .user {
@@ -306,7 +306,7 @@ mat-expansion-panel{
 
 .chat-bubble {
   position: relative;
-    top: 100px;
+    //top: 100px;
   background-color:#E6F8F1;
   padding:16px 28px;
   -webkit-border-radius: 20px;
@@ -358,4 +358,9 @@ mat-expansion-panel{
     transform: translateY(0px);
     background-color: #B5D9CB; //rgba(20,105,69,.2);
   }
+}
+.btn-submit{
+  // position: absolute;
+  //   bottom: 101px;
+  //   right: 45px;
 }

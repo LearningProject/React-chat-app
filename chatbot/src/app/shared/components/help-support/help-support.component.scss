@@ -126,8 +126,14 @@
     }
 
     .selectedAnswer {
-      background-color: yellow !important;
+      padding-top: calc(2em - 2px);
+      background: darkslategray;
+    //  background-color: yellow !important;
       pointer-events: none;
+      margin-left: 1px 1px 0;
+    box-shadow: -1px -1px 1px #000;
+    outline: 1px solid black;
+    background-image: linear-gradient(to top, #f4f5f5, #dfdddd);
     }
 
     .disableList {

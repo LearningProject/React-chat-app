@@ -50,7 +50,8 @@
   }
   
   .flip-card-back {
+    padding: 20px;
     background-color: #2980b9;
-    color: white;
+    color: black;
     transform: rotateY(180deg);
   }

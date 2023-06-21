@@ -37,8 +37,15 @@
   others facing adversity.</p>
 </div>
 <div class="flip-card-back">
-  <h1>John Doe</h1> 
-  <p>Architect & Engineer</p> 
-  <p>We love that guy</p>
+  <p style='font-family: Roboto, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  display: inline-flex;'>Persona Detail</p>
+  <div *ngFor="let message of persona_data;let i=index" class="message">
+    <!-- <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i] && message.type=== 'user'}"
+    (click)="personaAnswer($event,message.type,i)" > -->
+    <h3>{{message}}</h3>
+    <!-- </> -->
+    </div>
 </div>
 </div></div>

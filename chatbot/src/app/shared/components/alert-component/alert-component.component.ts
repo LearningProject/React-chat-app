@@ -8,12 +8,14 @@ import { Component, Input } from '@angular/core';
 export class AlertComponentComponent { 
   isOpen = true;
   @Input() persona_data:any;
+  showPersona: any;
   constructor(){
     console.log('data',this.persona_data);
 
   }
-  ngInit(){
-    console.log('data',this.persona_data);
+  ngOnInit(){
+    this.showPersona = this.persona_data;
+    console.log('data',this.showPersona);
   }
   openSupportPopup() {
     this.isOpen = !this.isOpen;

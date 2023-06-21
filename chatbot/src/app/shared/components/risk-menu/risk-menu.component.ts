@@ -41,11 +41,12 @@ export class RiskMenuComponent {
   });
   showtyping = false;
   data = [];
+  length: number = 0;
 
   constructor(private messageService: MessageService) {
     this.messages.push({
       type: 'client',
-      message: 'Hi, I am your support agent. How can I help you?',
+      message: 'Hi, Please drag risks from risk classification and drop it here.Once done please click on submit button.',
     });
     this.security = [{ type: 'client', message: 'Security Risk1' }, { type: 'client', message: 'Security Risk2' }, { type: 'client', message: 'Security Risk3' }, { type: 'client', message: 'Security Risk4' }];
     this.Prisk = [{ type: 'client', message: 'Risk1' }, { type: 'client', message: 'Risk2' }, { type: 'client', message: 'Risk3' }, { type: 'client', message: 'Risk4' }];
@@ -99,33 +100,38 @@ export class RiskMenuComponent {
         event.previousIndex,
         event.currentIndex,
       );
-      this.callRiskStory(event).then((val) => {
-        this.showtyping = false;
-        this.klpList.push(this.klpDetail);
-      });
+      this.callRiskStory(event);
+      // this.callRiskStory(event).then((val) => {
+      //   this.showtyping = false;
+      //   this.klpList.push(this.klpDetail);
+      // });
 
     }
 
   }
   callRiskStory(event: CdkDragDrop<string[]>) {
-    const sentMessage = event.container.data[0];
-    this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
+   // const sentMessage = event.container.data[0];
+   console.log('callRiskStory', event.container.data);
+    //this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
+    this.messages.push({ type: 'user', message: event.container.data[1] });
     this.severityMsg = event.container.data[event.container.data.length - 1];
-    this.showtyping = true;
+    this.klpList.push(this.klpDetail);
 
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        this.messages.push({
-          type: 'client',
-          message: this.klpDetail,
-        })
-        resolve('1'); // pass values
-      }, 5000);
-    });
-    // let promise = Promise.resolve (setTimeout(() => this.messages.push({
-    //   type: 'client',
-    //   message: klpDetail,
-    // }), 10000));
+    // important logic 
+   // this.showtyping = true;
+    // return new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     this.messages.push({
+    //       type: 'client',
+    //       message: this.klpDetail,
+    //     })
+    //     resolve('1'); // pass values
+    //   }, 500);
+    // });
+    // imp logic ends
+
+
+   
 
 
 
@@ -196,6 +202,29 @@ export class RiskMenuComponent {
   getPersona(data:any){
     this.data=data;
     console.log('data is from risk ',this.data );
+  }
+  submitRisk(){
+    this.length = this.messages.length * 50;
+   this.showTyping().then(val =>{
+   // this.length = this.messages.length * 100;
+    this.showtyping = false;
+   })
+
+  }
+
+  showTyping(){
+    // important logic 
+   this.showtyping = true;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this.messages.push({
+          type: 'client',
+          message: this.klpDetail,
+        })
+        resolve('1'); // pass values
+      }, 2000);
+    });
+    // imp logic ends
   }
 
   // scrollToBottom() {
