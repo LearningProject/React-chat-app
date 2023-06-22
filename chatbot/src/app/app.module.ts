@@ -32,11 +32,13 @@ import {HomeComponent} from './shared/components/home/home.component';
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
 import { KLPComponent } from './shared/components/klp/klp.component';
 //import { KLPComponent } from './shared/component/klp/klp.component'
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent],
   imports: [
-    MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,
+    MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -45,6 +47,7 @@ import { KLPComponent } from './shared/components/klp/klp.component';
     MatSlideToggleModule,
     BrowserAnimationsModule,
     MatExpansionModule,
+    MatTabsModule,
     MatIconModule,MatFormFieldModule,MatInputModule,CdkDropListGroup, CdkDropList, NgFor, CdkDrag
   ],
   providers: [],

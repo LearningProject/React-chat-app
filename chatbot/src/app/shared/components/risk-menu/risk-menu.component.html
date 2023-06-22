@@ -17,19 +17,15 @@
 <app-home (showMain)="openRisk($event)" *ngIf="startJourney"></app-home>
 
 <div *ngIf="!startJourney">
-  
+
   <mat-card class="example-card">
-    <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
-    <mat-card-header class="mat-header mb-5">
-      <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <!-- <mat-card-title>
-        <h1>Risk Playground </h1>
-      </mat-card-title> -->
+    <!-- <mat-card-header class="mat-header mb-5">
+    
       <div (click)="refresh()">
         <i class="refresh-icon fa fa-refresh" aria-hidden="true"></i>
       </div>
-      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-    </mat-card-header>
+    
+    </mat-card-header> -->
     <mat-card-content>
       <div class="container-fluid">
         <div class="leftmenu row">
@@ -347,12 +343,9 @@
                 <!-- <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div> -->
                 <!-- <div><app-alert-component *ngIf="openStory"  [data]=true></app-alert-component></div> -->
                 <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground Support</h1>
-                <button class="bg-success btn btn-submit" (click)="submitRisk()" style="position: absolute;
-              right: 5%;
-              top: -1%;
-          ">Submit </button>
+
                 <!-- <div> -->
-                <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list" style="position:absolute"
+                <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list"
                   (cdkDropListDropped)="showchat($event)" #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
                   <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type">
                     <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
@@ -365,6 +358,10 @@
                       <div class="dot"></div>
                     </div>
                   </div>
+
+                </div>
+                <div class="footer">
+                  <button class="bg-success btn btn-submit" (click)="submitRisk()" style="float:right" [disabled]="disabled">Submit </button>
                 </div>
 
                 <!-- </div> -->
@@ -384,6 +381,8 @@
               </button>
             </form> -->
               </div>
+
+              <app-klp [risk_kpl]="klpList"></app-klp>
               <app-progress-bar [risk_severity]="severity"></app-progress-bar>
             </div>
             <!-- <div class="example-container col-md-4">
@@ -393,7 +392,7 @@
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
         </div>
       </div> -->
-            <div class="col-sm-3" >
+            <div class="col-sm-3">
               <app-alert-component [persona_data]="data" *ngIf="openStory"></app-alert-component>
               <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
 

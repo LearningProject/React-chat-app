@@ -42,6 +42,7 @@ export class RiskMenuComponent {
   showtyping = false;
   data = [];
   length: number = 0;
+  disabled = true;
 
   constructor(private messageService: MessageService) {
     this.messages.push({
@@ -90,6 +91,7 @@ export class RiskMenuComponent {
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
+    this.disabled = false;
     this.severity = this.severity + 30;
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -205,6 +207,7 @@ export class RiskMenuComponent {
   }
   submitRisk(){
     this.length = this.messages.length * 50;
+    this.disabled = true;
    this.showTyping().then(val =>{
    // this.length = this.messages.length * 100;
     this.showtyping = false;

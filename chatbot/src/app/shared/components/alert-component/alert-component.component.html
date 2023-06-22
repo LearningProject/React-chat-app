@@ -44,7 +44,7 @@
   <div *ngFor="let message of persona_data;let i=index" class="message">
     <!-- <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i] && message.type=== 'user'}"
     (click)="personaAnswer($event,message.type,i)" > -->
-    <h3>{{message}}</h3>
+    <p class="persona-card">{{message}}</p>
     <!-- </> -->
     </div>
 </div>
