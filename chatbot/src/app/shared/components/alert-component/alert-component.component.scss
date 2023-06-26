@@ -2,7 +2,9 @@
     box-shadow: 0 25px 30px 0 rgba(0,0,0,0.15);
     margin: 10px;
     box-shadow: 0 25px 30px 0 rgba(0, 0, 0, 0.15);
-    font-family: sans-serif;
+    // font-family: sans-serif;
+    font-family: "ABCDiatype";
+    font-size: 16px;
     padding: 20px;
 }
 .helpdesk-popup-close-button {
@@ -15,8 +17,8 @@
   }
   .flip-card {
     background-color: transparent;
-    width: 500px;
-    height: 60vh;
+    width: 400px;
+    height: 75vh;
     perspective: 1000px;
   }
   
@@ -50,10 +52,12 @@
   }
   
   .flip-card-back {
-    font-family: sans-serif;
-    font-size: large;
+    // font-family: sans-serif;
+    // font-size: large;
     padding: 20px;
     background-color: #2980b9;
     color: black;
     transform: rotateY(180deg);
+    font-family: "ABCDiatype";
+    font-size: 16px;
   }

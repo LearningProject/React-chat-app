@@ -81,14 +81,14 @@ mat-expansion-panel {
 .chat-container {
   /* border: 1px solid gray; */
   width: 600px;
-  margin: 0 2%;
+ // margin: 0 2%;
   display: inline-block;
   vertical-align: top;
 }
 
 .example-list {
   margin-top: 20px;
-  background: #0070c4;
+ // background: #0070c4;
   border: solid 1px #ccc;
   min-height: 60px;
   /* background: white; */
@@ -100,10 +100,12 @@ mat-expansion-panel {
 .chat-list {
   /* background: #3b414f; */
   border: solid 1px #ccc;
+  border-top:none;
+  border-bottom:none;
   min-height: 360px;
   max-height: 400px;
   background: white;
-  border-radius: 14px 14px 0 0;
+  // border-radius: 14px 14px 0 0;
 
   display: block;
 
@@ -114,6 +116,7 @@ mat-expansion-panel {
   // max-height: 40%
   // border: solid 1px #ccc;
   // border-radius: 14px;
+  position:relative;
 }
 
 .chat-box {
@@ -142,10 +145,11 @@ mat-expansion-panel {
 
 
 .example-box {
-  background: #0070c4;
+  // background: #0070c4;
   padding: 10px 10px;
   border-bottom: solid 1px #ccc;
-  color: #fff;
+  color:#000;
+  //color: #fff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -240,16 +244,19 @@ mat-expansion-panel {
 }
 
 .client {
-  background-color: #40b8ba;
-  color: black;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  display: inline-block;
-  max-width: 80%;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  bottom: 0;
+    // position: absolute;
+    background-color: #40b8ba63;
+    color: black;
+    padding: 18px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+    max-width: 99%;
+    font-family: 'ABCDiatype';
+    font-size: 16px;
 }
+
 
 .user {
   border: 0.5px solid #333;
@@ -278,11 +285,17 @@ mat-expansion-panel {
 }
 
 .panel {
-  background: #0070c4;
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6db3f2+0,54a3ee+41,3690f0+63,1e69de+100 */
+background: #6db3f2; /* Old browsers */
+background: -moz-linear-gradient(left,  #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #6db3f2 0%,#54a3ee 41%,#3690f0 63%,#1e69de 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #6db3f2 0%,#54a3ee 41%,#3690f0 63%,#1e69de 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=1 ); /* IE6-9 */
+
   color: #fff;
-  padding: 10px 20px;
+ // padding: 10px 20px;
   margin-bottom: 10px;
-  margin-top: 10px;
+  // margin-top: 10px;
 }
 
 .user_icon {
@@ -388,5 +401,41 @@ mat-expansion-panel {
   height: 51px;
   //  background: grey;
   border-radius: 0 0 14px 14px;
-  border: 1px solid gray;
+  border: 1px solid #ccc;
+ // border-top:none;
+}
+.financial{
+  background: url('../../assets/images/personal.png') no-repeat;
+}
+.happy{
+  background: url('../../assets/images/happy.jpg') no-repeat;
+}
+.story{
+  top:25%;
+  left:25%;
+  margin: auto !important;
+  z-index: 99;
+  width: 500px;
+  height: auto;
+  position: absolute;
+  /* box-shadow: 0 25px 30px 0 rgba(0, 0, 0, 0.15); */
+  margin: 10px;
+  box-shadow: 0 10px 10px 0 #7092b3;
+  font-family: sans-serif;
+  padding: 20px;
+  background: #fff;
+}
+.helpdesk-popup-close-button {
+  float: right;
+  border: none;
+  background-color: transparent;
+  /* color: #fff; */
+  font-size: 14px;
+  cursor: pointer;
+}
+.risk-ingrediant{
+  border-radius: 14px 14px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: none;
+  display: block;
 }

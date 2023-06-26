@@ -7,6 +7,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .container-fluid{
+    margin: 25px 25px !important;
+    
+    box-sizing: border-box !important;
+  }
 </style>
 <div class="toolbar" role="banner">
   <h1 class='header' style="font-weight: bold;
@@ -16,9 +21,9 @@
 </div>
 <app-home (showMain)="openRisk($event)" *ngIf="startJourney"></app-home>
 
-<div *ngIf="!startJourney">
+<div *ngIf="!startJourney" class="example-card">
 
-  <mat-card class="example-card">
+  <!-- <mat-card class="example-card"> -->
     <!-- <mat-card-header class="mat-header mb-5">
     
       <div (click)="refresh()">
@@ -26,11 +31,11 @@
       </div>
     
     </mat-card-header> -->
-    <mat-card-content>
+    <!-- <mat-card-content> -->
       <div class="container-fluid">
         <div class="leftmenu row">
 
-          <div class="example-container col-sm-3">
+          <div class="example-container col-sm-2">
             <h2 style="color: #000; ; font-size:18px">Risk Classification</h2>
             <!-- Risk by Domain -->
 
@@ -38,19 +43,19 @@
               <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                 <mat-expansion-panel-header>
                   <mat-panel-title class="risk-header">
-                    Risk By Domain
+                    Risk By Domain 
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <!-- Financial Risk tab starts-->
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
                   <mat-expansion-panel-header>
                     <mat-panel-title class="risk-header">
-                      Financial Risk-(FR)
+                      Financial Risk-(FR) <img class="financial"/>
                     </mat-panel-title>
                   </mat-expansion-panel-header>
                   <!-- </mat-expansion-panel> -->
                   <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"
-                    (cdkDropListDropped)="drop($event)" style="overflow-y: auto;
+                    (cdkDropListDropped)="drop($event)" style="overflow-y: auto; margin: 0 -23px;
                 height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
                     <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
                   </div>
@@ -333,7 +338,7 @@
               </div>
             </div>
 
-            <div class="chat-container col-sm-5">
+            <div class="chat-container col-sm-7">
               <p class="chat-box-support" style="display:none;">An opportunity to explore possible risks during life
                 transitions, first person
                 accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for
@@ -342,14 +347,24 @@
               <div>
                 <!-- <div><app-help-support (riskDetail)=getRisk($event)></app-help-support></div> -->
                 <!-- <div><app-alert-component *ngIf="openStory"  [data]=true></app-alert-component></div> -->
+                <div>
                 <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground Support</h1>
-
+               
+                <mat-icon matBadge="{{count}}" matBadgeColor="warn" style="margin-left: -24px; float:right"></mat-icon>
+                <i class='fas fa-shopping-cart fa-pull-right fa-2x'></i>
+                </div>
                 <!-- <div> -->
-                <div class="row" cdkDropList [cdkDropListData]="done" class="chat-list"
+                  <div class="risk-ingrediant">
+                    <button style="position: relative;margin-top:10px;
+                    left: 85%;" (click)="openDialog()">Risk Ingrediant</button>
+                  </div>
+                <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list"
                   (cdkDropListDropped)="showchat($event)" #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
+                 <!-- <div> <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
                   <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type">
                     <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
                       aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon>{{item.message}}
+                      <!-- <div class="happy"></div> -->
                   </div>
                   <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
                     <div class="typing">
@@ -361,7 +376,7 @@
 
                 </div>
                 <div class="footer">
-                  <button class="bg-success btn btn-submit" (click)="submitRisk()" style="float:right" [disabled]="disabled">Submit </button>
+                  <button class="bg-success btn btn-submit" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story </button>
                 </div>
 
                 <!-- </div> -->
@@ -382,7 +397,7 @@
             </form> -->
               </div>
 
-              <app-klp [risk_kpl]="klpList"></app-klp>
+             
               <app-progress-bar [risk_severity]="severity"></app-progress-bar>
             </div>
             <!-- <div class="example-container col-md-4">
@@ -392,18 +407,28 @@
           <div class="example-box" *ngFor="let item of test" cdkDrag>{{item}}</div>
         </div>
       </div> -->
-            <div class="col-sm-3">
+            <div class="col-sm-2">
               <app-alert-component [persona_data]="data" *ngIf="openStory"></app-alert-component>
               <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
-
+              <!-- <app-klp [risk_kpl]="klpList"></app-klp> -->
             </div>
           </div>
 
         </div>
 
-    </mat-card-content>
+    <!-- </mat-card-content> -->
 
     <!-- <mat-progress-bar mode="determinate" value=50></mat-progress-bar> -->
-  </mat-card>
+  <!-- </mat-card> -->
 
+</div>
+
+<div class="story" *ngIf="showDialog">
+<h1 mat-dialog-title>Instruction</h1>
+<mat-dialog-content>
+ <p>Drag risks from risk Classification and drop here. </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close style="float:right" (click)="closeDialog()">Cancel</button>
+</mat-dialog-actions>
 </div>

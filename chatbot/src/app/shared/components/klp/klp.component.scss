@@ -1,5 +1,6 @@
 .klp{
-    width: 600px;
+  display:inline-flexbox;
+    width: auto;
     // max-width:fit-content;
    // height: auto;
     background:#fff;
@@ -9,7 +10,7 @@
    // margin: 0 3rem;
     // position: absolute;
     // top: 46%;
-    display: flex;
+   // display: flex;
 
 }
 .klpItems {

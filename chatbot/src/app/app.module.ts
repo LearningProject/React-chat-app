@@ -17,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import {
   CdkDragDrop,
@@ -34,11 +35,10 @@ import { KLPComponent } from './shared/components/klp/klp.component';
 //import { KLPComponent } from './shared/component/klp/klp.component'
 import {MatTabsModule} from '@angular/material/tabs';
 
-
 @NgModule({
   declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent],
   imports: [
-    MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,
+    MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -48,6 +48,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatTabsModule,
+    MatBadgeModule,
     MatIconModule,MatFormFieldModule,MatInputModule,CdkDropListGroup, CdkDropList, NgFor, CdkDrag
   ],
   providers: [],

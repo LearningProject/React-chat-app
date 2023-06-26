@@ -12,6 +12,7 @@ import {
 } from '@angular/cdk/drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MessageService } from '../../service/message.service';
+import { MatDialog } from '@angular/material/dialog';
 export interface Message {
   type: string;
   message: string;
@@ -43,12 +44,15 @@ export class RiskMenuComponent {
   data = [];
   length: number = 0;
   disabled = true;
+  showDialog= false;
+  count = 0;
 
-  constructor(private messageService: MessageService) {
-    this.messages.push({
-      type: 'client',
-      message: 'Hi, Please drag risks from risk classification and drop it here.Once done please click on submit button.',
-    });
+
+  constructor(private messageService: MessageService, public dialog: MatDialog) {
+    // this.messages.push({
+    //   type: 'client',
+    //   message: 'Hi, Please drag risks from risk classification and drop it here.Once done please click on submit button.',
+    // });
     this.security = [{ type: 'client', message: 'Security Risk1' }, { type: 'client', message: 'Security Risk2' }, { type: 'client', message: 'Security Risk3' }, { type: 'client', message: 'Security Risk4' }];
     this.Prisk = [{ type: 'client', message: 'Risk1' }, { type: 'client', message: 'Risk2' }, { type: 'client', message: 'Risk3' }, { type: 'client', message: 'Risk4' }];
     this.Crisk = [{ type: 'client', message: 'Security Risk1' }, { type: 'client', message: 'Security Risk2' }, { type: 'client', message: 'Security Risk3' }, { type: 'client', message: 'Security Risk4' }];
@@ -78,6 +82,7 @@ export class RiskMenuComponent {
     "Ex-Partner's Actions", 'Privacy Breaches', 'Exposure of personal information', 'Blackmail or Threats', 'Resume and Profile Privacy', 'Fake Job Applications'
   ];
   done = ['Hi, I am your support agent. How can I help you?'];
+  // done = [];
 
   cyber = ['Internet of Things (IoT) vulnerabilities', 'Inadequate Cybersecurity Practices', 'Not Regularly Reviewing Privacy Settings',
     'Phishing Scams', 'Wi-Fi Security', 'Online scams and fraudulent activities',]
@@ -85,14 +90,17 @@ export class RiskMenuComponent {
     'Key Learning Point 8', 'Key Learning Point 9', 'Key Learning Point 10'];
   social = ['risk1'];
   keys = Object.keys(this.todo);
-  klpDetail = 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
+ // klpDetail = 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
+klpDetail ='John was a soldier in the army for 10 years. He was honorably discharged, but he left early, so there was a possibility that his access to military systems or accounts may not have been properly terminated.One day, John received an email from someone claiming to be from the military. The email said that Johns pension account had been compromised and that he needed to click on a link in the email to reset his password.John was suspicious of the email, but he was also worried about his pension account. He clicked on the link in the email, and it took him to a website that looked like a military website.';
 
 
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
+    this.messages = [];
     this.disabled = false;
     this.severity = this.severity + 30;
+    this.count = this.count + 1;
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -113,9 +121,16 @@ export class RiskMenuComponent {
   }
   callRiskStory(event: CdkDragDrop<string[]>) {
    // const sentMessage = event.container.data[0];
+  // console.log('callRiskStory', event.container.data[1].length);
    console.log('callRiskStory', event.container.data);
-    //this.messages.push({ type: 'user', message: event.container.data[event.container.data.length - 1] });
-    this.messages.push({ type: 'user', message: event.container.data[1] });
+   event.container.data.forEach((data,i)=>{
+    if(data)
+this.messages.push({ type: 'user', message: data })
+   })
+  //  event.container.data[0].length ? this.messages.push({ type: 'user', message: event.container.data[0] }):
+  //  this.messages.push({ type: 'user', message: event.container.data[event.container.data.length -1] })
+  //  ;
+    //this.messages.push({ type: 'user', message: event.container.data[1] });
     this.severityMsg = event.container.data[event.container.data.length - 1];
     this.klpList.push(this.klpDetail);
 
@@ -230,6 +245,13 @@ export class RiskMenuComponent {
     // imp logic ends
   }
 
+  openDialog() {
+   this.showDialog = true;
+  }
+  closeDialog(){
+    this.showDialog = false;
+  }
+  
   // scrollToBottom() {
   //   setTimeout(() => {
   //     try {
