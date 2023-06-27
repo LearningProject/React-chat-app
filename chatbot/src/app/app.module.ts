@@ -34,6 +34,7 @@ import { ProgressBarComponent } from './shared/components/progress-bar/progress-
 import { KLPComponent } from './shared/components/klp/klp.component';
 //import { KLPComponent } from './shared/component/klp/klp.component'
 import {MatTabsModule} from '@angular/material/tabs';
+import { KLPService } from './shared/service/klp.service';
 
 @NgModule({
   declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent],

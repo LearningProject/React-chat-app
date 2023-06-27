@@ -17,20 +17,20 @@
   <h1 class='header' style="font-weight: bold;
   padding-top: 26px;"> Risk Playground </h1>
   <div><app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)
-      *ngIf="!startJourney"></app-help-support></div>
+     ></app-help-support></div>
 </div>
-<app-home (showMain)="openRisk($event)" *ngIf="startJourney"></app-home>
+<!-- <app-home (showMain)="openRisk($event)" *ngIf="startJourney"></app-home> -->
 
-<div *ngIf="!startJourney" class="example-card">
+<div class="example-card">
 
   <!-- <mat-card class="example-card"> -->
-    <!-- <mat-card-header class="mat-header mb-5">
+    <mat-card-header class="mat-header mb-5">
     
       <div (click)="refresh()">
         <i class="refresh-icon fa fa-refresh" aria-hidden="true"></i>
       </div>
     
-    </mat-card-header> -->
+    </mat-card-header>
     <!-- <mat-card-content> -->
       <div class="container-fluid">
         <div class="leftmenu row">
@@ -378,27 +378,14 @@
                 <div class="footer">
                   <button class="bg-success btn btn-submit" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story </button>
                 </div>
-
-                <!-- </div> -->
-                <!-- <form id="helpdesk-popup-footer" [formGroup]="chatForm">
-              <input
-                formControlName="message"
-                type="text"
-                id="helpdesk-popup-input"
-                placeholder="Type your message here..."
-              />
-              <button
-                id="helpdesk-popup-submit-button"
-                [disabled]="!chatForm.valid"
-                (click)="sendMessage()"
-              >
-                Send
-              </button>
-            </form> -->
               </div>
-
+            <a> If you want to see the Key Learning Points , click here</a>  
+            <a href="/klp" >
+              link to KLP component
+            </a>
+              <!-- <app-klp [risk_kpl]="klpList"></app-klp>  -->
              
-              <app-progress-bar [risk_severity]="severity"></app-progress-bar>
+              <!-- <app-progress-bar [risk_severity]="severity"></app-progress-bar> -->
             </div>
             <!-- <div class="example-container col-md-4">
         <h2 style="color:#000 ; font-size:18px">Key Learning Points Risks</h2>
@@ -426,7 +413,7 @@
 <div class="story" *ngIf="showDialog">
 <h1 mat-dialog-title>Instruction</h1>
 <mat-dialog-content>
- <p>Drag risks from risk Classification and drop here. </p>
+ <p>Drag risks from risk classification and drop here. </p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close style="float:right" (click)="closeDialog()">Cancel</button>

@@ -13,6 +13,7 @@ import {
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MessageService } from '../../service/message.service';
 import { MatDialog } from '@angular/material/dialog';
+import { KLPService } from '../../service/klp.service';
 export interface Message {
   type: string;
   message: string;
@@ -48,7 +49,7 @@ export class RiskMenuComponent {
   count = 0;
 
 
-  constructor(private messageService: MessageService, public dialog: MatDialog) {
+  constructor(private messageService: MessageService, public dialog: MatDialog,private klpService:KLPService) {
     // this.messages.push({
     //   type: 'client',
     //   message: 'Hi, Please drag risks from risk classification and drop it here.Once done please click on submit button.',
@@ -132,7 +133,8 @@ this.messages.push({ type: 'user', message: data })
   //  ;
     //this.messages.push({ type: 'user', message: event.container.data[1] });
     this.severityMsg = event.container.data[event.container.data.length - 1];
-    this.klpList.push(this.klpDetail);
+    this.klpList.push('HI hello');
+    this.klpService.setProduct(this.klpList);
 
     // important logic 
    // this.showtyping = true;
