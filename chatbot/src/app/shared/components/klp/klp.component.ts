@@ -1,29 +1,35 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { KLPService } from '../../service/klp.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 
 
 @Component({
   selector: 'app-klp',
   templateUrl: './klp.component.html',
   styleUrls: ['./klp.component.scss'],
- 
-})
-export class KLPComponent implements OnInit{
-  @Input() risk_kpl:any; 
- data:any =[];
-  background: ThemePalette ='primary' ;
-  constructor(private klpService:KLPService){
 
+})
+export class KLPComponent implements OnInit {
+  @Input() risk_kpl: any;
+  data: any = [];
+  background: ThemePalette = 'primary';
+  injector: any;
+  state$: Observable<any> | undefined;
+  story: any;
+  constructor(private klpService: KLPService, public activatedRoute: ActivatedRoute, private router: Router) {
   }
-  ngOnInit(){
-    this.klpService.selectedProduct$.subscribe((value) => {
-      console.log('value is',value);
-      this.data = value;
+  ngOnInit() {
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      this.data = params.getAll('list');
+      this.story = params.getAll('story')
     });
-    // this.data = this.klpService.getKLP();
-    console.log(this.data);
+    console.log('data is ', this.data);
+
+
   }
 
 }
+

@@ -6,18 +6,17 @@
       </div>
     
 </div> -->
-Hello KLP
-<div class="klp">
-<mat-tab-group dynamicHeight  animationDuration="2000ms">
-  <div *ngFor="let message of risk_kpl;let i=index" class="message">
-  <mat-tab >
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      KPL {{i}}
-    </ng-template>
+
+<div class="klp row">
+  <div class="col-sm-8">
+  <h2 style="color: #000; ; font-size:18px;text-align: center;">Key Learning Points</h2>
+  <div *ngFor="let message of data;let i=index" class="message">
     <p class="klpItems"  [attr.data-text]="message">{{message}}</p>
-  </mat-tab>
-</div>
-</mat-tab-group>
+  </div>
+  <h2 style="color: #000; ; font-size:18px;text-align: center;">Story Related to your risks selection</h2>
+   <p class="story">{{story}}</p>
+   </div>
+<div class="col-sm-3"><div class="klpimage"></div></div>
+
 </div>
 

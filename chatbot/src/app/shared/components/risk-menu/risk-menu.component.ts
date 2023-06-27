@@ -14,6 +14,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MessageService } from '../../service/message.service';
 import { MatDialog } from '@angular/material/dialog';
 import { KLPService } from '../../service/klp.service';
+import { Router } from '@angular/router';
 export interface Message {
   type: string;
   message: string;
@@ -49,7 +50,7 @@ export class RiskMenuComponent {
   count = 0;
 
 
-  constructor(private messageService: MessageService, public dialog: MatDialog,private klpService:KLPService) {
+  constructor(private messageService: MessageService, public dialog: MatDialog,private klpService:KLPService,private router:Router) {
     // this.messages.push({
     //   type: 'client',
     //   message: 'Hi, Please drag risks from risk classification and drop it here.Once done please click on submit button.',
@@ -91,7 +92,7 @@ export class RiskMenuComponent {
     'Key Learning Point 8', 'Key Learning Point 9', 'Key Learning Point 10'];
   social = ['risk1'];
   keys = Object.keys(this.todo);
- // klpDetail = 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
+  keyLearningPts = 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
 klpDetail ='John was a soldier in the army for 10 years. He was honorably discharged, but he left early, so there was a possibility that his access to military systems or accounts may not have been properly terminated.One day, John received an email from someone claiming to be from the military. The email said that Johns pension account had been compromised and that he needed to click on a link in the email to reset his password.John was suspicious of the email, but he was also worried about his pension account. He clicked on the link in the email, and it took him to a website that looked like a military website.';
 
 
@@ -111,6 +112,7 @@ klpDetail ='John was a soldier in the army for 10 years. He was honorably discha
         event.previousIndex,
         event.currentIndex,
       );
+      this.klpList.push(this.keyLearningPts);
       this.callRiskStory(event);
       // this.callRiskStory(event).then((val) => {
       //   this.showtyping = false;
@@ -133,8 +135,10 @@ this.messages.push({ type: 'user', message: data })
   //  ;
     //this.messages.push({ type: 'user', message: event.container.data[1] });
     this.severityMsg = event.container.data[event.container.data.length - 1];
-    this.klpList.push('HI hello');
-    this.klpService.setProduct(this.klpList);
+
+    this.klpService.setKLP(this.klpList);
+    //sessionStorage.setItem('item', this.klpList)
+    this.klpService.setProduct('HI');
 
     // important logic 
    // this.showtyping = true;
@@ -252,6 +256,17 @@ this.messages.push({ type: 'user', message: data })
   }
   closeDialog(){
     this.showDialog = false;
+  }
+  navigateWithState() {
+    console.log('this.klpList',this.klpList);
+    const options ={queryParams:{list :this.klpList,story:this.klpDetail}};
+   // this.router.navigate(['/klp'], options);
+    const url = this.router.serializeUrl(
+      this.router.createUrlTree([`/klp`],options));
+    window.open(url, '_blank');
+  }
+  ngOnDestroy() {
+    this.klpService.KLP = this.klpList;
   }
   
   // scrollToBottom() {

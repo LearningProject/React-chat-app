@@ -52,7 +52,7 @@ import { KLPService } from './shared/service/klp.service';
     MatBadgeModule,
     MatIconModule,MatFormFieldModule,MatInputModule,CdkDropListGroup, CdkDropList, NgFor, CdkDrag
   ],
-  providers: [],
+  providers: [KLPService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

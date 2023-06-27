@@ -17,6 +17,7 @@ import {
   CdkDragExit,
 } from '@angular/cdk/drag-drop';
 import { AlertComponentComponent } from '../alert-component/alert-component.component';
+import { KLPService } from '../../service/klp.service';
 
 export interface Message {
   type: string;
@@ -47,13 +48,17 @@ export class HelpSupportComponent {
   security = ['Hi, I am your support agent. How can I help you?', 'risk2'];
   selectedAnswer: any = [];
   personaDetail: any = [];
-  constructor(private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog, private zone: NgZone) {
+  constructor(private klpService: KLPService,private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog, private zone: NgZone) {
 
   }
   ngAfterViewInit() {
 
   }
   ngOnInit() {
+    this.klpService.selectedProduct$.subscribe((value) => {
+      console.log('value is',value);
+      // this.data = value;
+    });
     this.messages =[];
     this.messages.push({
       type: 'client',
