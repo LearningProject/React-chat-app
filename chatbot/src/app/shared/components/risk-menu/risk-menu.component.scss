@@ -253,8 +253,8 @@ mat-expansion-panel {
     margin-bottom: 10px;
     display: inline-block;
     max-width: 99%;
-    font-family: 'ABCDiatype';
-    font-size: 16px;
+    font-family: Elena, -apple-system, BlinkMacSystemFont, Roboto, roboto slab, droid serif, segoe ui, system-ui, Arial, sans-serif;
+    font-size: 18px;
 }
 
 
@@ -436,4 +436,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', end
   border: 1px solid #cccccc;
   border-bottom: none;
   display: block;
+}
+.generate{
+  background: #6db3f2; /* Old browsers */
+background: -moz-linear-gradient(left,  #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #6db3f2 0%,#54a3ee 41%,#3690f0 63%,#1e69de 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #6db3f2 0%,#54a3ee 41%,#3690f0 63%,#1e69de 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=1 ); /* IE6-9 */
 }

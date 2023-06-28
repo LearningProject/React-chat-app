@@ -242,7 +242,7 @@
             </div>
             <!-- <div> -->
             <div class="risk-ingrediant">
-              <button style="position: relative;margin-top:10px;
+              <button class="generate" style="position: relative;margin-top:10px;
                     left: 85%;" (click)="openDialog()">Risk Ingredient</button>
             </div>
             <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list"
@@ -254,7 +254,7 @@
                 <!-- <div class="happy"></div> -->
               </div>
               <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
-                <div class="typing">
+                <div class="typing" (click)="navigateWithState()">
                   <div class="dot"></div>
                   <div class="dot"></div>
                   <div class="dot"></div>
@@ -263,20 +263,17 @@
 
             </div>
             <div class="footer">
-              <button class="bg-success btn btn-submit" (click)="submitRisk()" style="float:right"
+              <button class="generate" (click)="submitRisk()" style="float:right"
                 [disabled]="disabled">Generate story </button>
             </div>
           </div>
-          <div *ngIf='severity>0' style="font-size:18px;margin-top:10px;"> If you want to see the Key Learning Points ,<a
-              style="  text-decoration: underline;
-              -webkit-text-decoration-color: rgb(10, 25, 236); /* Safari */  
-              text-decoration-color: rgb(10, 6, 243); color:blue" (click)="navigateWithState()">
-              click here
-            </a></div>
+          <div *ngIf='severity>0' style="font-size:18px;margin-top:10px;"> If you want to see the Key Learning Points ,
+            <button class="generate"(click)="navigateWithState()">Click Here</button>
+           </div>
 
           <!-- <app-klp ></app-klp>  -->
 
-          <app-progress-bar [risk_severity]="severity"></app-progress-bar>
+          <!-- <app-progress-bar [risk_severity]="severity"></app-progress-bar> -->
         </div>
         <div class="col-sm-2">
           <app-alert-component [persona_data]="data" *ngIf="openStory"></app-alert-component>
