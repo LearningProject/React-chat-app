@@ -127,14 +127,17 @@ klpDetail ='John was a soldier in the army for 10 years. He was honorably discha
   // console.log('callRiskStory', event.container.data[1].length);
    console.log('callRiskStory', event.container.data);
    event.container.data.forEach((data,i)=>{
-    if(data)
-this.messages.push({ type: 'user', message: data })
+    if(data){
+this.messages.push({ type: 'user', message: data });
+this.severityMsg = data;
+    }
+
    })
   //  event.container.data[0].length ? this.messages.push({ type: 'user', message: event.container.data[0] }):
   //  this.messages.push({ type: 'user', message: event.container.data[event.container.data.length -1] })
   //  ;
     //this.messages.push({ type: 'user', message: event.container.data[1] });
-    this.severityMsg = event.container.data[event.container.data.length - 1];
+   
 
     this.klpService.setKLP(this.klpList);
     //sessionStorage.setItem('item', this.klpList)
