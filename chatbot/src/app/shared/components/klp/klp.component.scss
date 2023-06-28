@@ -2,7 +2,7 @@
   height:80%;
   padding:20px;
   box-shadow: 0 10px 10px 0 #7092b3;
-  margin:35px;
+  margin:5%;
   font-size: 1.1em;
   line-height: 1.55em;
   font-family: Elena,-apple-system,BlinkMacSystemFont,Roboto,roboto slab,droid serif,segoe ui,system-ui,Arial,sans-serif;
@@ -49,27 +49,32 @@ transition: all .2s linear;
 
 }
 
-  .klpItems:focus:after,.klpItems:hover:after{
-      // content:attr(data-text);
-      position: relative;
-      overflow: visible;
-      text-overflow: inherit;
-     // background: #40b8ba;
-     background: azure;
-     // position: absolute;
-      left:auto;
-       top:auto;
-    //    width: 80%;
-    //   max-width: 20rem;
-      border: 1px solid #eaebec;
-       padding: 0 .5rem;
-       box-shadow: 0 2px 4px 0 rgba(0,0,0,.28);
-      // white-space: normal;
-       word-wrap: break-word;
-       display:block;
-      color:black;
-     // z-index: 99;
-       margin-top:-1.25rem;
+  .klpItems:hover, .story:hover{
+    background: azure;
+    box-shadow: 0 0 3px black;
+    margin-top: -10px;
+    font-weight: bold;
+    // background-color: red;
+    //    content:attr(data-text);
+    //   position: relative;
+    //   overflow: visible;
+    //   text-overflow: inherit;
+    //  // background: #40b8ba;
+    //  background: red;
+    //  // position: absolute;
+    //   left:auto;
+    //    top:auto;
+    // //    width: 80%;
+    // //   max-width: 20rem;
+    //   border: 1px solid #eaebec;
+    //    padding: 0 .5rem;
+    //    box-shadow: 0 2px 4px 0 rgba(0,0,0,.28);
+    //   // white-space: normal;
+    //    word-wrap: break-word;
+    //    display:block;
+    //   color:black;
+     z-index: 99;
+    //    margin-top:-1.25rem;
     //   padding:20px;
     }
     .klpimage{
