@@ -248,7 +248,7 @@
             <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list"
               (cdkDropListDropped)="showchat($event)" #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
               <!-- <div> <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
-              <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type">
+              <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type" [attr.data-text]="item.message">
                 <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
                   aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon>{{item.message}}
                 <!-- <div class="happy"></div> -->

@@ -4,6 +4,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { KLPService } from '../../service/klp.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
+import { Location } from '@angular/common';
+import { NavigationEnd } from "@angular/router";
 
 
 @Component({
@@ -19,7 +21,13 @@ export class KLPComponent implements OnInit {
   injector: any;
   state$: Observable<any> | undefined;
   story: any;
-  constructor(private klpService: KLPService, public activatedRoute: ActivatedRoute, private router: Router) {
+  private history: string[] = [];
+  constructor(private klpService: KLPService, public activatedRoute: ActivatedRoute, private router: Router,private location:Location) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.history.push(event.urlAfterRedirects);
+      }
+    });
   }
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
@@ -29,6 +37,14 @@ export class KLPComponent implements OnInit {
     console.log('data is ', this.data);
 
 
+  }
+  back(): void {
+    this.history.pop();
+    if (this.history.length > 0) {
+      this.location.back();
+    } else {
+      this.router.navigateByUrl("/risk");
+    }
   }
 
 }
