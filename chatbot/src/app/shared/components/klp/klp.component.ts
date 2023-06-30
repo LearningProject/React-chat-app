@@ -34,7 +34,7 @@ export class KLPComponent implements OnInit {
       this.data = params.getAll('list');
       this.story = params.getAll('story')
     });
-    console.log('data is ', this.data);
+    console.log('data is ', this.story);
 
 
   }

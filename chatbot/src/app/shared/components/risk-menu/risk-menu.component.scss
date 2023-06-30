@@ -297,6 +297,8 @@ mat-expansion-panel {
 }
 
 .user {
+  font-family: Elena, -apple-system, BlinkMacSystemFont, Roboto, roboto slab, droid serif, segoe ui, system-ui, Arial, sans-serif;
+  font-size: 18px;
   border: 0.5px solid #333;
   background-color: #fff;
   color: #881a1a;
@@ -304,7 +306,7 @@ mat-expansion-panel {
   border-radius: 5px;
   margin-bottom: 10px;
   display: inline-block;
-  max-width: 80%;
+  max-width: 51%;
   text-align: right;
   float: right;
 
