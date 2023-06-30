@@ -263,6 +263,8 @@ mat-expansion-panel {
 }
 
 .client:hover {
+  content:'\A';
+
 
   background: azure;
   box-shadow: 0 0 3px black;
@@ -270,6 +272,7 @@ mat-expansion-panel {
   font-weight: bold;
   // background-color: red;
   content: attr(data-text);
+  white-space: pre;
  // position: relative;
   overflow: visible;
   text-overflow: inherit;
@@ -283,7 +286,7 @@ mat-expansion-panel {
   //   border: 1px solid #eaebec;
   //    padding: 0 .5rem;
   //    box-shadow: 0 2px 4px 0 rgba(0,0,0,.28);
-   white-space: normal;
+   white-space: pre-line;
      word-wrap: break-word;
   //    display:block;
   //   color:black;
