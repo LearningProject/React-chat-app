@@ -107,6 +107,9 @@ In a dramatic turn of events, Sarah successfully tracked Jack's location and coo
 Thanks to Sarah's quick thinking and expertise, the military systems were secured, and retiree pension accounts were protected from any financial harm. The incident served as a wake-up call for the army, leading to comprehensive reviews of their termination processes and increased cybersecurity measures.";
 
 
+toppings = new FormControl('');
+  toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
+
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {

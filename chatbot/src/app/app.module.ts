@@ -35,11 +35,13 @@ import { KLPComponent } from './shared/components/klp/klp.component';
 //import { KLPComponent } from './shared/component/klp/klp.component'
 import {MatTabsModule} from '@angular/material/tabs';
 import { KLPService } from './shared/service/klp.service';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent],
   imports: [
-    MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,MatButtonModule,
+    MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,MatButtonModule,MatFormFieldModule, MatSelectModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

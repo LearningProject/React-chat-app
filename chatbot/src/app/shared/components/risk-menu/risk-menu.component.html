@@ -17,7 +17,14 @@
 <div class="toolbar" role="banner">
   <h1 class='header' style="font-weight: bold;
   padding-top: 26px;"> Risk Playground </h1>
-  <div><app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)></app-help-support></div>
+  <div >
+    <mat-form-field class="risk-selection" style="background-color: #000;" >
+      <mat-label >Select Risks</mat-label>
+      <mat-select [formControl]="toppings" multiple >
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)></app-help-support></div>
 </div>
 <div class="example-card">
   <mat-card-header class="mat-header mb-5">
@@ -242,16 +249,22 @@
             </div>
             <!-- <div> -->
             <div class="risk-ingrediant">
-              <button class="generate" style="position: relative;margin-top:10px;
+              <!-- <div class="col-sm-3">
+                
+              </div> -->
+              <!-- <div class="col-sm-3"> -->
+                <button class="generate " style="position: relative;margin-top:10px;
                     left: 85%;" (click)="openDialog()">Risk Ingredient</button>
+              <!-- </div> -->
             </div>
             <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list"
               (cdkDropListDropped)="showchat($event)" #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
               <!-- <div> <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
-              <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type" [attr.data-text]="item.message">
+              <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type"
+                [attr.data-text]="item.message">
                 <!-- <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
                   aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon> -->
-                  {{item.message}}
+                {{item.message}}
                 <!-- <div class="happy"></div> -->
               </div>
               <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
@@ -264,13 +277,13 @@
 
             </div>
             <div class="footer">
-              <button class="generate" (click)="submitRisk()" style="float:right"
-                [disabled]="disabled">Generate story </button>
+              <button class="generate" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story
+              </button>
             </div>
           </div>
           <div *ngIf='severity>0' style="font-size:18px;margin-top:10px;"> If you want to see the Key Learning Points ,
-            <button class="generate"(click)="navigateWithState()">Click Here</button>
-           </div>
+            <button class="generate" (click)="navigateWithState()">Click Here</button>
+          </div>
 
           <!-- <app-klp ></app-klp>  -->
 
