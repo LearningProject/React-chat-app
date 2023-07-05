@@ -334,6 +334,7 @@ this.severityMsg = data;
      
     })
     if(this.messages.length){
+      this.openStory = true;
       this.showDialog = false;
       this.disabled = false;
       } else {
