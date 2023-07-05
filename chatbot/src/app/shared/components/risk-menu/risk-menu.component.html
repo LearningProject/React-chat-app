@@ -326,7 +326,7 @@
       </section>
     </mat-dialog-content>
     <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close style="float:right" (click)="submitDialog()">Submit</button>
+      <button mat-button mat-dialog-close style="float:right" (click)="submitDialog()"  *ngIf="openStory">Submit</button>
       <button mat-button mat-dialog-close style="float:right" (click)="closeDialog()">Cancel</button>
     </mat-dialog-actions>
   </div>
