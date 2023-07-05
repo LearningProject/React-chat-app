@@ -3,10 +3,14 @@
   font-family: ui-monospace;
   font-weight: large;
   padding-top: 46px !important;
-  font-size: -webkit-xxx-large;
+  font-size: xx-large;
   padding-left:50px;
 }
-
+.container-fluid{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow: hidden;
+}
 .example-card {
   // opacity: 0.9;
   //  width: 65%;
@@ -76,6 +80,7 @@ mat-expansion-panel {
   // width: 400px;
   // max-width: 100%;
   //margin: 0 2% 0 2%;
+  padding-right:20px;
   display: inline-block;
   vertical-align: top;
 }
@@ -497,6 +502,7 @@ mat-expansion-panel {
 }
 
 .generate {
+  border-radius: 11px;
   background: #6db3f2;
   /* Old browsers */
   background: -moz-linear-gradient(left, #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%);

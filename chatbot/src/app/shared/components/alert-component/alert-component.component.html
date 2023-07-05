@@ -9,43 +9,60 @@
 </div> -->
 <div class="story flip-card">
   <div class="flip-card-inner">
-<div class=" flip-card-front" >
-  <div id="helpdesk-popup-header">
-    <p style='font-family: Roboto, sans-serif;
+    <div class=" flip-card-front">
+      <div id="helpdesk-popup-header">
+        <p style='font-family: Roboto, sans-serif;
     font-size: large;
     font-weight: bold;
     display: inline-flex;'>Story Related to your Persona/Avatar</p>
-    <!-- <button class="helpdesk-popup-close-button" style='  float: right;
+        <!-- <button class="helpdesk-popup-close-button" style='  float: right;
     border: none;
     background-color: transparent;
     /* color: #fff; */
     font-size: 14px;
-    cursor: pointer;'(click)="openSupportPopup()">
-      <mat-icon>line_weight</mat-icon>
-    </button> -->
-    <!-- [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }" -->
-  </div>
-  
-<p [style.display]="isOpen ? 'block' : 'none'"> Alex, a passionate and determined boy, dreamt of becoming a pilot in the Air Force. At the age of 19, he enlisted
-  and embarked on a rigorous training program. However, a severe physical injury forced him to leave the armed forces,
-  leaving him feeling lost and frustrated. Along with the emotional toll of leaving his military family, Alex faced the
-  daunting challenge of tax management problems. With the support of loved ones and fellow servicemembers, he learned to
-  navigate his financial responsibilities. Alex turned to writing as an outlet to express his emotions and found solace
-  in helping other veterans facing similar challenges. Through his resilience and determination, he became an advocate
-  for injured servicemembers, offering guidance in physical and emotional recovery, as well as financial matters. Alex's
-  journey taught him that setbacks can lead to new beginnings, and he emerged as a source of inspiration and hope for
-  others facing adversity.</p>
-</div>
-<div class="flip-card-back">
-  <p style='font-family: Roboto, sans-serif;
+    cursor: pointer;' (click)="openSupportPopup()">
+          <mat-icon>line_weight</mat-icon>
+        </button> -->
+        <!-- [ngClass]="{'selectedAnswer': flipped[i], 'disableList':!flipped[i] }" -->
+      </div>
+
+      <div [style.display]="isOpen ? 'block' : 'none'">
+
+       <h3> Title: "Resilient Wings"</h3>
+
+        <h4>Departure from the Air Force</h4>
+
+       <p> Once upon a time, in a small town, there lived a young man named Alex. He had always dreamt of serving in the
+        Air Force, soaring through the skies with unwavering pride. At the age of 18, he enlisted in the military and
+        embarked on an extraordinary journey.</p>
+
+        <h4>The Price of Sacrifice</h4>
+
+        <p> During his time in the Air Force, Alex encountered a physical injury that hindered his ability to continue
+        serving. Despite his deep love for his country, he had to make the difficult decision to leave the military at
+        the tender age of 21. The transition was emotionally challenging, as he had to face the reality of leaving
+        behind the life he had always known.</p>
+
+        <!-- <h4> A Broken Heart </h4>
+
+        <p>In addition to his military departure, Alex was also going through a heart-wrenching breakup with his long-term
+        partner, Sarah. The strain of distance and the demanding nature of military life had taken its toll on their
+        relationship, leading to an inevitable parting of ways. The combination of leaving the Air Force and the end of
+        a significant relationship left Alex feeling lost and uncertain about his future.</p> -->
+
+      </div>
+    </div>
+    <div class="flip-card-back">
+      <p style='font-family: Roboto, sans-serif;
   font-size: large;
   font-weight: bold;
   display: inline-flex;'>Persona Detail</p>
-  <div *ngFor="let message of persona_data;let i=index" class="message">
-    <!-- <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i] && message.type=== 'user'}"
+      <div *ngFor="let message of persona_data;let i=index" class="message">
+        <!-- <div [class]="message.type" [ngClass]="{'selectedAnswer': flipped[i] && message.type=== 'user'}"
     (click)="personaAnswer($event,message.type,i)" > -->
-    <p class="persona-card">{{message}}</p>
-    <!-- </> -->
+        <p class="persona-card">{{message}}</p>
+        <!-- </> -->
+      </div>
     </div>
+  </div>
 </div>
-</div></div>

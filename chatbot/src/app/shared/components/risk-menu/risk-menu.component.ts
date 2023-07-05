@@ -328,7 +328,7 @@ this.severityMsg = data;
   submitDialog() {
     this.task.subtasks?.forEach((t) => {
       if (t.completed === true) {
-        this.count = this.count +1 ;
+        this.count = this.count + 1 ;
         this.messages.push({ type: 'user', message: t.name })
       }
      

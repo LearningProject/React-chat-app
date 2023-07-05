@@ -18,12 +18,27 @@
   <h1 class='header' style="font-weight: bold;
   padding-top: 26px;"> Risk Playground </h1>
   <div >
-    <mat-form-field class="risk-selection" style="background-color: #000;" >
-      <mat-label >Select Risks</mat-label>
+    <div class="btn-group" dropdown>
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-basic">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+        </li>
+      </ul>
+    </div>
+    <!-- <mat-form-field class="risk-selection" style="background-color: #000;" >
+      <mat-label >Select Your Transition</mat-label>
       <mat-select [formControl]="toppings" multiple >
         <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
     <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)></app-help-support></div>
 </div>
 <div class="example-card">
@@ -33,7 +48,7 @@
     </div>
   </mat-card-header>
   <div class="container-fluid">
-    <div class="leftmenu row">
+    <div class="leftmenu row  no-gutters">
       <div class="example-container col-sm-2">
         <h2 style="color: #000; ; font-size:18px">Risk Classification</h2>
         <mat-accordion>
@@ -281,7 +296,7 @@
               </button>
             </div>
           </div>
-          <div *ngIf='severity>0' style="font-size:18px;margin-top:10px;"> If you want to see the Key Learning Points ,
+          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;"> If you want to see the Key Learning Points ,
             <button class="generate" (click)="navigateWithState()">Click Here</button>
           </div>
 
@@ -299,7 +314,8 @@
   </div>
 
   <div class="story" *ngIf="showDialog">
-    <h1 mat-dialog-title>Instruction</h1>
+    <h1 *ngIf="!openStory" mat-dialog-title>Instruction</h1>
+    <h1 *ngIf="openStory" mat-dialog-title>Select Risk</h1>
     <mat-dialog-content>
       <p *ngIf="!openStory">Drag Risks from Classification and drop it here.</p>
       <section class="example-section" *ngIf="openStory">
