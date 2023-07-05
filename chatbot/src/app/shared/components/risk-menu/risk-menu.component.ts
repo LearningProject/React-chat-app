@@ -117,7 +117,7 @@ Thanks to Sarah's quick thinking and expertise, the military systems were secure
 
 toppings = new FormControl('');
   toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
-
+  selected:boolean = false;
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
@@ -330,11 +330,15 @@ this.severityMsg = data;
       if (t.completed === true) {
         this.count = this.count +1 ;
         this.messages.push({ type: 'user', message: t.name })
-
       }
+     
+    })
+    if(this.messages.length){
       this.showDialog = false;
       this.disabled = false;
-    })
+      } else {
+       this.selected = true;
+      }
   }
   
   // scrollToBottom() {

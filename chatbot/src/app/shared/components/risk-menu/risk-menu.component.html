@@ -324,6 +324,7 @@
           </ul>
         </span>
       </section>
+      <p style="color: red" *ngIf="selected">*Select atleast one risk to proceed further.</p>
     </mat-dialog-content>
     <mat-dialog-actions align="end">
       <button mat-button mat-dialog-close style="float:right" (click)="submitDialog()"  *ngIf="openStory">Submit</button>
