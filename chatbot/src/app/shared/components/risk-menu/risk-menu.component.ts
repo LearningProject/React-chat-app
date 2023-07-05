@@ -101,19 +101,13 @@ export class RiskMenuComponent {
   social = ['risk1'];
   keys = Object.keys(this.todo);
   keyLearningPts = 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
-klpDetail ="Once upon a time, in a world where technology ruled supreme, there was a former soldier named Jack. Jack had served his country honorably, but due to personal reasons, he left the army early. Little did he know that this decision would set off a chain of events that would threaten the security of both military systems and the pension accounts of retired soldiers.As Jack transitioned back into civilian life, he found himself drawn to the world of hacking and cybersecurity. With his military background, he possessed a unique skill set that made him an expert in identifying vulnerabilities in computer systems. \n However, instead of using his skills for good, he was consumed by a desire for revenge against the army that he felt had betrayed him. \
-Jack decided to exploit the potential flaw in the termination process of military systems and accounts. Due to a miscommunication or oversight, his access to military systems had not been properly terminated when he left the army. This oversight left a backdoor open, a virtual key to the kingdom that Jack could potentially exploit.\
-\n But Jack's ambitions didn't stop there. He discovered that retired soldiers' pension accounts were also linked to the same system. This realization sparked a diabolical plan in his mind. He realized that by gaining access to both the military systems and the pension accounts, he could not only wreak havoc but also profit from the vulnerable retirees.\
-\n Utilizing his hacking skills, Jack managed to infiltrate the military network undetected. The Internet of Things (IoT) vulnerabilities played right into his hands. He exploited weaknesses in the military's IoT devices, from surveillance cameras to drones, using them as gateways into the network.\
-Once inside, Jack maneuvered through the labyrinth of classified information, military databases, and sensitive files. He knew he had to be careful to avoid detection, as any trace of his activities could lead to dire consequences.\
-Simultaneously, he delved deeper into the pension account system. By gaining access to retiree accounts, he could siphon off funds, leaving the vulnerable soldiers in financial ruin. Jack's plan was not just about revenge; it was a twisted attempt to prove his superiority over the system that had cast him aside.\
- \n However, unbeknownst to Jack, a brilliant cybersecurity analyst named Sarah was hot on his trail. Sarah, employed by a private cybersecurity firm, had been monitoring the military network for suspicious activities. When she noticed unauthorized access attempts, she dedicated herself to uncovering the culprit.\
-Sarah's expertise in IoT vulnerabilities helped her trace the hacker's entry point. With each passing moment, the tension grew, as she realized the stakes were much higher than she initially thought. She knew that if she didn't act swiftly, the consequences could be catastrophic. \
-\n Armed with determination, Sarah worked tirelessly, employing her skills to identify and neutralize Jack's infiltration. She quickly patched the IoT vulnerabilities, cutting off his access points and ensuring that the system was secure once again. She also alerted the military authorities about the breach and the potential danger to retiree pension accounts.\
-Meanwhile, Jack was unaware that Sarah was closing in on him. He continued his sinister mission, blissfully ignorant of the imminent danger he was about to face. But his arrogance proved to be his downfall.\
-In a dramatic turn of events, Sarah successfully tracked Jack's location and coordinated with the military to apprehend him. The day of reckoning had come for Jack, as he was arrested and charged with multiple offenses, including unauthorized access, identity theft, and attempted financial fraud.\
-Thanks to Sarah's quick thinking and expertise, the military systems were secured, and retiree pension accounts were protected from any financial harm. The incident served as a wake-up call for the army, leading to comprehensive reviews of their termination processes and increased cybersecurity measures.";
-
+klpDetail =' Title: Resilient Wings\
+\n Departure from the Air Force\
+\nOnce upon a time, in a small town, there lived a young man named Alex. He had always dreamt of serving in the Air Force, soaring through the skies with unwavering pride. At the age of 18, he enlisted in the military and embarked on an extraordinary journey.\
+\nThe Price of Sacrifice\
+\nDuring his time in the Air Force, Alex encountered a physical injury that hindered his ability to continue serving. Despite his deep love for his country, he had to make the difficult decision to leave the military at the tender age of 21. The transition was emotionally challenging, as he had to face the reality of leaving behind the life he had always known.\
+\nA Broken Heart\
+\nIn addition to his military departure, Alex was also going through a heart-wrenching breakup with his long-term partner, Sarah. The strain of distance and the demanding nature of military life had taken its toll on their relationship, leading to an inevitable parting of ways. The combination of leaving the Air Force and the end of a significant relationship left Alex feeling lost and uncertain about his future.';
 
 toppings = new FormControl('');
   toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
@@ -330,6 +324,7 @@ this.severityMsg = data;
       if (t.completed === true) {
         this.count = this.count + 1 ;
         this.messages.push({ type: 'user', message: t.name })
+        this.klpList.push(this.keyLearningPts);
       }
      
     })
