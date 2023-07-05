@@ -301,9 +301,32 @@
   <div class="story" *ngIf="showDialog">
     <h1 mat-dialog-title>Instruction</h1>
     <mat-dialog-content>
-      <p>Drag risks from risk classification and drop here. </p>
+      <p *ngIf="!openStory">Drag Risks from Classification and drop it here.</p>
+      <section class="example-section" *ngIf="openStory">
+        <span class="example-list-section">
+          <mat-checkbox class="example-margin"
+                        [checked]="allComplete"
+                        [color]="task.color"
+                        [indeterminate]="someComplete()"
+                        (change)="setAll($event.checked)">
+            {{task.name}}
+          </mat-checkbox>
+        </span>
+        <span class="example-list-section">
+          <ul>
+            <li *ngFor="let subtask of task.subtasks">
+              <mat-checkbox [(ngModel)]="subtask.completed"
+                            [color]="subtask.color"
+                            (ngModelChange)="updateAllComplete()">
+                {{subtask.name}}
+              </mat-checkbox>
+            </li>
+          </ul>
+        </span>
+      </section>
     </mat-dialog-content>
     <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close style="float:right" (click)="submitDialog()">Submit</button>
       <button mat-button mat-dialog-close style="float:right" (click)="closeDialog()">Cancel</button>
     </mat-dialog-actions>
   </div>

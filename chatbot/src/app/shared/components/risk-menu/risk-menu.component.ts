@@ -15,9 +15,16 @@ import { MessageService } from '../../service/message.service';
 import { MatDialog } from '@angular/material/dialog';
 import { KLPService } from '../../service/klp.service';
 import { Router } from '@angular/router';
+import { ThemePalette } from '@angular/material/core';
 export interface Message {
   type: string;
   message: string;
+}
+export interface Task {
+  name: string;
+  completed: boolean;
+  color: ThemePalette;
+  subtasks?: Task[];
 }
 @Component({
   selector: 'app-risk-menu',
@@ -48,7 +55,8 @@ export class RiskMenuComponent {
   disabled = true;
   showDialog= false;
   count = 0;
-
+  
+  
 
   constructor(private messageService: MessageService, public dialog: MatDialog,private klpService:KLPService,private router:Router) {
     // this.messages.push({
@@ -284,6 +292,49 @@ this.severityMsg = data;
   }
   ngOnDestroy() {
     this.klpService.KLP = this.klpList;
+  }
+  task: Task = {
+    name: 'Persona Risks',
+    completed: false,
+    color: 'primary',
+    subtasks: [
+      {name: 'Unauthorized access to pension accounts', completed: false, color: 'primary'},
+      {name: 'Online Dating Scam', completed: false, color: 'primary'},
+      {name: 'Online Fraud', completed: false, color: 'primary'},
+      {name: 'Identity theft', completed: false, color: 'primary'},
+    ]
+  };
+
+  allComplete: boolean = false;
+
+  updateAllComplete() {
+    this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
+  }
+
+  someComplete(): boolean {
+    if (this.task.subtasks == null) {
+      return false;
+    }
+    return this.task.subtasks.filter(t => t.completed).length > 0 && !this.allComplete;
+  }
+
+  setAll(completed: boolean) {
+    this.allComplete = completed;
+    if (this.task.subtasks == null) {
+      return;
+    }
+    this.task.subtasks.forEach(t => (t.completed = completed));
+  }
+  submitDialog() {
+    this.task.subtasks?.forEach((t) => {
+      if (t.completed === true) {
+        this.count = this.count +1 ;
+        this.messages.push({ type: 'user', message: t.name })
+
+      }
+      this.showDialog = false;
+      this.disabled = false;
+    })
   }
   
   // scrollToBottom() {
