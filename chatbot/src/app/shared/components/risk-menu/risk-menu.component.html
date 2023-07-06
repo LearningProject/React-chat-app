@@ -273,9 +273,8 @@
             input/interaction.</p>
           <div style="padding-top: 13px;">
             <div>
-              <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground Support</h1>
-              <p style="font-size: large;  color:darkorchid;  padding: 10px 10px;    display: inline-block;    margin: 0 144px;"
-                *ngIf="favoriteSeason"> You have selected <b style="color:#000;font-size: larger;">{{favoriteSeason}} </b> Risk</p>
+              <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground "Exploring the Unseen,Embracing the Unknown." </h1>
+
               <mat-icon matBadge="{{count}}" matBadgeColor="warn" style="margin-left: -24px; float:right"></mat-icon>
               <i class='fas fa-shopping-cart fa-pull-right fa-2x'></i>
             </div>
@@ -317,9 +316,8 @@
               </button>
             </div>
           </div>
-          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;"> If you want to see the Key
-            Learning Points ,
-            <button class="generate" (click)="navigateWithState()">Click Here</button>
+          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;"><p style="color: rgb(201, 17, 106);">If you want to know the Key Learning Points....
+            <button class="generate" (click)="navigateWithState()">Click Here</button></p>
           </div>
 
           <!-- <app-klp ></app-klp>  -->
@@ -336,10 +334,10 @@
   </div>
 
   <div class="story" *ngIf="showDialog">
-    <h1 *ngIf="!openStory" mat-dialog-title>Instruction</h1>
-    <h1 *ngIf="openStory" mat-dialog-title>Select Risk</h1>
+    <h1 *ngIf="!openStory" mat-dialog-title style="color: green;">Drag Risks from  "Risk Classification" and drop it here...</h1>
+    <h1 *ngIf="openStory" mat-dialog-title>Select Risk For Further Story</h1>
     <mat-dialog-content>
-      <p *ngIf="!openStory">Drag Risks from Classification and drop it here.</p>
+      <!-- <h3 *ngIf="!openStory">*******</h3> -->
       <section class="example-section" *ngIf="openStory">
         <span class="example-list-section">
           <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color"
