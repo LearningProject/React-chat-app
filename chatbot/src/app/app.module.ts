@@ -37,13 +37,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { KLPService } from './shared/service/klp.service';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
   declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent],
   imports: [
     MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,MatButtonModule,MatFormFieldModule, MatSelectModule,MatCheckboxModule,
-    BrowserModule,
+    BrowserModule,MatRadioModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

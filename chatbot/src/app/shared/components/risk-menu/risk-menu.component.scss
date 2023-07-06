@@ -593,3 +593,24 @@ span.multiselect-native-select select {
     background-color: rgba(0, 0, 0, 0) !important;
   }
 }
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+.dropright{
+  float:left;
+  margin-left:15px;
+  top:-5px;
+  border:1px solid white;
+  border-radius: 6px;
+}
+.trans{
+  color:#fff !important;
+}

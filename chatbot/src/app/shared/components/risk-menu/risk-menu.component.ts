@@ -55,6 +55,8 @@ export class RiskMenuComponent {
   disabled = true;
   showDialog= false;
   count = 0;
+  favoriteSeason: string = '';
+  transtion: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
   
   
 
