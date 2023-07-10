@@ -14,7 +14,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MessageService } from '../../service/message.service';
 import { MatDialog } from '@angular/material/dialog';
 import { KLPService } from '../../service/klp.service';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 export interface Message {
   type: string;
@@ -301,11 +301,20 @@ this.severityMsg = data;
     this.showDialog = false;
   }
   navigateWithState() {
+    
+    const queryParams: any = {};
+    queryParams.list = this.klpList;
+    queryParams.story=this.klpDetail;
+    queryParams.messages = JSON.stringify(this.messages);
     console.log('this.klpList',this.messages);
-    const options ={queryParams:{list :this.klpList,story:this.klpDetail,messages:this.messages}};
+  //  const options ={queryParams:{list :this.klpList,story:this.klpDetail,messages:JSON.stringify(this.messages)}};
    // this.router.navigate(['/klp'], options);
+       // Create our 'NaviationExtras' object which is expected by the Angular Router
+       const navigationExtras: NavigationExtras = {
+        queryParams
+      };
     const url = this.router.serializeUrl(
-      this.router.createUrlTree([`/klp`],options));
+      this.router.createUrlTree([`/klp`],navigationExtras));
     window.open(url, '_blank');
   }
   ngOnDestroy() {

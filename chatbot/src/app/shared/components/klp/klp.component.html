@@ -10,18 +10,27 @@
 <div class="klp row">
   <!-- <button (click)="back()">close</button>> -->
   <div class="col-sm-11">
-  <h2 style="color: #000; ; font-size:28px;text-align: center;">Key Learning Points</h2>
-  <div *ngFor="let message of data;let i=index" class="message">
-    <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p>
-  </div>
-  <h2 style="color: #000; ; font-size:28px;text-align: center;">Risks</h2>
-  <div *ngFor="let message of messages;let i=index" class="message">
-    <p class="klpItems" style="color: blue;">{{message.domain}}-{{message.message}}</p>
-  </div>
-  <h2 style="color: #000; ; font-size:28px;text-align: center;">Story Related to your risks selection</h2>
-   <p class="story">{{story}}</p>
-   </div>
-<!-- <div class="col-sm-3"><div class="klpimage"></div></div> -->
+    <h2 style="color: #000; ; font-size:28px;text-align: center;">Key Learning Points</h2>
+    <div *ngFor="let message of data;let i=index" class="message">
+      <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p>
+    </div>
+    <h2 style="color: #000; ; font-size:28px;text-align: center;">Risks</h2>
+    <div class="row">
+      <div *ngFor="let message of messages;let i=index" class="riskUpdaterow col-sm-2">
+        <!-- <div *ngIf="let risk of message"> -->
+        <div class="display:inline" (click)="displayStory(message)">
+          <p style="color: blue; text-decoration: none; display: inline;" >
+            {{message.domain}} - </p>
+          <p style="color: blue; display:inline">{{message.message}}</p>
+        </div>
+      </div>
+     
+    </div>
+    <p class="story" style="font-size:18px;margin-top: 15px;">{{riskStory}}</p> 
+    <div>
+      <h2 style="color: #000; ; font-size:28px;text-align: center;">Story Related to your risks selection</h2>
+      <p class="story">{{story}}</p>
+    </div>
+    <!-- <div class="col-sm-3"><div class="klpimage"></div></div> -->
 
-</div>
-
+  </div>
