@@ -1,5 +1,5 @@
 
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {
   CdkDragDrop,
@@ -19,6 +19,7 @@ import { ThemePalette } from '@angular/material/core';
 export interface Message {
   type: string;
   message: string;
+  domain?:string;
 }
 export interface Task {
   name: string;
@@ -44,6 +45,7 @@ export class RiskMenuComponent {
   severity: number = 0;
   startJourney = true;
   severityMsg: string = '';
+
   klpList: string[] = [];
   openStory = false;
   chatForm = new FormGroup({
@@ -57,6 +59,8 @@ export class RiskMenuComponent {
   count = 0;
   favoriteSeason: string = '';
   transtion: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
+  riskTag: any;
+ // domain:string='';
   
   
 
@@ -149,7 +153,7 @@ toppings = new FormControl('');
    console.log('callRiskStory', event.container.data);
    event.container.data.forEach((data,i)=>{
     if(data){
-this.messages.push({ type: 'user', message: data });
+this.messages.push({ type: 'user', message: data , domain:this.riskTag});
 this.severityMsg = data;
     }
 
@@ -184,11 +188,23 @@ this.severityMsg = data;
 
 
   }
+  drag(exited: CdkDragExit<any>,item:any){
+   console.log('dragged',item,exited.item.element.nativeElement.innerText);
+   this.riskTag = item;
+   this.klpList.push(this.keyLearningPts);
+   this.messages.push({type:'user',message:exited.item.element.nativeElement.innerText,domain:item});
+   this.severityMsg = exited.item.element.nativeElement.innerText;
+   this.disabled = false;
+   this.severity = this.severity + 30;
+   this.count = this.count + 1;
+  }
 
   drop(event: CdkDragDrop<string[]>) {
+   
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      console.log('else event',event);
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
@@ -234,6 +250,7 @@ this.severityMsg = data;
     this.messages.push({
       type: 'user',
       message: sentMessage,
+      domain:this.riskTag
     });
     this.chatForm.reset();
     this.scrollToBottom();
@@ -242,6 +259,7 @@ this.severityMsg = data;
       this.messages.push({
         type: 'client',
         message: response.message,
+        domain:this.riskTag
       });
       this.scrollToBottom();
     });
@@ -268,6 +286,7 @@ this.severityMsg = data;
         this.messages.push({
           type: 'client',
           message: this.klpDetail,
+         // domain:this.riskTag
         })
         resolve('1'); // pass values
       }, 2000);
@@ -282,8 +301,8 @@ this.severityMsg = data;
     this.showDialog = false;
   }
   navigateWithState() {
-    console.log('this.klpList',this.klpList);
-    const options ={queryParams:{list :this.klpList,story:this.klpDetail}};
+    console.log('this.klpList',this.messages);
+    const options ={queryParams:{list :this.klpList,story:this.klpDetail,messages:this.messages}};
    // this.router.navigate(['/klp'], options);
     const url = this.router.serializeUrl(
       this.router.createUrlTree([`/klp`],options));
@@ -328,7 +347,7 @@ this.severityMsg = data;
     this.task.subtasks?.forEach((t) => {
       if (t.completed === true) {
         this.count = this.count + 1 ;
-        this.messages.push({ type: 'user', message: t.name })
+        this.messages.push({ type: 'user', message: t.name,domain:'Financial Risk' });
         this.klpList.push(this.keyLearningPts);
       }
      
@@ -341,7 +360,9 @@ this.severityMsg = data;
        this.selected = true;
       }
   }
-  
+  openDomainStory(){
+    this.messages.push({type:'client',message:'Will display story based on the risk'});
+  }
   // scrollToBottom() {
   //   setTimeout(() => {
   //     try {

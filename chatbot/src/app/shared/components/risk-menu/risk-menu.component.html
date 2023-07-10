@@ -80,9 +80,9 @@
                   Financial Risk-(FR) <img class="financial" />
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"
-                (cdkDropListDropped)="drop($event)" style="overflow-y: auto; margin: 0 -23px;
-                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
+              <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"  
+                (cdkDropListDropped)="drop($event)" (cdkDropListExited)="drag($event,'Financial Risk')" style="overflow-y: auto; margin: 0 -23px; 
+                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate" [cdkDropListConnectedTo]="[doneList]">
                 <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
               </div>
             </mat-expansion-panel>
@@ -94,9 +94,9 @@
                   Personal Risk-(PR)
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
+              <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"  (cdkDropListExited)="drag($event,'Personal Risk')"
                 [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
-                  height: 300px;">
+                  height: 300px;" [cdkDropListConnectedTo]="[doneList]">
                 <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
               </div>
             </mat-expansion-panel>
@@ -109,8 +109,8 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div cdkDropList [cdkDropListData]="cyber" class="example-list" (cdkDropListDropped)="drop($event)"
-                [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
-                  height: 300px;">
+                [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto; 
+                  height: 300px;"  (cdkDropListExited)="drag($event,'CyberSecurity Risk')">
                 <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
               </div>
             </mat-expansion-panel>
@@ -272,6 +272,8 @@
             user
             input/interaction.</p>
           <div style="padding-top: 13px;">
+            <p style="font-size: large;    padding: 10px 10px;    display: inline-block;"
+             *ngIf="favoriteSeason"> You have selected &nbsp;<b style="color:blueviolet"> {{favoriteSeason}} Risk </b></p>
             <div>
               <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground "Exploring the Unseen,Embracing the Unknown." </h1>
 
@@ -293,13 +295,15 @@
               <!-- </div> -->
             </div>
             <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list"
-              (cdkDropListDropped)="showchat($event)" #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
-              <!-- <div> <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
-              <div class="chat-box col-sm-6 message" *ngFor="let item of messages" cdkDrag [ngClass]="item.type"
-                [attr.data-text]="item.message">
+               #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
+              <!-- <div>(cdkDropListDropped)="showchat($event)" <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
+          
+              <div class="" *ngFor="let item of messages" cdkDrag  [attr.data-text]="item.message">
                 <!-- <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
                   aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon> -->
-                {{item.message}}
+                <span class="tag generate"  (click)="openDomainStory()" *ngIf="item.type == 'user'">{{item.domain}}</span>
+               <!-- <button type="button" class="btn btn-primary tag">{{riskTag}}</button>  -->
+               <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
                 <!-- <div class="happy"></div> -->
               </div>
               <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">

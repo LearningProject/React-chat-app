@@ -22,6 +22,7 @@ export class KLPComponent implements OnInit {
   state$: Observable<any> | undefined;
   story: any;
   private history: string[] = [];
+  messages: any[]=[];
   constructor(private klpService: KLPService, public activatedRoute: ActivatedRoute, private router: Router,private location:Location) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -32,9 +33,10 @@ export class KLPComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.data = params.getAll('list');
-      this.story = params.getAll('story')
+      this.story = params.getAll('story');
+      this.messages= params.getAll('messages');
     });
-    console.log('data is ', this.story);
+    console.log('data is ', this.messages);
 
 
   }
