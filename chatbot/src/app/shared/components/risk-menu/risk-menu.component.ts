@@ -26,6 +26,7 @@ export interface Task {
   completed: boolean;
   color: ThemePalette;
   subtasks?: Task[];
+  domain?:string;
 }
 @Component({
   selector: 'app-risk-menu',
@@ -325,10 +326,11 @@ this.severityMsg = data;
     completed: false,
     color: 'primary',
     subtasks: [
-      {name: 'Unauthorized access to pension accounts', completed: false, color: 'primary'},
-      {name: 'Online Dating Scam', completed: false, color: 'primary'},
-      {name: 'Online Fraud', completed: false, color: 'primary'},
-      {name: 'Identity theft', completed: false, color: 'primary'},
+      {name: 'Unauthorized access to pension accounts', completed: false, color: 'primary',domain:'Financial Risk'},
+      {name: 'Online Dating Scam', completed: false, color: 'primary', domain:'Financial Risk'},
+      {name: 'Online Fraud', completed: false, color: 'primary',domain:'Financial Risk'},
+      {name: 'Identity theft', completed: false, color: 'primary',domain:'Financial Risk'},
+      {name: 'Exposure of Personal Identifiable Information (PII)', completed: false, color: 'primary',domain:'Personal Risk'}
     ]
   };
 
@@ -356,7 +358,7 @@ this.severityMsg = data;
     this.task.subtasks?.forEach((t) => {
       if (t.completed === true) {
         this.count = this.count + 1 ;
-        this.messages.push({ type: 'user', message: t.name,domain:'Financial Risk' });
+        this.messages.push({ type: 'user', message: t.name,domain:t.domain });
         this.klpList.push(this.keyLearningPts);
       }
      
