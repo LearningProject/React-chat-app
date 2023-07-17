@@ -85,7 +85,18 @@ width:70%;
     z-index: 99;
 
     #helpdesk-popup-body {
-      background: cornflowerblue;
+     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6db3f2+0,54a3ee+41,3690f0+63,1e69de+100 */
+  background: #6db3f2;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6db3f2', endColorstr='#1e69de', GradientType=1);
+  /* IE6-9 */
+
      // background: cadetblue;
       height: calc(100% - 10px);
       padding: 10px;
@@ -144,18 +155,20 @@ width:70%;
       overflow: auto;
 
       .message {
-        font-family: 'ABCDiatype';
+        font-family: 'system-ui';
         cursor: pointer;
         display: flow-root;
         width: 100%;
 
         .client {
         //  background-color: #333;
-          color: white;
+          color: whitesmoke;
           padding: 1px;
           border-radius: 5px;
           margin-bottom: 5px;
           display: inline-block;
+          font-size: large;
+          font-style: bold;
           max-width: 100%;
         }
 

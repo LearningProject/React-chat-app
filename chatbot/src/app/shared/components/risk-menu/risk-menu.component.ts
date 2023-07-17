@@ -126,7 +126,7 @@ toppings = new FormControl('');
 
 
   step: number | undefined = -1;
-  Questions: string[] = ['Do you want al carte with risk?','Do you want to go with persona?'];
+  Questions: string[] = ['Do you want al-carte based risks?','Do you want to go with persona based risks?'];
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {
