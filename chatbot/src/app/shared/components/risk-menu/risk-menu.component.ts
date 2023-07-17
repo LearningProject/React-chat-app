@@ -122,6 +122,10 @@ klpDetail ='Title of the Story "Resilient Wings"\
 toppings = new FormControl('');
   toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
   selected:boolean = false;
+
+
+  step: number | undefined = -1;
+  Questions: string[] = ['Do you want al carte with risk?','Do you want to go with persona?'];
   ngOnInit() {
   }
   showchat(event: CdkDragDrop<string[]>) {

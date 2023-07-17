@@ -620,3 +620,25 @@ span.multiselect-native-select select {
   float: right;
   clear: both;
 }
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+  position: absolute;
+  left:40%;
+  top:auto;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+.selectStep{
+  font-size: x-large;
+    fill-rule: nonzero;
+    font-weight: bolder;
+    position: relative;
+    font-family: inherit;
+    top: 7%;
+    text-align: center;
+}
