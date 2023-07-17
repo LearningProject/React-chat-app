@@ -54,7 +54,7 @@
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
         </mat-select>
       </mat-form-field> -->
-    <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) *ngIf="step == 1"></app-help-support>
+    <!-- <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) *ngIf="step == 1"></app-help-support> -->
   </div>
 </div>
 {{step}}
@@ -94,7 +94,7 @@
               </mat-expansion-panel-header>
               <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"  
                 (cdkDropListDropped)="drop($event)" (cdkDropListExited)="drag($event,'Financial Risk')" style="overflow-y: auto; margin: 0 -23px; 
-                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate" [cdkDropListConnectedTo]="[doneList]">
+                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate" >
                 <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
               </div>
             </mat-expansion-panel>
@@ -108,7 +108,7 @@
               </mat-expansion-panel-header>
               <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"  (cdkDropListExited)="drag($event,'Personal Risk')"
                 [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
-                  height: 300px;" [cdkDropListConnectedTo]="[doneList]">
+                  height: 300px;">
                 <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
               </div>
             </mat-expansion-panel>
@@ -277,12 +277,10 @@
           </div>
         </div>
 
-        <div class="chat-container col-sm-7">
-          <p class="chat-box-support" style="display:none;">An opportunity to explore possible risks during life
-            transitions, first person
-            accounts and experiences, and risk mitigating strategies/tools in a fun engaging way that allows for
-            user
-            input/interaction.</p>
+        <div class="chat-container col-sm-7" *ngIf="step == 1 " [ngStyle]="{'display':!closePersona  ? 'block' : 'none' }">
+        <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) ></app-help-support>
+        </div>
+        <div class="chat-container col-sm-7" *ngIf="step == 0 || openStory">
           <div style="padding-top: 13px;">
             <p style="font-size: large;    padding: 10px 10px;    display: inline-block;"
              *ngIf="favoriteSeason"> You have selected &nbsp;<b style="color:blueviolet"> {{favoriteSeason}} Transition</b></p>

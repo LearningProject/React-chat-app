@@ -49,6 +49,7 @@ export class RiskMenuComponent {
 
   klpList: string[] = [];
   openStory = false;
+  closePersona = false;
   chatForm = new FormGroup({
     message: new FormControl('', [Validators.required]),
   });
@@ -237,6 +238,7 @@ this.severityMsg = data;
   getRisk(event: any) {
     console.log('calling');
     this.openStory = true;
+    this.closePersona = true;
     // event.forEach((element: any) => {
     //   this.messages.push({ type: 'user', message: element })
     // });
@@ -368,6 +370,7 @@ this.severityMsg = data;
      
     })
     if(this.messages.length){
+      this.closePersona = true;
       this.openStory = true;
       this.showDialog = false;
       this.disabled = false;
