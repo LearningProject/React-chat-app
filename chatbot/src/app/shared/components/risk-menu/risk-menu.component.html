@@ -269,15 +269,19 @@
 
         <div class="risk-severity">
           <div class="row mb-2">
-            <div class="col-*">Type of Risk :
+            <div class="col-*">Choose your preference
+            <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
+            Ala-Carte</button>
+            <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
+            Persona</button>
             </div>
             <div class="col-*"
               [ngClass]='severity < 40 ? "bg-success": severity >40 && severity < 70? "bg-warning":"bg-danger"'>
               {{severityMsg}}</div>
           </div>
           <div class="row">
-            <div class="col-*">Severity of Risk :
-            </div>
+            <!-- <div class="col-*">Severity of Risk :
+            </div> -->
             <div class="col-*"> {{severity < 40 ? "Low" : severity>40 && severity < 70? "Medium" :"High"}}</div>
             </div>
           </div>
