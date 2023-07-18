@@ -302,8 +302,8 @@
               <!-- <p style="font-size: large;    padding: 10px 10px;    display: inline-block;
               
                 " *ngIf="favoriteSeason"> You have selected &nbsp;<b> {{favoriteSeason}} </b></p> -->
-              <button class="generate " style="margin-top:10px;position: relative;
-                    left: 85%;" (click)="openDialog()">Risk Ingredient</button>
+              <button mat-flat-button color="warn" style="margin-top:5px;position: relative;
+                    left: 81%;" (click)="openDialog()">Risk Ingredient</button>
 
               <!-- </div> -->
             </div>
@@ -330,14 +330,13 @@
 
             </div>
             <div class="footer">
-              <button class="generate" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story
-              </button>
+              <!-- <button mat-raised-button="primary" class="example-button-row" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story
+              </button> -->
+              <button mat-raised-button color="primary" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story</button>
             </div>
           </div>
-          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;">
-            <p style="color: rgb(201, 17, 106);">If you want to know the Key Learning Points....
-              <button class="generate" (click)="navigateWithState()">Click Here</button>
-            </p>
+          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;"><p style="color: rgb(201, 17, 106);">If you want to know the Key Learning Points....
+            <button mat-raised-button color="primary" class="generate" (click)="navigateWithState()">Click Here</button></p>
           </div>
 
           <!-- <app-klp ></app-klp>  -->

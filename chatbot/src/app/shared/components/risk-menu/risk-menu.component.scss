@@ -501,18 +501,18 @@ mat-expansion-panel {
 }
 
 .generate {
-  border-radius: 11px;
-  background: #6db3f2;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #6db3f2 0%, #54a3ee 41%, #3690f0 63%, #1e69de 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6db3f2', endColorstr='#1e69de', GradientType=1);
-  /* IE6-9 */
+  border-radius: 5px;
+  background: #3f51b5;
+  display: table-cell;
+  max-width: 600px;
+  
+  
 }
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
 
 
 
