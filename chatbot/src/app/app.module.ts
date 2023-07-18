@@ -39,10 +39,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { RiskKlpComponent } from './shared/components/risk-klp/risk-klp.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent, RiskKlpComponent],
+  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent, RiskKlpComponent, SpinnerComponent],
   imports: [
     MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,MatButtonModule,MatFormFieldModule, MatSelectModule,MatCheckboxModule,
     BrowserModule,MatRadioModule,

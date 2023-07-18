@@ -62,6 +62,8 @@ export class RiskMenuComponent {
   favoriteSeason: string = '';
   transtion: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
   riskTag: any;
+  openRiskPlayground = false;
+  openKLP = false;
  // domain:string='';
   
   
@@ -277,6 +279,7 @@ this.severityMsg = data;
     console.log('data is from risk ',this.data );
   }
   submitRisk(){
+    this.openKLP = true;
     this.length = this.messages.length * 50;
     this.disabled = true;
    this.showTyping().then(val =>{
@@ -362,6 +365,7 @@ this.severityMsg = data;
     this.task.subtasks.forEach(t => (t.completed = completed));
   }
   submitDialog() {
+ 
     this.task.subtasks?.forEach((t) => {
       if (t.completed === true) {
         this.count = this.count + 1 ;
@@ -372,6 +376,7 @@ this.severityMsg = data;
     })
     if(this.messages.length){
       this.closePersona = true;
+      this.openRiskPlayground = true;
       this.openStory = true;
       this.showDialog = false;
       this.disabled = false;
@@ -386,6 +391,9 @@ this.severityMsg = data;
      Determined to protect her comrades-in-arms, Sergeant Thompson becomes an advocate for enhanced information security measures. Her efforts lead to the implementation of robust safeguards within the military, empowering servicemembers to protect their identities. Through her resilience, Sergeant Thompson not only rebuilds trust in the military ability to safeguard PII \
      but also becomes a guiding light for others, ensuring the sanctity of their identities and preserving the trust bestowed upon military institutions.'
     this.messages.push({type:'client',message:msg});
+  }
+  generateRiskWindow(i:number){
+ this.step = i;
   }
   // scrollToBottom() {
   //   setTimeout(() => {
