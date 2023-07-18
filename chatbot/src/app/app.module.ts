@@ -38,10 +38,11 @@ import { KLPService } from './shared/service/klp.service';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { RiskKlpComponent } from './shared/components/risk-klp/risk-klp.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent],
+  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent, RiskKlpComponent],
   imports: [
     MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,MatButtonModule,MatFormFieldModule, MatSelectModule,MatCheckboxModule,
     BrowserModule,MatRadioModule,
