@@ -237,6 +237,7 @@ this.severityMsg = data;
   }
   getRisk(event: any) {
     console.log('calling');
+    this.showDialog = true;
     this.openStory = true;
     this.closePersona = true;
     // event.forEach((element: any) => {

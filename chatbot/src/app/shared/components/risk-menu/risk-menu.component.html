@@ -92,9 +92,9 @@
                   Financial Risk-(FR) <img class="financial" />
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"  
+              <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"
                 (cdkDropListDropped)="drop($event)" (cdkDropListExited)="drag($event,'Financial Risk')" style="overflow-y: auto; margin: 0 -23px; 
-                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate" >
+                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
                 <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
               </div>
             </mat-expansion-panel>
@@ -106,8 +106,9 @@
                   Personal Risk-(PR)
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"  (cdkDropListExited)="drag($event,'Personal Risk')"
-                [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto;
+              <div cdkDropList [cdkDropListData]="securitys" class="example-list" (cdkDropListDropped)="drop($event)"
+                (cdkDropListExited)="drag($event,'Personal Risk')" [cdkDropListEnterPredicate]="noReturnPredicate"
+                style="overflow-y: auto;
                   height: 300px;">
                 <div class="example-box" *ngFor="let item of securitys" cdkDrag>{{item}}</div>
               </div>
@@ -122,7 +123,7 @@
               </mat-expansion-panel-header>
               <div cdkDropList [cdkDropListData]="cyber" class="example-list" (cdkDropListDropped)="drop($event)"
                 [cdkDropListEnterPredicate]="noReturnPredicate" style="overflow-y: auto; 
-                  height: 300px;"  (cdkDropListExited)="drag($event,'CyberSecurity Risk')">
+                  height: 300px;" (cdkDropListExited)="drag($event,'CyberSecurity Risk')">
                 <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
               </div>
             </mat-expansion-panel>
@@ -277,15 +278,17 @@
           </div>
         </div>
 
-        <div class="chat-container col-sm-7" *ngIf="step == 1 " [ngStyle]="{'display':!closePersona  ? 'block' : 'none' }">
-        <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) ></app-help-support>
+        <div class="chat-container col-sm-7" *ngIf="step == 1 "
+          [ngStyle]="{'display':!closePersona  ? 'block' : 'none' }">
+          <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)></app-help-support>
         </div>
-        <div class="chat-container col-sm-7" *ngIf="step == 0 || openStory">
+        <div class="chat-container col-sm-7" *ngIf="step == 0 || !showDialog">
           <div style="padding-top: 13px;">
-            <p style="font-size: large;    padding: 10px 10px;    display: inline-block;"
-             *ngIf="favoriteSeason"> You have selected &nbsp;<b style="color:blueviolet"> {{favoriteSeason}} Transition</b></p>
+            <p style="font-size: large;    padding: 10px 10px;    display: inline-block;" *ngIf="favoriteSeason"> You
+              have selected &nbsp;<b style="color:blueviolet"> {{favoriteSeason}} Transition</b></p>
             <div>
-              <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground "Exploring the Unseen,Embracing the Unknown." </h1>
+              <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground "Exploring the
+                Unseen,Embracing the Unknown." </h1>
 
               <mat-icon matBadge="{{count}}" matBadgeColor="warn" style="margin-left: -24px; float:right"></mat-icon>
               <i class='fas fa-shopping-cart fa-pull-right fa-2x'></i>
@@ -304,16 +307,17 @@
 
               <!-- </div> -->
             </div>
-            <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list"
-               #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
+            <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list" #doneList="cdkDropList"
+              [cdkDropListConnectedTo]="[todoList]">
               <!-- <div>(cdkDropListDropped)="showchat($event)" <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
-          
-              <div class="" *ngFor="let item of messages" cdkDrag  [attr.data-text]="item.message">
+
+              <div class="" *ngFor="let item of messages" cdkDrag [attr.data-text]="item.message">
                 <!-- <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
                   aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon> -->
-                <span class="tag generate"  (click)="openDomainStory()" *ngIf="item.type == 'user'">{{item.domain}}</span>
-               <!-- <button type="button" class="btn btn-primary tag">{{riskTag}}</button>  -->
-               <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
+                <span class="tag generate" (click)="openDomainStory()"
+                  *ngIf="item.type == 'user'">{{item.domain}}</span>
+                <!-- <button type="button" class="btn btn-primary tag">{{riskTag}}</button>  -->
+                <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
                 <!-- <div class="happy"></div> -->
               </div>
               <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
@@ -330,8 +334,10 @@
               </button>
             </div>
           </div>
-          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;"><p style="color: rgb(201, 17, 106);">If you want to know the Key Learning Points....
-            <button class="generate" (click)="navigateWithState()">Click Here</button></p>
+          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;">
+            <p style="color: rgb(201, 17, 106);">If you want to know the Key Learning Points....
+              <button class="generate" (click)="navigateWithState()">Click Here</button>
+            </p>
           </div>
 
           <!-- <app-klp ></app-klp>  -->
@@ -339,7 +345,7 @@
           <!-- <app-progress-bar [risk_severity]="severity"></app-progress-bar> -->
         </div>
         <div class="col-sm-2">
-          <app-alert-component [persona_data]="data" *ngIf="openStory && step === 1"></app-alert-component>
+          <!-- <app-alert-component [persona_data]="data" *ngIf="openStory && step === 1"></app-alert-component> -->
         </div>
       </div>
 
@@ -348,27 +354,42 @@
   </div>
 
   <div class="story" *ngIf="showDialog">
-    <h1 *ngIf="!openStory" mat-dialog-title style="color: green;">Drag Risks from  "Risk Classification" and drop it here...</h1>
-    <h1 *ngIf="openStory" mat-dialog-title>Select Risk For Further Story</h1>
+    <h1 *ngIf="!openStory" mat-dialog-title style="color: green;">Drag Risks from "Risk Classification" and drop it
+      here...</h1>
+
     <mat-dialog-content>
-      <!-- <h3 *ngIf="!openStory">*******</h3> -->
       <section class="example-section" *ngIf="openStory">
-        <span class="example-list-section">
-          <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color"
-            [indeterminate]="someComplete()" (change)="setAll($event.checked)">
-            {{task.name}}
-          </mat-checkbox>
-        </span>
-        <span class="example-list-section">
-          <ul>
-            <li *ngFor="let subtask of task.subtasks">
-              <mat-checkbox [(ngModel)]="subtask.completed" [color]="subtask.color"
-                (ngModelChange)="updateAllComplete()">
-                {{subtask.name}}
-              </mat-checkbox>
-            </li>
-          </ul>
-        </span>
+        <div class="persona-detail">
+          <p style='font-family: Roboto, sans-serif;
+        font-size: large;
+        font-weight: bold;
+        display: inline-flex;'>Persona Detail</p>
+          <div *ngFor="let message of data;let i=index" class="message">
+            <p class="persona-card">{{message}}</p>
+          </div>
+        </div>
+        <div class="persona-detail">
+          <p style='font-family: Roboto, sans-serif;
+        font-size: large;
+        font-weight: bold;
+        display: inline-flex;' *ngIf="openStory" mat-dialog-title>Select Risk For Further Story</p>
+          <span class="example-list-section">
+            <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color"
+              [indeterminate]="someComplete()" (change)="setAll($event.checked)">
+              {{task.name}}
+            </mat-checkbox>
+          </span>
+          <span class="example-list-section">
+            <ul>
+              <li *ngFor="let subtask of task.subtasks">
+                <mat-checkbox [(ngModel)]="subtask.completed" [color]="subtask.color"
+                  (ngModelChange)="updateAllComplete()">
+                  {{subtask.name}}
+                </mat-checkbox>
+              </li>
+            </ul>
+          </span>
+        </div>
       </section>
       <p style="color: red" *ngIf="selected">*Select atleast one risk to proceed further.</p>
     </mat-dialog-content>

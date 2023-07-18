@@ -470,14 +470,13 @@ mat-expansion-panel {
 }
 
 .story {
-  top: 25%;
+  top: 18%;
   left: 25%;
   margin: auto !important;
   z-index: 99;
-  width: 500px;
+  width: 540px;
   height: auto;
   position: absolute;
-  /* box-shadow: 0 25px 30px 0 rgba(0, 0, 0, 0.15); */
   margin: 10px;
   box-shadow: 0 10px 10px 0 #7092b3;
   font-family: system-ui;
@@ -641,6 +640,11 @@ span.multiselect-native-select select {
     font-family: inherit;
     top: 7%;
     text-align: center;
+}
+.persona-detail{
+  border-radius: 6px;
+  padding: 20px;
+  border: 1px solid grey;
 }
 .selectStep.mdc-form-field>label {
   // font-family: emoji;
