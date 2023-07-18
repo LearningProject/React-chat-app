@@ -65,10 +65,10 @@
     <label id="example-radio-group-label">Select Option</label>
   
     
-      <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
-        Do you want al-carte based risks?</button>
+      <!-- <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
+        Do you want ala-carte based risks assesment?</button>
       <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
-        Do you want to go with persona based risks?</button>
+        Do you want to go with persona based risks assesment?</button> -->
 
     
     <!-- <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="step">
@@ -77,6 +77,32 @@
       </mat-radio-button>
     </mat-radio-group> -->
   </div>
+  <div class="col-md-6 mb-10" style="text-align: center;">
+    <div class="bg-light bg-opacity-50 rounded-3 p-10 mx-md-5 h-md-100">
+        <div class="d-flex flex-center w-60px h-60px rounded-3 bg-light-info bg-opacity-90 mb-10"
+            style="margin: auto;">
+            <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
+            <!-- <img src="assets/images/leaving-armed-force.png" /> -->
+            <!--end::Svg Icon-->
+        </div>
+        <h1 class="mb-5">Do you want ala-carte based risks assesment?</h1>
+        <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
+          Click Here</button>
+    </div>
+</div>
+<div class="col-md-6 mb-10" style="text-align: center;">
+  <div class="bg-light bg-opacity-50 rounded-3 p-10 mx-md-5 h-md-100">
+      <div class="d-flex flex-center w-60px h-60px rounded-3 bg-light-info bg-opacity-90 mb-10"
+          style="margin: auto;">
+          <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
+          <!-- <img src="assets/images/leaving-armed-force.png" /> -->
+          <!--end::Svg Icon-->
+      </div>
+      <h1 class="mb-5">Do you want to go with persona based risks assesment?</h1>
+      <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
+       Click here</button>
+  </div>
+</div>
 
 </div>
 <div class="example-card" *ngIf="step == 0 || 1 ">
