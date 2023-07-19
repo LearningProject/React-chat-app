@@ -1,37 +1,49 @@
-<!-- <div class="klp">
-    <h1 _ngcontent-ng-c766345762="" style="color: #000; font-size: 18px; font-weight: bold;">Key Learning Point</h1>
-    <div *ngFor="let message of risk_kpl;let i=index" class="message">
-        <p class="klpItems"  [attr.data-text]="message">{{message}}</p>
-
-      </div>
-    
-</div>  [attr.data-text]="message" -->
+<!-- 
 
 <div class="klp row" *ngIf="dataList.length">
-    <!-- <button (click)="back()">close</button>> -->
+  <div class="col-sm-11">
+    <h2 style="color: #000; ; font-size:28px;text-align: center;">Key Learning Points</h2>
+    <div *ngFor="let message of dataList;let i=index" class="message">
+      <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p>
+    </div>
+
+
+
+    <p class="story" style="font-size:18px;margin-top: 15px;">{{riskStory}}</p>
+
+  </div> -->
+
+
+
+
+  <div class="klp row" *ngIf="dataList.length">
     <div class="col-sm-11">
       <h2 style="color: #000; ; font-size:28px;text-align: center;">Key Learning Points</h2>
       <div *ngFor="let message of dataList;let i=index" class="message">
-        <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p>
-      </div>
-     
-     
-      <!-- <div>
-        <h2 style="color: #000; ; font-size:28px;text-align: center;">Story Related to your risks selection</h2>
-        <p class="story">{{story}}</p>
-      </div> -->
-      <!-- <div class="col-sm-3"><div class="klpimage"></div></div> -->
-      <!-- <h2 style="color: #000; ; font-size:28px;text-align: center;">Risks</h2> -->
-      <!-- <div class="row">
-        <div *ngFor="let message of messages;let i=index" class="col-sm-2">
-          <div class="riskUpdaterow " (click)="displayStory(message)"*ngIf='message.type=="user"'>
-            <p style="color: blue; text-decoration: none; display: inline;" >
-              {{message.domain}} - </p>
-            <p style="color: blue; display:inline">{{message.message}}</p>
+        <!-- <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p> -->
+        <div class="accordion" [id]="i">
+          <div class="accordion-item">
+            <h2 class="accordion-header" [id]="'accordion' + i">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#accordion-body' + i" aria-expanded="true" [attr.aria-controls]="'accordion-body' + i">
+                KLP {{i + 1}}
+              </button>
+            </h2>
+            <div [id]="'accordion-body' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'accordion'+ i" [attr.data-bs-parent]="'#' + i">
+              <div class="accordion-body">
+                <strong> {{message}}</strong> 
+              </div>
+            </div>
           </div>
-        </div>
-       
-      </div> -->
-      <p class="story" style="font-size:18px;margin-top: 15px;">{{riskStory}}</p> 
-  
+      </div>
+
     </div>
+
+
+
+
+
+
+
+
+
+  

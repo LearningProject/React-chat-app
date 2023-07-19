@@ -147,13 +147,14 @@ width:70%;
 
     .selectedAnswer {
       padding-top: calc(2em - 2px);
-      background: darkslategray;
+      background: rgb(79, 47, 62);
     //  background-color: yellow !important;
       pointer-events: none;
       margin-left: 1px 1px 0;
     box-shadow: -1px -1px 1px #000;
     outline: 1px solid black;
-    background-image: linear-gradient(to top, #f4f5f5, #dfdddd);
+    //background-image: linear-gradient(to top, #f4f5f5, #dfdddd);
+    background-image: linear-gradient(to top, #f4f5f5, #ffd700);
     }
 
     .disableList {
