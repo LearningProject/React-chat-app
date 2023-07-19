@@ -293,7 +293,7 @@
 
         <div class="chat-container col-sm-7" *ngIf="step == 1 "
           [ngStyle]="{'display':!closePersona  ? 'block' : 'none' }">
-          <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)></app-help-support>
+          <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) [riskType]="favoriteSeason"></app-help-support>
         </div>
         <div class="chat-container col-sm-7" *ngIf="step == 0 || (step == 1 && openRiskPlayground)">
           <div style="padding-top: 13px;">

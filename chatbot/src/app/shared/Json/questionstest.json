@@ -1,0 +1,2377 @@
+[{
+    "_id": {
+      "$oid": "6442a269880bff1f27a7d99f"
+    },
+    "index": 1,
+    "type": "Relationship Breakdown",
+    "questions": [
+      {
+        "index": 1,
+        "question": "How old are you?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 1,
+            "option": "18-25",
+            "value": "18-25",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 2,
+            "option": "26-35",
+            "value": "26-35",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 3,
+            "option": "36-45",
+            "value": "36-45",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 4,
+            "option": "46-55",
+            "value": "46-55",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 5,
+            "option": "56-65",
+            "value": "56-65",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 6,
+            "option": "65+",
+            "value": "65+",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "age"
+      },
+      {
+        "index": 2,
+        "question": "Which of the following best describes your gender?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 7,
+            "option": "Male “Man”",
+            "value": "man",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 8,
+            "option": "Female “Woman”",
+            "value": "woman",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 9,
+            "option": "Transgender \"Male\"",
+            "value": "transgendermale",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 10,
+            "option": "Transgender \"Female\"",
+            "value": "transgenderfemale ",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "gender"
+      },
+      {
+        "index": 3,
+        "question": "How long did your relationship last?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 11,
+            "option": "1-5 years",
+            "value": "1-5 years",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [
+              "Impulsive Sharing",
+              " Limited Trust and Familiarity",
+              " Online Dating Scams",
+              " Digital Stalking"
+            ],
+            "klp": [
+              "Be cautious about sharing explicit photos or engaging in private conversations with individuals you don't know well or trust. Remember that once something is shared online, it can be difficult to control its distribution or prevent unauthorized sharing.\nIf you encounter any unwanted or inappropriate content that has been shared without your consent, promptly delete it from your devices and report it to the platform or service provider. They may be able to take action to remove the content and address the situation.",
+              " If something feels off or uncomfortable, trust your instincts. If you have concerns about the intentions or behavior of a partner, it's important to prioritize your own safety and well-being.\nEstablish clear boundaries with your partner regarding what is acceptable to share online and what is not. Have open conversations about consent and the importance of respecting each other's privacy.",
+              " Use well-known and reputable online dating platforms that have established security measures and a track record of user safety. Research the platform's security features, privacy policies, and user reviews before creating an account.\nTake steps to verify the authenticity of the profiles you encounter. Look for inconsistencies or suspicious signs, such as overly perfect or generic profiles, inconsistent information, or reluctance to engage in video calls or meet in person.",
+              " If you experience digital stalking or online harassment, block the individual on all platforms and report their behavior to the respective platform's support or abuse team. Provide evidence of the harassment, such as screenshots or saved messages."
+            ]
+          },
+          {
+            "id": 12,
+            "option": "5-10 years",
+            "value": "5-10 years",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 13,
+            "option": "10-25 years",
+            "value": "10-25 years",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [
+              "Shared Online Accounts",
+              " Accumulated Digital Footprint",
+              " Social Network Interconnections",
+              " Online Financial Transactions",
+              " Online Reputation Management"
+            ],
+            "klp": [
+              "Remove any shared access to online accounts. Revoke permissions or remove your former partner's access from your individual accounts. Review the account settings to ensure that only authorized individuals can access your personal information.\nReview and update the recovery options for your individual accounts. Make sure the recovery email address, phone number, or security questions are updated to your own information, reducing the risk of unauthorized access through account recovery methods.",
+              " Decide together which shared photos, messages, or other digital content should be deleted or archived. Remove any content that may be sensitive, personal, or no longer relevant. Consider using digital tools or platforms specifically designed for separating couples to assist in managing shared content.\nStay vigilant and monitor online platforms for any unauthorized use or malicious actions. If you suspect misuse or harassment, report it to the platform's administrators or seek legal advice if necessary.",
+              " Consider limiting access to your social media profiles by unfriending or blocking individuals who may cause conflicts or breaches of confidentiality during the relationship breakdown. You can also customize your privacy settings to restrict certain individuals from viewing or interacting with your content.\nIf you anticipate significant conflicts or privacy concerns during the relationship breakdown, you may consider taking a temporary break from social media or deactivating your accounts until the situation stabilizes. This can help reduce the chances of unintended information sharing or conflicts arising from social media interactions.",
+              " If you have joint bank accounts, credit cards, or insurance policies, review and update the authorized users and beneficiaries.\nEnsure that your contact information, such as email addresses and phone numbers, associated with your financial accounts are up to date.\n If you had set up automatic payments or recurring transfers from your joint accounts, review and update them to reflect your new financial arrangements.",
+              " Conduct a personal online audit: Start by conducting a thorough audit of your online presence. Search for your name on search engines and social media platforms to identify any content or profiles that are associated with you. Take note of any outdated or inaccurate information that may need to be addressed.\n\nUpdate or delete shared profiles: If you and your former partner have created joint online profiles or shared accounts, decide how to handle them. Update the information to reflect your current status or consider deleting them if they are no longer relevant. Ensure that you have access and control over your personal online presence."
+            ]
+          },
+          {
+            "id": 14,
+            "option": "25 years +",
+            "value": "25 years +",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "duration"
+      },
+      {
+        "index": 4,
+        "question": "What led to the breakdown?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 15,
+            "option": "Partner had another relationship",
+            "value": "Partner had another relationship",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 16,
+            "option": "I had another relationship",
+            "value": "I had another relationship",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 17,
+            "option": "Mutual decision",
+            "value": "Mutual decision",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 18,
+            "option": "Stress of children",
+            "value": "Stress of children",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 19,
+            "option": "Money issues",
+            "value": "Money issues",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 20,
+            "option": "Relocation",
+            "value": "Relocation",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 21,
+            "option": "Other",
+            "value": "Other",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "breakdown"
+      },
+      {
+        "index": 5,
+        "question": "Do you have shared physical assets?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 22,
+            "option": "Yes",
+            "value": "yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Joint Bank Accounts and Finances",
+              " Shared Online Accounts",
+              " Social Media Accounts-Online Harassment",
+              " Digital Assets-Ownership Disputes:",
+              " Social engineering and phishing attempts"
+            ],
+            "klp": [
+              "Enable two-factor authentication (2FA) for all shared banking and financial accounts. This adds an extra layer of security by requiring a verification code in addition to the password.\nRegularly monitor account activity and set up alerts for any suspicious transactions or changes in account settings.\nUse strong and unique passwords for all online banking and financial accounts. Avoid using easily guessable information like birthdates or common words.\nRegularly update and patch devices used for online banking, such as computers and smartphones, to ensure they have the latest security updates.\nBe cautious about sharing personal financial information, such as Social Security numbers or account details, with anyone unless it is necessary.\nEnsure that both partners have separate login credentials for shared banking and financial accounts. Each partner should have their own username, password, and other security measures.",
+              " Use strong and unique passwords for shared online accounts. Avoid reusing passwords across multiple accounts.\nEnable two-factor authentication (2FA) for all shared accounts.\nKeep devices used to access shared accounts secure by setting up individual user profiles and using strong passwords or biometric authentication.\nImplement access controls and permissions within shared accounts to restrict actions and ensure that only authorized users can make changes or deletions.\nRegularly backup shared data and online content to prevent loss in case of unauthorized changes or sabotage.",
+              " Enable strict privacy settings on social media accounts to limit who can view and interact with the content.\nBlock or report any accounts engaging in harassment or cyberbullying.\nAvoid engaging in heated or confrontational discussions online, as they can escalate into harassment.\nBe mindful of the information shared on social media platforms and consider the potential consequences before posting personal or intimate details.\nRegularly review and adjust privacy settings on social media accounts to ensure that only desired individuals can access personal information.\n\nBe cautious about sharing sensitive or controversial information that could be used against you during a relationship breakdown.\nConduct periodic searches to ensure that false or damaging information is not circulating.",
+              " Maintain clear documentation or agreements regarding the ownership and access rights of digital assets.\nUse password-protected accounts or individual logins for shared digital assets to ensure that access is limited to authorized individuals.\nImplement regular backup procedures for important digital assets to prevent data loss in case of accidental deletion or hardware failures.\nUse cloud storage or online backup services to securely store and protect digital assets from local device issues.\nConsider using version control or document collaboration tools to track changes and revisions to shared digital documents, reducing the risk of data loss.\nKeep records and evidence of your involvement and contributions to joint projects or creative works to support your intellectual property claims.",
+              " Be cautious of unsolicited communications, such as emails, messages, or phone calls, especially if they request sensitive information or financial transactions. Always verify the legitimacy of the sender or caller before providing any information or taking action."
+            ]
+          },
+          {
+            "id": 23,
+            "option": "No",
+            "value": "no",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "asset"
+      },
+      {
+        "index": 6,
+        "question": "Are you going for divorce?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 24,
+            "option": "Yes",
+            "value": "yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Online harassment or stalking",
+              "Unauthorized access to personal information",
+              "Digital footprint and online reputation",
+              ""
+            ],
+            "klp": [
+              "It's important to be cautious about accepting friend requests or engaging in online conversations with unknown individuals.",
+              "Ensure that you protect your personal devices with strong passwords or biometric authentication. Be cautious about sharing personal information over email or messaging platforms, and consider using encrypted communication methods for sensitive discussions.",
+              "During and after a divorce, it's important to be mindful of your digital footprint. Regularly review your social media privacy settings, consider what you share publicly, and think twice before posting anything that could be misconstrued or used against you."
+            ]
+          },
+          {
+            "id": 25,
+            "option": "No",
+            "value": "no",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "divorce"
+      },
+      {
+        "index": 7,
+        "question": "Do you have children?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 26,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 8,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 27,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "children"
+      },
+      {
+        "index": 8,
+        "question": "Are your children under 18?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 28,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [
+              "Oversharing on social media",
+              " Phishing attempts and scams",
+              " Identity theft",
+              " Online reputation",
+              " Online grooming and bullying"
+            ],
+            "klp": [
+              "Avoid posting excessive details about your daily routines, your children's schedules, or your exact location.",
+              " Be cautious about clicking on suspicious links, downloading attachments, or providing sensitive information online",
+              " Safeguard personal documents, such as birth certificates, social security cards, and passports, in a secure location. Be cautious about sharing sensitive information online or over the phone.",
+              " Be mindful of the content you post online and ensure that it aligns with the image you want to portray. Regularly review your privacy settings on social media platforms to control who can see your posts.",
+              " Monitor their online activities, educate them about internet safety, and establish rules for their internet usage. Encourage open communication so that they feel comfortable discussing any concerning or inappropriate interactions they may encounter online."
+            ]
+          },
+          {
+            "id": 29,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 11,
+            "risk": [
+              "Social Media Access",
+              " Online Purchases:",
+              " Online Communication",
+              " Digital Content Sharing",
+              " Online Privacy and Social Media",
+              " Parental Oversharing",
+              " Unintended Exposure to Content",
+              " Online Manipulation"
+            ],
+            "klp": [
+              "Regularly review and update their privacy settings to restrict access to their profiles, posts, and personal information.\nEnable two-factor authentication for added security.\nBe cautious about accepting friend requests from unknown individuals, including their child, and to regularly review their friend list for any suspicious activity.",
+              " Educate yourself on safe online shopping practices, including creating strong and unique passwords, using secure payment methods, and regularly monitoring their bank and credit card statements.\nKeep your payment information and credit card details secure and to never share them with anyone, including yourchild.",
+              " Provide guidance to parents on secure messaging platforms and how to enable privacy features such as end-to-end encryption.\nEncourage open and transparent communication between parents regarding online communication with the child, including any rules or boundaries that should be respected.\nRemind parents to be mindful of the potential for manipulation or misrepresentation in online conversations and to address any concerns or conflicts directly with each other.",
+              " Promote discussions and agreement between parents on guidelines for sharing digital content involving the child, such as photos, videos, or personal information.\nRemind parents to regularly review their privacy settings on social media platforms to control who can view and access their shared content.",
+              " Parents should respect their adult children's privacy and avoid posting personal information, private family matters.",
+              " Parents should be mindful of oversharing information about their grown-up children during the separation process.",
+              " Parents should be mindful of their online conversations and consider having private discussions away from social media.",
+              " Both parents and their adult children should be aware of such tactics and focus on maintaining healthy, independent relationships."
+            ]
+          }
+        ],
+        "template_key": "children_age"
+      },
+      {
+        "index": 9,
+        "question": "Are you seeking to put custody agreement in place?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 30,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 9,
+            "risk": [
+              "Child custody disputes"
+            ],
+            "klp": [
+              "Be mindful of the information you share on social media or other online platforms, as it may be used against you in custody proceedings. Adjust your privacy settings to limit access to your personal information and posts."
+            ]
+          },
+          {
+            "id": 31,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 9,
+            "risk": [
+              "Cannot afford to pay legal fees"
+            ],
+            "klp": []
+          }
+        ],
+        "template_key": "agreement"
+      },
+      {
+        "index": 10,
+        "question": "Do you or your partner pay child maintenance?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 32,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 11,
+            "risk": [
+              "Online Fraud",
+              "  Online Harassment"
+            ],
+            "klp": [
+              "Use Secure Payment Methods: Opt for secure and reputable payment methods when making child maintenance payments. Use encrypted payment gateways or platforms that have a strong reputation for security",
+              "  Be Mindful of Online Presence: Avoid posting detailed information about child maintenance payments or personal financial matters on public platforms or social media. Be cautious about sharing sensitive information that could be used against you."
+            ]
+          },
+          {
+            "id": 33,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "child_maintenance"
+      },
+      {
+        "index": 11,
+        "question": "Does the breakdown of your relationship affect your employment?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 34,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 35,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "affect_employment"
+      },
+      {
+        "index": 12,
+        "question": "Are you financially dependent on your (ex-)partner?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 36,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 13,
+            "risk": [
+              "Online Scams and Fraud",
+              " Predatory Lending",
+              " Online Charity Scams"
+            ],
+            "klp": [
+              "Use Secure and Trusted Websites: When making online transactions or sharing sensitive information, ensure you are using secure websites with HTTPS encryption. Look for trust indicators like padlock symbols in the browser's address bar.\nInstall Security Software: Protect your devices with reliable antivirus and anti-malware software. Keep your operating system and applications up to date to prevent vulnerabilities that could be exploited by cybercriminals.",
+              " Seek Financial Guidance: If you are financially dependent and facing challenges, consider seeking financial advice from reputable professionals or non-profit organizations. They can provide guidance on managing finances, exploring assistance programs, and avoiding scams.",
+              " Verify Sources and Charities: Before providing any financial assistance or personal information to online platforms or charities, conduct thorough research. Verify the legitimacy of the organization, check for reviews or testimonials, and ensure they have secure donation processes."
+            ]
+          },
+          {
+            "id": 37,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 13,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "ex_dependent"
+      },
+      {
+        "index": 13,
+        "question": "Do You consider yourself religious?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 38,
+            "option": "Yes",
+            "value": "yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": "0",
+            "risk": [
+              "Community Repercussions",
+              "Online Religious Advice or Counseling",
+              "Interfaith Considerations",
+              "Online reputation and image manipulation"
+            ],
+            "klp": [
+              "Be mindful of the privacy settings on social media platforms and adjust them to control who can view your posts.\nThink twice before sharing your separation information online.\nSeek support from like-minded individuals or religious communities in more secure and private settings.",
+              "It's essential to approach online religious platforms with caution and verify the credibility of sources.",
+              "Consider the potential consequences of sharing personal religious beliefs during a sensitive time and evaluate the impact it may have on the situation.\nAdjust privacy settings on social media platforms to control who can view posts related to religious beliefs.\nAvoid engaging in heated discussions or debates about religion online, especially if it may escalate the conflict or prolong the healing process."
+            ]
+          },
+          {
+            "id": 39,
+            "option": "No ",
+            "value": "no",
+            "icon": "",
+            "type": "option",
+            "nextIndex": "0",
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "religious"
+      }
+    ],
+    "template": "A <#if age??>${age}</#if> old #if gender??><#if gender?lower_case==\"prefer not to say\">person<#else>${gender}</#if></#if>old who has been in a relationship with partner for<#if duration??>${duration}</#if> other_issues??>${other_issues</#if><#if breakdown??>breaking down relationship due to with partner ${breakdown}<#if asset??>ith partner we have  shared ${asset}</#if><#if divorce??><#if divorce?lower_case==\"Yes\">I am going for divorce <#elseif divorce?lower_case==\"No\"> </#if></#if><#if children??><#if children?lower_case==\"yes\">we both have children<#if children?lower_case==\"No\"> </#if></#if><#if children_age??><#if children_age?lower_case==\"yes\">, our children above 18<#elseif children_age?lower_case==\"No\">,children less than 18</#if></#if></#if><#if agreement??><#if agreement?lower_case==\"yes\">and our custody agreement in place<#elseif agreement?lower_case==\"No\">and our custody agreement is not in place <#if child_maintenance??><#if child_maintenance?lower_case==\"yes\">pay child maintenance<#elseif child_maintenance?lower_case==\"No\">not pay child maintenance</#if></#><#if affect_employment??><#if affect_employment?lowecase==\"Yes\">relationship breakdown affect my employment<#elseif affect_employment?lower_case==\"No\">relationship breakdown not effect my employment</#if></#if><#if financially_dependant??><#if financially_dependant?lower_case==\"yes\"> I am financially dependant on my partner <#elseif financially_dependant?lower_case==\"No\">I am not financially dependant on my partner</#if></#if><#if religious??><#if religious?lower_case==\"yes\">I am consider as religious myself<#elseif religious?lower_case==\"No\">I am not consider as religious myself</#if></#if> story should consider the scenario of facing the risks and steps  taken as preventive measures."
+  },{
+    "_id": {
+      "$oid": "644601a2880bff1f27a7d9b3"
+    },
+    "index": 2,
+    "type": "Leaving Armed Force",
+    "template": "A <#if age??>${age}</#if> old <#if gender??><#if gender?lower_case==\"prefer not to say\">  person <#else>${gender}</#if></#if> left the <#if division??>${division}</#if><#if reason??><#if reason?lower_case==\"retirement\"> and then left it due to ${reason} <#elseif reason?lower_case==\"physical injury\"> and then left it due to ${reason} <#elseif reason?lower_case==\"mental health issue\"> and then left it due to ${reason} <#elseif reason?lower_case==\"family reasons\"> and then left it due to ${reason} <#elseif reason?lower_case==\"to pursue a different career in civilian life\"> and then left it ${reason} <#elseif reason?lower_case==\"to become a full time student at university\"> and then left it ${reason} <#elseif reason?lower_case==\"the lifestyle wasn\\'t compatible to creating a secure relationship\">and then left it because ${reason} </#if></#if>after serving for <#if duty_period??>${duty_period}</#if> and facing many other issues such as: <#if sec_issues??>${sec_issues},</#if><#if other_issues??>${other_issues}</#if>. Write a story of this person reflecting other aspect of transition life:<#if combat??><#if combat?lower_case==\"yes\"> posted in combat zone</#if></#if><#if marriage??><#if marriage?lower_case==\"yes\">, married life</#if></#if><#if children??><#if children?lower_case==\"yes\">, children above 18<#else>, children less than 18</#if></#if><#if reveal??><#if reveal?lower_case==\"yes\">, sharing about leaving of forces publicly</#if></#if><#if regret??><#if regret?lower_case==\"yes\"> and regretting it</#if></#if>. <#if info??>${info}</#if> is being shared <#if mode??><#if mode?lower_case==\"social media\">through social media<#else>in person</#if></#if>.Story should consider the scenario of facing the risks such as <#if risks??>${risks} </#if>and steps taken as preventive measures: <#if klps??>${klps}</#if>'",
+    "questions": [
+      {
+        "index": 1,
+        "question": "How long did you serve in the armed forces?",
+        "type": "radio",
+        "mandatory": true,
+        "template_key": "duty_period",
+        "optionList": [
+          {
+            "id": 1,
+            "option": "3-6 years",
+            "value": "3-6 years",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [
+              "Difficult to leave fellow service members and organisation",
+              "Accustomed to military schedules and facing lack of discipline in civilian life"
+            ],
+            "klp": []
+          },
+          {
+            "id": 2,
+            "option": "6-10 years",
+            "value": "6-10 years",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [
+              "It was incredibly hard going from that military bubble to civi street because literally grown there",
+              "Difficult to leave fellow service members and organisation",
+              "Accustomed to military schedules and facing lack of discipline in civilian life"
+            ],
+            "klp": []
+          },
+          {
+            "id": 3,
+            "option": "10-15 years",
+            "value": "10-15 years",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [
+              "It was incredibly hard going from that military bubble to civi street because literally grown there",
+              "Loose close friends",
+              "Difficult to leave fellow service members and organisation",
+              "Accustomed to military schedules and facing lack of discipline in civilian life"
+            ],
+            "klp": []
+          },
+          {
+            "id": 4,
+            "option": "15+ years",
+            "value": "15+ years",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [
+              "It was incredibly hard going from that military bubble to civi street because literally grown there",
+              "Loose close friends",
+              "Difficult to leave fellow service members and organisation",
+              "Accustomed to military schedules and facing lack of discipline in civilian life"
+            ],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "question": "To which gender do you most identify?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 5,
+            "option": "Male “Man” ",
+            "value": "Male “man”",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 6,
+            "option": "Female “Woman”",
+            "value": "Female “woman”",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 7,
+            "option": "Transgender \"Male “",
+            "value": "Transgender \"Male “",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 8,
+            "option": "Transgender \"Female\"",
+            "value": "Transgender \"Female",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "gender"
+      },
+      {
+        "index": 3,
+        "question": "Which division of the armed forces were you part of?",
+        "type": "radio",
+        "mandatory": true,
+        "template_key": "division",
+        "optionList": [
+          {
+            "id": 9,
+            "option": "Air Force",
+            "value": "Air Force",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 10,
+            "option": "Navy",
+            "value": "Navy",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 11,
+            "option": "Army",
+            "value": "Army",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "question": "What age group do you belong to?",
+        "type": "radio",
+        "mandatory": true,
+        "template_key": "age",
+        "optionList": [
+          {
+            "id": 12,
+            "option": "18-25",
+            "value": "18-25",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 13,
+            "option": "26-35",
+            "value": "26-35",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 14,
+            "option": "36-45",
+            "value": "36-45",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 15,
+            "option": "46-55",
+            "value": "46-55",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 16,
+            "option": "56-65",
+            "value": "56-65",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 5,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "question": "For what reason did you leave the forces?",
+        "type": "radio",
+        "mandatory": true,
+        "template_key": "reason",
+        "optionList": [
+          {
+            "id": 17,
+            "option": "Retirement",
+            "value": "Retirement",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Unauthorized access to pension accounts:",
+              "Investment risks and market fluctuations"
+            ],
+            "klp": [
+              "Create strong and unique passwords for pension accounts and enable multi-factor authentication if available.\nRegularly monitor pension account statements for any unauthorized transactions or suspicious activity.\nBe cautious of phishing attempts and avoid clicking on links or providing personal information in response to unsolicited communications",
+              "Diversify investments within the pension fund to minimize exposure to specific risks.\nStay informed about the investment strategy and performance of the pension fund.\nConsult with financial advisors or professionals to make informed decisions about investment options."
+            ]
+          },
+          {
+            "id": 18,
+            "option": "Physical injury",
+            "value": "Physical injury",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Unauthorized Access to Military Systems",
+              "Exposure of Personal Identifiable Information (PII)",
+              "Inadequate Cybersecurity Practices",
+              "Medical Data Breaches",
+              "Targeted Scams and Fraud",
+              "Assistive Device Vulnerabilities",
+              "Online Disability Discrimination"
+            ],
+            "klp": [
+              "Contact the appropriate military authorities to ensure that access to military systems and accounts is properly revoked.\nChange passwords for any accounts associated with military systems",
+              "Monitor credit reports regularly to detect any suspicious activity or signs of identity theft.\nEnable fraud alerts on credit accounts to receive notifications of any unusual activity.\nBe cautious about sharing personal information online or with unknown individuals.",
+              "Stay informed about current cybersecurity practices and threats through reputable sources.\nUse strong and unique passwords for online accounts and enable two-factor authentication whenever possible.\nKeep operating systems, software, and security applications up to date with the latest patches and updates.",
+              "Regularly monitor medical records and billing statements for any unusual activity or signs of fraudulent access.\nEnsure healthcare providers follow strict security protocols to protect personal health information.",
+              "Be cautious when sharing personal or health-related information online or with unknown individuals.\nVerify the legitimacy of medical treatments or insurance offers before providing personal details or making any financial transactions.",
+              "Keep assistive devices up to date with the latest firmware and security patches provided by the manufacturer.\nChange default passwords for any internet-connected medical devices and ensure strong, unique passwords are used.\nBe cautious when connecting devices to public or unsecured Wi-Fi networks.",
+              "Report and block individuals engaging in online harassment or discrimination.\nUtilize privacy settings on social media platforms to limit access to personal information.\nSeek support from advocacy groups or legal resources in case of online discrimination."
+            ]
+          },
+          {
+            "id": 19,
+            "option": "Mental health issue",
+            "value": "Mental health issue",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Unauthorized Access to Military Systems",
+              "Exposure of Personal Identifiable Information (PII)",
+              "Inadequate Cybersecurity Practices",
+              "Disclosure of Personal Health Information",
+              "Targeted Online Exploitation",
+              "Online Harassment and Stigmatization",
+              "Unauthorized Access to Personal Devices"
+            ],
+            "klp": [
+              "Contact the appropriate military authorities to ensure that access to military systems and accounts is properly revoked.\nChange passwords for any accounts associated with military systems",
+              "Monitor credit reports regularly to detect any suspicious activity or signs of identity theft.\nEnable fraud alerts on credit accounts to receive notifications of any unusual activity.\nBe cautious about sharing personal information online or with unknown individuals.",
+              "Stay informed about current cybersecurity practices and threats through reputable sources.\nUse strong and unique passwords for online accounts and enable two-factor authentication whenever possible.\nKeep operating systems, software, and security applications up to date with the latest patches and updates.",
+              "Be cautious about sharing sensitive mental health details online and adjust privacy settings to limit access to personal information.\nConsider using anonymous usernames or accounts when discussing personal mental health matters.",
+              "Exercise caution when engaging in online interactions with unknown individuals, especially when discussing personal or sensitive matters.\nLearn to identify common signs of phishing attempts and employ proper security measures, such as using strong passwords and avoiding suspicious links.",
+              "Be mindful of the information shared online and adjust privacy settings to limit access to personal profiles.\nReport and block individuals engaging in harassment or cyberbullying, and seek support from trusted friends, family, or mental health professionals.",
+              "Use strong passwords or biometric authentication to secure personal devices.\nRegularly update device software and applications to patch security vulnerabilities.\nAvoid storing sensitive mental health information on devices unless necessary, and consider encrypting data for an added layer of protection."
+            ]
+          },
+          {
+            "id": 20,
+            "option": "Family reasons",
+            "value": "Family reasons",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Unauthorized Access to Military Systems",
+              "Constantly having to justify my decision to people",
+              "People spreading false rumours that I was dishonourably discharged",
+              "Exposure of Personal Identifiable Information (PII):",
+              "Inadequate Cybersecurity Practices:",
+              ""
+            ],
+            "klp": [
+              "Contact the appropriate military authorities to ensure that access to military systems and accounts is properly revoked.\nChange passwords for any accounts associated with military systems",
+              "Monitor credit reports regularly to detect any suspicious activity or signs of identity theft.\nEnable fraud alerts on credit accounts to receive notifications of any unusual activity.\nBe cautious about sharing personal information online or with unknown individuals.",
+              "Stay informed about current cybersecurity practices and threats through reputable sources.\nUse strong and unique passwords for online accounts and enable two-factor authentication whenever possible.\nKeep operating systems, software, and security applications up to date with the latest patches and updates."
+            ]
+          },
+          {
+            "id": 21,
+            "option": "To pursue a different career in civilian life",
+            "value": "To pursue a different career in civilian life",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Unauthorized Access to Military System",
+              "Exposure of Personal Identifiable Information (PII)",
+              "Inadequate Cybersecurity Practices",
+              "Phishing and Social Engineering",
+              "Online Reputation and Personal Branding",
+              "Revenge Porn and Intimate Image Abuse",
+              "Stalking and Harassment",
+              "Online Reputation Damage"
+            ],
+            "klp": [
+              "Contact the appropriate military authorities to ensure that access to military systems and accounts is properly revoked.\nChange passwords for any accounts associated with military systems",
+              "Monitor credit reports regularly to detect any suspicious activity or signs of identity theft.\nEnable fraud alerts on credit accounts to receive notifications of any unusual activity.\nBe cautious about sharing personal information online or with unknown individuals.",
+              "Stay informed about current cybersecurity practices and threats through reputable sources.\nUse strong and unique passwords for online accounts and enable two-factor authentication whenever possible.\nKeep operating systems, software, and security applications up to date with the latest patches and updates.",
+              "Be cautious about unsolicited job offers or emails requesting personal information.\nVerify the legitimacy of job postings, recruiters, or employers through trusted sources or official company websites.\nEducate oneself about common phishing techniques and practice good email and online hygiene.",
+              "Maintain a professional and secure online presence, regularly reviewing and managing privacy settings on social media platforms.\nBe cautious about sharing personal information publicly or with unverified sources.\nConsider setting up Google alerts to monitor mentions of one's name online and take proactive steps to address any false or damaging information",
+              "Be cautious about sharing intimate images online or with individuals who cannot be trusted.\nConsider using secure and private messaging apps for sensitive conversations.\nUnderstand laws and regulations related to revenge porn in the jurisdiction and take legal action if necessary.",
+              "Regularly review and adjust privacy settings on social media platforms to restrict access to personal information.\nBe cautious about accepting friend requests or connections from unknown individuals.\nDocument any instances of stalking or harassment and report them to the appropriate authorities.",
+              "Be mindful of the information shared online and consider the potential consequences before posting or commenting on sensitive topics.\nRegularly monitor online presence and conduct online reputation management by addressing false or damaging information promptly.\nConsider engaging professional services to help manage online reputation, if needed."
+            ]
+          },
+          {
+            "id": 22,
+            "option": "To become a full time student at university",
+            "value": "To become a full time student at university",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Unauthorized Access to Military Systems",
+              "Exposure of Personal Identifiable Information (PII)",
+              "Inadequate Cybersecurity Practices"
+            ],
+            "klp": [
+              "Contact the appropriate military authorities to ensure that access to military systems and accounts is properly revoked.\nChange passwords for any accounts associated with military systems",
+              "Monitor credit reports regularly to detect any suspicious activity or signs of identity theft.\nEnable fraud alerts on credit accounts to receive notifications of any unusual activity.\nBe cautious about sharing personal information online or with unknown individuals.",
+              "Stay informed about current cybersecurity practices and threats through reputable sources.\nUse strong and unique passwords for online accounts and enable two-factor authentication whenever possible.\nKeep operating systems, software, and security applications up to date with the latest patches and updates."
+            ]
+          },
+          {
+            "id": 23,
+            "option": "The lifestyle wasn't compatible to creating a secure relationship",
+            "value": "The lifestyle wasn't compatible to creating a secure relationship",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Unauthorized Access to Military Systems",
+              "Exposure of Personal Identifiable Information (PII)",
+              "Inadequate Cybersecurity Practices",
+              "Online Dating and Relationship Scams",
+              "People spreading false rumours that I was dishonourably discharged"
+            ],
+            "klp": [
+              "Contact the appropriate military authorities to ensure that access to military systems and accounts is properly revoked.\nChange passwords for any accounts associated with military systems",
+              "Monitor credit reports regularly to detect any suspicious activity or signs of identity theft.\nEnable fraud alerts on credit accounts to receive notifications of any unusual activity.\nBe cautious about sharing personal information online or with unknown individuals.",
+              "Stay informed about current cybersecurity practices and threats through reputable sources.\nUse strong and unique passwords for online accounts and enable two-factor authentication whenever possible.\nKeep operating systems, software, and security applications up to date with the latest patches and updates.",
+              "Be cautious when sharing personal information with individuals met online and avoid disclosing sensitive details too quickly.\nUse reputable dating platforms with privacy and security features.\nPerform online research on potential partners to verify their identity and credibility."
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "question": "Are you facing any of the following as secondary issues?",
+        "type": "radio",
+        "mandatory": true,
+        "template_key": "sec_issues",
+        "optionList": [
+          {
+            "id": 24,
+            "option": "Moving from one city to another",
+            "value": "Moving from one city to another",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Phishing Scams",
+              "Online Harassment and Stalking",
+              "Digital Footprint and Online Reputation",
+              "Wi-Fi Security"
+            ],
+            "klp": [
+              "To prevent falling for phishing scams, they should be cautious about clicking on links or providing personal information in response to unsolicited emails or messages. Verifying the authenticity of the communication through official channels is essential.",
+              "Ex-army individuals should be cautious about accepting friend requests or engaging in online conversations with unknown individuals. Adjusting privacy settings on social media platforms and limiting the visibility of personal information can help mitigate risks. Additionally, they should report any instances of harassment or stalking to the appropriate authorities.",
+              "Ex-army individuals should be mindful of their digital footprint and consider what they share publicly. They should think twice before posting anything.  Regularly reviewing and adjusting social media privacy settings is crucial to maintain control over their online presence.",
+              "It is important to use secure and encrypted connections when accessing sensitive information, such as banking or personal accounts. Utilizing virtual private networks (VPNs) can add an extra layer of security when connecting to public Wi-Fi."
+            ]
+          },
+          {
+            "id": 25,
+            "option": "Starting a new relationship",
+            "value": "Starting a new relationship",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Online Dating and Romance Scams",
+              "Relationship Status Updates",
+              "Ex-Partner's Actions"
+            ],
+            "klp": [
+              "Preventive measures include being cautious about sharing personal information or sending money to individuals met online. Verifying the authenticity of the person and using reputable dating platforms can help mitigate the risk.",
+              "Review and adjust the privacy settings on your social media accounts. Limit the visibility of personal information and posts to trusted friends and connections, rather than making them public. Regularly review and update these settings to ensure your information is protected",
+              "Foster a strong foundation of trust and respect with your partner. Establish clear boundaries regarding the sharing of personal information online, and ensure both parties understand the importance of maintaining privacy."
+            ]
+          },
+          {
+            "id": 26,
+            "option": "Breaking up with partner",
+            "value": "Breaking up with partner",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Digital Footprint and Reputation",
+              "Personal Information Exposure",
+              "Legal and Personal Safety",
+              "Legal and Personal Safety"
+            ],
+            "klp": [
+              "Regularly reviewing and adjusting privacy settings on social media platforms to limit the visibility of personal information. Being cautious about accepting friend requests or engaging in online conversations with unknown individuals, especially those who may have connections to the ex-partner.",
+              "Using strong, unique passwords for all online accounts, including social media, email, and financial platforms.\n\nEnabling two-factor authentication on important accounts to add an extra layer of security.\n\nBeing cautious about sharing personal information over email or messaging platforms and considering using encrypted communication methods for sensitive discussions.\n\nRegularly monitoring credit reports and financial accounts to detect any signs of unauthorized activity or identity theft.",
+              "Document any instances of online harassment or threats and seek legal advice to understand their rights and potential courses of action. Seeking legal advice to understand legal rights, protection orders, or restraining orders that can help mitigate online and offline risks."
+            ]
+          },
+          {
+            "id": 27,
+            "option": "Coming out as LGBTQ & exploring that",
+            "value": "Coming out as LGBTQ & exploring that.",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Repercussions within Social Circles",
+              "Discrimination in Job Applications or Professional Settings",
+              "Doxxing and Exposure"
+            ],
+            "klp": [
+              "Be cautious about the information you share online regarding your LGBTQ identity. Consider the potential consequences and be mindful of who may have access to this information.",
+              "Review and adjust privacy settings on social media platforms to control who can view your posts and personal information. Limit access to trusted friends and connections.",
+              "Maintain strong passwords, enable two-factor authentication, and use reputable security software to protect your online accounts and devices"
+            ]
+          },
+          {
+            "id": 28,
+            "option": "None",
+            "value": "None",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "question": "Please select the challenges you faced/are facing after leaving the forces:",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 29,
+            "option": "Healthcare issues (insurance, access issues and coverage)",
+            "value": "Healthcare issues (insurance, access issues and coverage)",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 8,
+            "risk": [
+              "Phishing Scams",
+              " Unauthorized Access",
+              " Privacy Concerns",
+              " Insurance Fraud"
+            ],
+            "klp": [
+              "Be cautious of unsolicited emails or messages. Verify the authenticity of the sender before sharing any sensitive information. Avoid clicking on suspicious links and always access insurance portals directly through trusted sources.",
+              " Use strong, unique passwords for insurance accounts and enable two-factor authentication whenever possible. Regularly monitor account activity and report any unauthorized access immediately.",
+              " Be cautious about sharing sensitive health information online. Adjust privacy settings on social media platforms and carefully consider the potential consequences before posting any health-related details.",
+              " Research and verify the legitimacy of insurance providers before making any commitments. Be wary of unsolicited offers and always read and understand the terms and conditions of insurance policies."
+            ]
+          },
+          {
+            "id": 30,
+            "option": "Tax management problem",
+            "value": "Tax management problem",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 8,
+            "risk": [
+              "Phishing Scams",
+              " Identity Theft",
+              " Unsecure Wi-Fi Networks",
+              " Malware and Ransomware Attacks",
+              " Unauthorized Access to Tax Documents"
+            ],
+            "klp": [
+              "Be cautious of unsolicited emails or messages related to taxes. Verify the authenticity of the sender before sharing any sensitive information. Avoid clicking on suspicious links and always access tax-related websites directly through trusted sources.",
+              " Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.",
+              " Avoid using public Wi-Fi networks when filing taxes or accessing sensitive information. Instead, use a secure and private network, such as a password-protected home Wi-Fi or a virtual private network (VPN) for added security.",
+              " Maintain up-to-date antivirus and anti-malware software on personal devices. Be cautious of email attachments from unknown senders and avoid clicking on suspicious links. Only download tax-related software from trusted sources.",
+              " Encrypt tax-related documents and ensure they are stored in secure, password-protected locations. Regularly backup important tax files and consider using encrypted cloud storage or external hard drives for added security."
+            ]
+          },
+          {
+            "id": 31,
+            "option": "Unemployment Issue",
+            "value": "Unemployment Issue",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 8,
+            "risk": [
+              "Phishing Emails",
+              " Job Scams",
+              " Social Engineering Attacks"
+            ],
+            "klp": [
+              "Be wary of unsolicited emails and verify the authenticity of the sender before opening any attachments or clicking on links. Avoid providing sensitive information over email unless it is from a trusted and verified source.",
+              " Be cautious of job offers that seem too good to be true or require upfront payments. Research and verify the legitimacy of the employer or recruitment agency before providing personal information.",
+              " Be cautious when sharing personal information or login details with individuals or organizations that cannot be verified. Always verify the identity of the person you are communicating with through trusted channels."
+            ]
+          }
+        ],
+        "template_key": "other_issues"
+      },
+      {
+        "index": 8,
+        "question": "What kind of information you shared or intend to share?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 32,
+            "option": "Qualifications, Job related experience while job hunting",
+            "value": "Qualifications, Job related experience while job hunting",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Resume and Profile Privacy",
+              "Fake Job Applications"
+            ],
+            "klp": [
+              "Review and adjust privacy settings on job search platforms and social media accounts to control who can view your profile and personal information. Be cautious about sharing sensitive details openly on public platforms.",
+              "Be cautious of job applications that ask for excessive personal information or require payment. Verify the legitimacy of the employer and the job application process before providing any sensitive information"
+            ]
+          },
+          {
+            "id": 33,
+            "option": "Elements of my personal life, emotions",
+            "value": "Elements of my personal life, emotions",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Resume and Profile Privacy",
+              "Online Harassment and Bullying",
+              "Reputation Damage",
+              "Psychological Manipulation",
+              "Targeted Advertising and Scams"
+            ],
+            "klp": [
+              "Be cautious of sharing highly personal information online and exercise discretion when engaging with unknown individuals or requests.",
+              "Be mindful of the potential reactions or responses to personal disclosures and consider limiting the visibility of such posts to trusted individuals only.",
+              "Think twice before sharing deeply personal emotions online and consider the potential consequences on personal and professional relationships.",
+              "Be cautious of individuals who excessively focus on personal emotions or vulnerabilities and avoid sharing sensitive information with unknown or untrusted individuals.",
+              "Exercise caution when engaging with online advertisements or offers that seem too good to be true, and research and verify the legitimacy of the company or product before making any commitments."
+            ]
+          },
+          {
+            "id": 34,
+            "option": "My current financial situation and/or the pension I am entitled to",
+            "value": "My current financial situation and/or the pension I am entitled to",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Phishing and Scams",
+              "Identity Theft",
+              "Social Engineering Attacks",
+              "Reputation Damage",
+              "Targeted Advertising and Scams"
+            ],
+            "klp": [
+              "Be cautious of unsolicited messages related to financial offers and avoid clicking on suspicious links or providing personal or financial information without verifying the source.",
+              "Limit the amount of personal financial information shared publicly online and review privacy settings on social media platforms to control who can view your posts and personal details.",
+              " Be cautious of unsolicited communications and verify the legitimacy of individuals or organizations before sharing personal or financial details.",
+              "Consider the potential consequences of sharing financial information publicly and be mindful of the long-term impact on personal and professional relationships.",
+              "xercise caution when engaging with online advertisements related to financial services and research and verify the legitimacy of the company or product before making any commitments."
+            ]
+          },
+          {
+            "id": 35,
+            "option": "Not shared, Just read posts and comments to find people who have similar experiences",
+            "value": "Not shared, Just read posts and comments to find people who have similar experiences",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Phishing Scams",
+              "Privacy Risks",
+              "Emotional Manipulation",
+              "Reputation Risks"
+            ],
+            "klp": [
+              "Be cautious of clicking on links or downloading files from unverified sources, even if they seem relevant to your experiences. Verify the authenticity of the post or comment before interacting with it.",
+              "Consider using privacy-focused browser extensions or tools that block tracking cookies and prevent data collection. Regularly review your privacy settings on social media platforms to limit the information that is visible to others.",
+              "Be cautious of individuals who excessively focus on shared experiences and emotions, especially if they try to establish a relationship or ask for personal or financial assistance. Verify the authenticity of the person and their intentions before sharing any information or engaging further.",
+              "Be mindful of the online communities and discussions you choose to engage with. Consider using privacy settings to limit the visibility of your online activity or separate personal and professional online personas."
+            ]
+          }
+        ],
+        "template_key": "info"
+      }
+    ]
+  },{
+    "_id": {
+      "$oid": "6447787f880bff1f27a7d9b8"
+    },
+    "index": 3,
+    "type": "Serious Illness",
+    "questions": [
+      {
+        "index": 1,
+        "question": "How old are you?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 1,
+            "option": "18-25",
+            "value": "18-25",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 2,
+            "option": "26-35",
+            "value": "26-35",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 3,
+            "option": "36-45",
+            "value": "36-45",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 4,
+            "option": "46-55",
+            "value": "46-55",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 5,
+            "option": "56+",
+            "value": "56+",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "question": "To which gender do you most identify?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 6,
+            "option": "Male “Man”",
+            "value": "man",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 7,
+            "option": "Female “Woman”",
+            "value": "women",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 8,
+            "option": "Transgender \"Male\"",
+            "value": "Transgender Male",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 9,
+            "option": "Transgender \"Female\"",
+            "value": "Transgender Female",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 3,
+        "question": "What kind of illness are you suffering from?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 10,
+            "option": "Cancer",
+            "value": "Cancer",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 11,
+            "option": "Heart",
+            "value": "Heart",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 12,
+            "option": "Respiratory illnesses",
+            "value": "Respiratory illnesses",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 13,
+            "option": "HIV/AIDS",
+            "value": "HIV/AIDS",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 4,
+        "question": "What stage is your illness at?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 14,
+            "option": "Early stage, started to seek treatment",
+            "value": "Early stage, started to seek treatment",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Telemedicine and Remote Consultations"
+            ],
+            "klp": [
+              "Use secure and trusted telemedicine platforms recommended by your healthcare provider.\nEnsure that your internet connection is secure when participating in remote consultations.\nAvoid discussing sensitive information or sharing personal details over unsecured networks or public Wi-Fi."
+            ]
+          },
+          {
+            "id": 15,
+            "option": "Undergoing treatment",
+            "value": "Undergoing treatment",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Internet of Things (IoT) vulnerabilities"
+            ],
+            "klp": [
+              "Patients should secure their home Wi-Fi network by setting a strong password, enabling network encryption (such as WPA2), and regularly updating the router firmware. It's also advisable to separate the IoT devices onto a dedicated network if the router supports this feature.\n\nPatients should choose IoT devices from reputable manufacturers that prioritize security. They should keep the devices updated with the latest firmware and security patches. It's also important to secure the devices with strong, unique passwords and enable any available security features, such as two-factor authentication.\n\nThey should also check if the device allows them to control the sharing of their data, and carefully review the privacy settings and permissions associated with the device's companion app or online platform."
+            ]
+          },
+          {
+            "id": 16,
+            "option": "Treatment completed",
+            "value": "Treatment completed",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Fraudulent insurance claims",
+              "Insurance policy cancellation or denial"
+            ],
+            "klp": [
+              "Safeguard your medical records and insurance policy details by storing them securely and using strong passwords or encryption.\nRegularly monitor your insurance statements for any suspicious or unauthorized activity.",
+              "Be cautious when providing personal information to insurance providers or third-party vendors, ensuring their legitimacy and encryption protocols."
+            ]
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 5,
+        "question": "Have you, or anyone you know, done any fundraising to support your treatment?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 17,
+            "option": "Yes",
+            "value": "yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Phishing and scam attempts",
+              "Unauthorized access to financial information",
+              "Data breaches and leakage of personal information",
+              "Online reputation management"
+            ],
+            "klp": [
+              "Educate yourself and donors about common phishing techniques and advise them to be cautious of suspicious communications.\nProvide clear instructions on how to verify the legitimacy of the fundraising campaign and encourage donors to directly visit the official website or contact the organizers through trusted channels",
+              "Use secure and reputable payment processing platforms that offer robust security measures.\nImplement strong passwords and two-factor authentication for fundraising-related accounts and ensure they are regularly updated.\nRegularly monitor financial transactions and report any suspicious activities to the relevant authorities.",
+              "Follow data protection best practices and ensure that all donor information is stored securely and encrypted when necessary.\nComply with applicable data protection regulations and standards to safeguard the privacy of donors.\nClearly communicate the privacy policy and data protection practices to donors, assuring them that their information will be handled with care.",
+              "Regularly monitor online platforms for any negative content or misinformation and address it promptly and professionally.\nEstablish a proactive online reputation management strategy, which may include responding to feedback, providing accurate updates, and engaging with supporters.\nEncourage donors and supporters to share their positive experiences and feedback to counterbalance any negative content."
+            ]
+          },
+          {
+            "id": 18,
+            "option": "No",
+            "value": "no",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "fundraising"
+      },
+      {
+        "index": 6,
+        "question": "Do you have/had a job?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 19,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Unauthorized access to employment-related accounts",
+              "Confidential information exposure",
+              "Online reputation and job search"
+            ],
+            "klp": [
+              "Notify the employer or IT department about the situation and request immediate removal or suspension of access to work accounts.\nChange passwords for any personal accounts linked to work email or other work-related systems to prevent unauthorized access.\nEnable two-factor authentication for all accounts to add an extra layer of security.",
+              "Securely store and encrypt any confidential work-related files or documents to prevent unauthorized access or disclosure.\nConsult with legal counsel or HR professionals to understand the specific requirements for handling and protecting sensitive information during employment transitions.\nDelete or securely dispose of any work-related data or documents that are no longer needed, following proper data destruction protocols.",
+              "Regularly review privacy settings on social media platforms and consider adjusting them to limit the visibility of personal information and updates.\nBe mindful of what is shared online, including personal experiences or health-related details, and think about the potential implications on future employment prospects.\nUse professional networking platforms to maintain a positive online presence and connect with potential employers or colleagues in a secure and professional manner."
+            ]
+          },
+          {
+            "id": 20,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Facing financial issues"
+            ],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 7,
+        "question": "Have you had to give financial control to a family member while you undergo treatment?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 21,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 8,
+            "risk": [
+              "Unauthorized access to financial accounts",
+              "Identity theft and fraud:",
+              "Online scams and phishing"
+            ],
+            "klp": [
+              "Regularly monitor financial account activity and review statements for any unauthorized transactions.\nSet up alerts for suspicious activity, such as large withdrawals or transfers, and promptly report any unauthorized transactions to the financial institution.\nConsider using separate login credentials for financial accounts and avoid sharing passwords or other sensitive information with the family member.\nMaintain an open line of communication with trusted individuals who can help monitor and review financial activities periodically.\nConsider involving a financial advisor or attorney to provide oversight and ensure proper management of financial affairs.",
+              "Safeguard personal identification documents, such as social security cards or passports, by keeping them securely stored and limiting access to them.\nRegularly review credit reports to identify any unauthorized accounts or suspicious activity.\nConsider placing a fraud alert or credit freeze with credit reporting agencies to prevent unauthorized access to credit.",
+              "Online scams and phishing:\nScenario: The family member may fall victim to online scams or phishing attempts, which can compromise the person's financial information or assets.",
+              "Educate the family member about common online scams and phishing techniques, emphasizing the importance of verifying the legitimacy of websites, emails, or requests for sensitive information.\nEncourage the use of strong, unique passwords for online accounts and enable two-factor authentication where available.\nRegularly update antivirus and anti-malware software on devices used for financial transactions."
+            ]
+          },
+          {
+            "id": 22,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 8,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 8,
+        "question": "Do you have children?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 23,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 9,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 24,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "question": "Are your children under 18?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 25,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [
+              "Exposure of personal information",
+              "Online scams and fraudulent activities",
+              "Increased exposure to harmful content"
+            ],
+            "klp": [
+              "Educate children about the importance of not sharing personal information online and the potential risks associated with it.\nEncourage children to be cautious when interacting with strangers online and to only share information with trusted individuals.\nMonitor children's online activities and set privacy settings on social media platforms to restrict access to personal information.",
+              "Educate children about common online scams and the importance of skepticism when encountering unsolicited requests for money or personal information.\nTeach children to verify the authenticity of charitable organizations before making any donations and to involve trusted adults in the decision-making process.\nEncourage children to consult trusted healthcare professionals for medical advice and to avoid engaging with unknown individuals offering unsolicited advice online.",
+              "Implement parental controls and content filtering tools on devices used by children to limit their exposure to inappropriate or harmful content.\nMonitor children's online activities and provide guidance on responsible internet usage.\nEncourage open communication with children, so they feel comfortable discussing any distressing online encounters and seek support if needed."
+            ]
+          },
+          {
+            "id": 26,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [
+              "Social media oversharing",
+              "Digital estate planning"
+            ],
+            "klp": [
+              "Encourage adult children to respect their ill parent's privacy and to think carefully before sharing personal information or medical updates on public platforms.\nAdvise them to adjust privacy settings on social media accounts to limit visibility to trusted individuals only.\nRemind them to be mindful of the potential consequences of oversharing, such as unwanted inquiries or potential exploitation.",
+              "Encourage adult children and their ill parent to have discussions about digital estate planning, including the management and access to online accounts in case of incapacity or passing.\nDocument and securely store important account information, passwords, and instructions for accessing or managing digital assets.\nConsider using password management tools or secure digital vaults to store and share sensitive information with trusted family members or legal representatives."
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "question": "Have you followed any of the following approaches to share your illness information online?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 27,
+            "option": "Shared and don’t care about it being public",
+            "value": "Shared and don’t care about it being public",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Privacy breaches",
+              " Online harassment and bullying",
+              " Impact on future opportunities:"
+            ],
+            "klp": [
+              "Encourage the person to carefully consider the audience when sharing personal information online, particularly regarding their illness.\nEducate them about the importance of privacy settings on social media platforms and advise them to review and adjust their privacy preferences accordingly.\nRemind them to think twice before posting or sharing information that could compromise their privacy or security.",
+              " Encourage the person to think about the potential consequences of sharing such personal information openly and be prepared to handle any negative or hurtful interactions.\nRemind them to use privacy settings to limit who can comment or engage with their posts, and to report or block individuals engaging in harassment or bullying.\nSupport them in seeking emotional support or counseling to cope with any online negativity they may encounter.",
+              " Encourage the person to consider the potential impact of sharing such personal information on their future opportunities and relationships.\nRemind them to be mindful of what they share online and consider using pseudonyms or anonymous accounts to protect their privacy.\nAdvise them to think about the permanence of online content and how it may be perceived by others in different contexts."
+            ]
+          },
+          {
+            "id": 28,
+            "option": "Shared anonymously",
+            "value": "Shared anonymously",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Exposure of personal identity",
+              " Online harassment and bullying",
+              " Future implications and unintended identification"
+            ],
+            "klp": [
+              "Advise the person to be cautious about the information they share, even when doing so anonymously. Avoid providing specific details that could potentially identify them.\nEncourage them to use a secure and private internet connection, such as a virtual private network (VPN), to help protect their anonymity.\nRemind them to review and adjust privacy settings on the platforms they use to ensure their personal information is not exposed.",
+              " Advise the person to be prepared for potential negative interactions and emotionally prepare themselves for any hurtful or insensitive comments.\nEncourage them to use platforms or forums with moderation and reporting features, which can help mitigate harassment and allow for the removal of offensive content or blocking of abusive users.\nRemind them to prioritize their mental well-being and seek support from trusted friends, family, or online communities who can provide understanding and empathy.",
+              " Advise the person to be cautious about their online behavior and to avoid posting or sharing anything that could potentially reveal their identity.\nEncourage them to regularly review their online presence and conduct searches to assess what information is publicly available about them.\nRemind them to be mindful of any connections they make online and to be wary of individuals who may try to exploit their situation or gain unauthorized access to their personal information."
+            ]
+          },
+          {
+            "id": 29,
+            "option": "Not shared, but researched",
+            "value": "Not shared, but researched",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Malicious websites or scams",
+              "Data privacy and confidentiality",
+              "Misinformation and disinformation"
+            ],
+            "klp": [
+              "Encourage the use of reputable and trusted websites, such as government health agencies or reputable medical organizations, for obtaining reliable information.\nAdvise the person to be cautious of websites with suspicious or unverified claims, and to avoid clicking on unfamiliar or suspicious links.\nInstall and regularly update reliable antivirus software and use a firewall to protect against malware.",
+              "Recommend using private browsing modes or clearing browsing history and cookies regularly to minimize data tracking.\nEncourage the use of virtual private networks (VPNs) to encrypt internet connections and enhance privacy while conducting research.\nRemind the person to review and adjust privacy settings on search engines and online platforms to limit data collection and personalized advertising.",
+              "Emphasize the importance of critically evaluating the sources and credibility of information found online.\nEncourage the person to consult with qualified healthcare professionals or seek second opinions to verify the information they come across.\nProvide resources or suggest reputable websites or online communities that specialize in providing accurate and evidence-based health information."
+            ]
+          }
+        ],
+        "template_key": ""
+      }
+    ],
+    "template": ""
+  },{
+    "_id": {
+      "$oid": "64478288880bff1f27a7d9bb"
+    },
+    "index": 4,
+    "type": "LGBTQ+",
+    "questions": [
+      {
+        "index": 1,
+        "question": "Which of the following best describes your gender?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 1,
+            "option": "Man (Including trans man)",
+            "value": "man",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 2,
+            "option": "Woman (Including trans woman)",
+            "value": "woman",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 3,
+            "option": "Non-binary",
+            "value": "Non-binary",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 4,
+            "option": "Genderfluid",
+            "value": "Genderfluid",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 2,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 2,
+        "question": "Does your gender identity match the one you were assigned at birth?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 5,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 6,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 7,
+            "option": "Prefer not to say",
+            "value": "Prefer not to say",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 3,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "question": "Do you identify as intersex?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 8,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 9,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 10,
+            "option": "Prefer not to say",
+            "value": "Prefer not to say",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 4,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "question": "What age group do you belong to?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 11,
+            "option": "Under 18",
+            "value": "Under 18",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 12,
+            "option": "18-25",
+            "value": "18-25",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 13,
+            "option": "26-35",
+            "value": "26-35",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 14,
+            "option": "36-45",
+            "value": "36-45",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 15,
+            "option": "46-55",
+            "value": "46-55",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 16,
+            "option": "56+",
+            "value": "56+",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "question": "Are you struggling accepting your sexual identity?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 17,
+            "option": "Yes",
+            "value": "yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [
+              "Seeking Online Support in Unsafe Spaces",
+              "Sharing Personal Information Indiscriminately",
+              "Engaging in Unsafe Online Relationships",
+              "Not Securing Online Accounts",
+              "Falling for Online Scams or Phishing Attempts"
+            ],
+            "klp": [
+              "t's important to research and identify reputable online support groups, forums, or communities specifically designed for individuals going through similar experiences. Look for platforms that prioritize user privacy, moderation, and provide a safe and supportive environment",
+              "Learning Point: Practice caution when sharing personal information online. Limit the disclosure of sensitive details and avoid sharing them with unknown or untrusted individuals. Be mindful of privacy settings on social media platforms and consider using pseudonyms or maintaining online anonymity if desired.",
+              "Exercise caution when engaging in online relationships. Take the time to get to know someone before sharing personal information or engaging in intimate conversations. Trust your instincts and be aware of potential red flags or inconsistencies in the other person's behavior.",
+              "Implement strong, unique passwords for all online accounts and consider using a password manager to securely store and manage them. Enable two-factor authentication whenever possible to add an extra layer of security.",
+              "Learning Point: Be vigilant and skeptical of unsolicited emails, messages, or requests for personal or financial information. Verify the legitimacy of organizations or individuals before providing any sensitive details. Educate yourself on common online scams and phishing techniques to recognize and avoid them."
+            ]
+          },
+          {
+            "id": 18,
+            "option": "No",
+            "value": "no",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 6,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": "Sexual identity"
+      },
+      {
+        "index": 6,
+        "question": "Are you confused about your sexual orientation or still experimenting/oscillating between different identities?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 19,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [
+              "Online Targeting and Exploitation",
+              "Online Harassment and Bullying",
+              "Exposure to Inappropriate Content"
+            ],
+            "klp": [
+              "Be cautious when engaging in online conversations with unknown individuals. Avoid sharing personal information, such as your address, financial details, or intimate photos/videos. Trust your instincts and verify the authenticity of individuals before sharing personal or sensitive information.",
+              "Enable privacy settings on social media platforms to control who can interact with your posts and limit exposure to potentially harmful individuals. Block or report any instances of harassment or bullying. Seek support from trusted friends, family, or support groups who can provide guidance and emotional assistance.",
+              "Use reputable and trusted online resources, websites, or forums that provide accurate information and support. Research the credibility of sources before engaging with them. Install content filtering or parental control software to help block inappropriate content, especially if minors are involved.\n"
+            ]
+          },
+          {
+            "id": 20,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 7,
+            "risk": [],
+            "klp": []
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "question": "Have you come out to your family?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 21,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 8,
+            "risk": [
+              "Family not supportive",
+              "Being asked to leave family home",
+              "Losing relationship with one or more family members"
+            ],
+            "klp": []
+          },
+          {
+            "id": 22,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 9,
+            "risk": [
+              "Privacy Breaches",
+              "Unintended Disclosure",
+              "Online Harassment or Bullying",
+              "Blackmail or Threats",
+              "Supportive Online Networks"
+            ],
+            "klp": [
+              "Device Security: Keep your personal devices password-protected and consider using features like biometric authentication (e.g., fingerprint or facial recognition) to prevent unauthorized access.",
+              "Privacy Settings: Review and strengthen the privacy settings on your social media accounts to limit the visibility of your posts, connections, and personal information. Ensure that only trusted individuals can see your content.\n\nBe cautious about the information you share online, particularly on social media platforms. Think carefully before posting or engaging in discussions that could inadvertently reveal your LGBT identity.",
+              "Account Security: Use strong, unique passwords for your online accounts, and enable two-factor authentication whenever possible. Regularly monitor your accounts for any suspicious activity.",
+              "Safe Browsing: Use private browsing modes or virtual private networks (VPNs) to enhance your online privacy and prevent unauthorized tracking or monitoring.",
+              "Trusted Networks: Seek out supportive online networks or communities where you can connect with others who have similar experiences. However, exercise caution and ensure the confidentiality and trustworthiness of these networks before sharing personal information."
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "question": "Have you come out at workplace?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 23,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 9,
+            "risk": [
+              "Family not supportive",
+              "  Being asked to leave family home",
+              "  Losing relationship with one or more family members"
+            ],
+            "klp": []
+          },
+          {
+            "id": 24,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 9,
+            "risk": [
+              "Unintended Disclosure",
+              "Discrimination or Harassment",
+              "Professional Repercussions",
+              "Outing by Colleagues",
+              "Data Privacy"
+            ],
+            "klp": [
+              "Privacy Settings: Review and strengthen the privacy settings on your social media accounts to control who can see your posts, connections, and personal information. Limit the visibility of your content to trusted individuals.",
+              "Network Connections: Be cautious about accepting friend or connection requests from colleagues or superiors on social media platforms. Consider creating separate professional and personal accounts to maintain boundaries between work and personal life.",
+              "Workplace Policies: Familiarize yourself with your organization's policies regarding diversity, inclusion, and non-discrimination. Understand the legal protections and support available to LGBT employees in your jurisdiction.",
+              "rusted Colleagues: Identify supportive colleagues or allies within your workplace whom you can confide in and seek guidance from. Establishing a support network can help navigate challenges and make informed decisions about coming out.",
+              "Online Discussions: If you engage in online discussions related to LGBT topics or communities, ensure that the platforms or forums you participate in prioritize user privacy and security. Verify the privacy policies and practices of these platforms before sharing personal information."
+            ]
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 9,
+        "question": "Have you not come out to your children?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 25,
+            "option": "Yes",
+            "value": "yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 26,
+            "option": "No",
+            "value": "no",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [
+              "Accidental Discovery",
+              "Online Exposure",
+              "Parental Monitoring"
+            ],
+            "klp": [
+              "Ensure that you protect your personal devices with strong passwords or biometric authentication. Be cautious about sharing personal information over email or messaging platforms, and consider using encrypted communication methods for sensitive discussions.",
+              "Monitor Online Activities: Stay vigilant about your children's online activities, including their access to devices, social media accounts, and messaging platforms. Implement parental controls, discuss responsible online behavior, and establish boundaries that respect everyone's privacy.",
+              "Educate Children about Privacy: Teach your children about the importance of online privacy, including the potential risks of sharing personal information or engaging in discussions about sensitive topics. Encourage them to be cautious about what they share online and with whom.\n\nDigital Boundaries: Establish clear guidelines and expectations regarding online behavior, including respecting each other's privacy and refraining from sharing personal information or engaging in online discussions that may inadvertently expose family secrets."
+            ]
+          },
+          {
+            "id": 27,
+            "option": "Does not apply",
+            "value": "Does not apply",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 10,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 10,
+        "question": "Are you or your parents/family are religious?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 28,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 11,
+            "risk": [
+              "Exposure to Online Religious Extremism",
+              "Outing by Religious Communities",
+              "Cyberbullying and Harassment",
+              "Conflict with Religious Teachings",
+              "Lack of Supportive Resources"
+            ],
+            "klp": [
+              "Protect Personal Information: Be cautious when sharing personal information in religious online spaces. Consider using pseudonyms or maintaining anonymity to protect your identity until you feel comfortable sharing openly.",
+              "Research and Seek Supportive Communities: Look for inclusive and affirming religious communities or organizations online that embrace diversity and support LGBTQ+ individuals. Connect with like-minded individuals who can provide understanding and acceptance.",
+              "Privacy and Security Settings: Review and adjust your privacy settings on social media platforms and other online platforms to limit the visibility of your personal information and posts. Restrict access to your profile, photos, and personal details only to trusted individuals or friends.\n\nSelective Sharing: Be cautious about sharing personal information or details related to your sexual orientation or gender identity in religious online spaces. Consider sharing only with individuals or groups you trust, and avoid disclosing sensitive information in public forums.\n\nBlock and Report: If you encounter instances of cyberbullying or harassment, promptly block the individuals involved and report their behavior to the platform administrators. ",
+              "Educate Yourself: Learn about different religious perspectives on LGBTQ+ issues to gain a deeper understanding of diverse beliefs and interpretations. This knowledge can help navigate discussions and engage in constructive dialogues when faced with opposing views.",
+              "Foster a Supportive Online Network: Cultivate a network of friends, allies, and supportive individuals who can provide emotional support and guidance. Engage with online platforms or groups specifically designed for LGBTQ+ individuals of faith."
+            ]
+          },
+          {
+            "id": 29,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 30,
+            "option": "does not apply",
+            "value": "does not apply",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 11,
+        "question": "Are you in a new relationship after coming out?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 31,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [
+              "Sharing Personal Information Too Soon",
+              "Catfishing or Deceptive Online Identity",
+              "Unauthorized Sharing of Intimate Content",
+              "Online Stalking or Harassment"
+            ],
+            "klp": [
+              "Take your time getting to know the person and establishing trust before sharing personal information. Consider using pseudonyms or alternative contact methods until you feel comfortable sharing more sensitive details. Trust your instincts and be cautious when divulging personal information too quickly.",
+              "Preventive Measure: Be vigilant and skeptical when engaging in online relationships. Take the time to verify the person's identity through video calls or in-person meetings whenever possible. Conduct online research to gather information and look for inconsistencies in their stories or behavior. Trust your intuition and be cautious of individuals who avoid genuine connection or provide inconsistent information.",
+              "Preventive Measure: Practice caution when sharing intimate content. Consider establishing trust and a deeper connection with your partner before sharing such material. Discuss boundaries and consent surrounding the content. If you do share intimate content, ensure it is done through secure and encrypted platforms or apps. Be mindful of potential red flags, such as pressure to share or threats if you decline.",
+              "Be cautious about accepting friend requests or engaging in online conversations with individuals you've recently met. Review and adjust your social media privacy settings to limit the visibility of personal information and posts. Consider using two-factor authentication and strong passwords for your online accounts. If you experience harassment or stalking, document the incidents, block the individual, and report the behavior to the relevant platforms or authorities."
+            ]
+          },
+          {
+            "id": 32,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 33,
+            "option": "Does not apply",
+            "value": "does not apply",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 12,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 12,
+        "question": " Are you facing any medical issues?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 34,
+            "option": "Yes",
+            "value": "Yes",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 13,
+            "risk": [
+              "Privacy Breach",
+              "Discrimination and Stigmatization",
+              "Misinformation and Inaccurate Advice",
+              "Targeted Advertising and Data Collection"
+            ],
+            "klp": [
+              "Anonymity and Pseudonyms: Consider using pseudonyms or maintaining anonymity when participating in online discussions or seeking support. This can help protect your identity and minimize the risk of being personally identifiable.",
+              "Online Support Groups and Communities: Engage with online support groups or communities specifically focused on LGBT health or medical issues. These spaces can provide a safe and understanding environment where individuals can share experiences, ask questions, and receive support from others who have faced similar challenges.",
+              "Trusted Sources: Rely on reputable medical sources and websites that provide accurate and evidence-based information. Look for organizations or websites that specialize in LGBT health to ensure inclusive and knowledgeable guidance.\n\nConsult Medical Professionals: While online resources can be helpful, it's crucial to consult with medical professionals for accurate diagnosis, treatment, and advice tailored to your specific needs. Establishing a relationship with a trusted healthcare provider who is knowledgeable about LGBT health can provide personalized guidance.",
+              "Privacy Settings and Data Protection: Review and adjust privacy settings on social media platforms and other online accounts. Be mindful of what information you share publicaly.\nSecure and Encrypted Platforms: Use secure and encrypted platforms for online communication related to sensitive medical information. This can help protect your privacy and ensure that your personal health data is kept confidential. "
+            ]
+          },
+          {
+            "id": 35,
+            "option": "No",
+            "value": "No",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 13,
+            "risk": [],
+            "klp": []
+          },
+          {
+            "id": 36,
+            "option": "does not apply",
+            "value": "does not apply",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 13,
+            "risk": [],
+            "klp": []
+          }
+        ],
+        "template_key": ""
+      },
+      {
+        "index": 13,
+        "question": "What kind of information you shared?",
+        "type": "radio",
+        "mandatory": true,
+        "optionList": [
+          {
+            "id": 37,
+            "option": "Information about relationship and other personal stuff",
+            "value": "Information about relationship and other personal stuff",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Unauthorized Access and Privacy Breach",
+              "Online Harassment and Discrimination",
+              "Targeted Scams and Social Engineering",
+              "Reputation Damage"
+            ],
+            "klp": [
+              "Be cautious about the information you share online. Avoid disclosing sensitive details such as your full name, address, phone number, or specific locations. Review your social media privacy settings and ensure that only trusted individuals have access to your personal posts and information.",
+              "Enable privacy settings on your social media accounts to control who can view and interact with your posts. Block or report any instances of harassment or discrimination. Be selective about the platforms and online communities you engage with, focusing on those that are inclusive and supportive.",
+              "Be cautious when interacting with individuals you meet online, especially if they show excessive interest or ask for personal or financial information. Avoid sharing sensitive information, such as bank account details or passwords, with individuals you have not met in person. Trust your instincts and be vigilant for any red flags or inconsistencies in their behavior.",
+              "hink before you post and consider the potential consequences. Be mindful of sharing intimate details or compromising photos/videos online. Regularly review your social media profiles and remove any content that could be misconstrued or used against you. Keep in mind that once something is posted online, it can be difficult to completely remove it from the internet."
+            ]
+          },
+          {
+            "id": 38,
+            "option": "Photos of me and my partner at the time.",
+            "value": "Photos of me and my partner at the time.",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "NUnauthorized Sharing and Distribution",
+              "Online Harassment and Bullying",
+              "  Shared to vent out the anger and frustration",
+              "Geolocation and Physical Safety"
+            ],
+            "klp": [
+              "Before sharing any photos, consider the potential risks involved. Ensure that you trust the platform or individuals you are sharing with. Opt for private and secure platforms that provide strong privacy controls. Discuss with your partner the boundaries and agreements regarding the sharing of intimate photos. Avoid including identifiable elements in the photos, such as faces or unique backgrounds, to minimize the risk of being recognized.",
+              "Be cautious about the platforms and communities you share your photos with. Opt for platforms that have robust community guidelines and moderation policies in place. Enable privacy settings to control who can view and comment on your photos. Report any instances of harassment or bullying to the platform administrators. Block and unfriend individuals who engage in negative or harmful behavior.",
+              "Choose reputable and secure platforms or cloud storage services that prioritize user privacy and employ strong security measures. Enable two-factor authentication for your accounts to provide an extra layer of security. Regularly review and update your privacy settings to ensure that only trusted individuals have access to your shared photos. Consider using encryption tools or password-protecting sensitive photos to further enhance their security."
+            ]
+          },
+          {
+            "id": 39,
+            "option": "Experience about transition to help others",
+            "value": "Experience about transition to help others",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Doxing and Online Harassment",
+              "Misrepresentation and Identity Theft",
+              "Unintended Disclosure of Personal Information",
+              "Online Trolling and Negative Feedback"
+            ],
+            "klp": [
+              "Protect your personal information by being cautious about the details you share online. Use pseudonyms or anonymous accounts when discussing sensitive topics. Avoid sharing identifiable information such as your full name, address, phone number, or workplace. Regularly review your privacy settings on social media platforms and limit the visibility of your posts to trusted individuals. If you encounter harassment or doxing attempts, report the incidents to the platform administrators and consider seeking legal assistance if necessary.",
+              "Be cautious about the platforms and communities you share your experience with. Choose reputable and secure platforms that prioritize user privacy. Consider watermarking or adding a digital signature to your shared content to deter misuse. Regularly monitor your online presence to identify any unauthorized use of your identity. If you come across any fake profiles or instances of identity theft, report them to the platform administrators and take appropriate legal action if necessary.\n",
+              "Exercise caution when discussing sensitive topics and consider the potential consequences of sharing specific details. Be mindful of the information you include in your posts or comments. Avoid sharing scans or photos of sensitive documents that could be exploited or used against you. Regularly review and update your privacy settings on social media platforms to control the visibility of your shared content.",
+              "Develop a strong support network within the online communities you engage with. Surround yourself with positive and inclusive individuals who can provide emotional support. Consider moderating comments on your posts or disabling comments altogether to prevent negative interactions. If you encounter trolling or harassment, do not engage with the individuals and instead report the incidents to the platform administrators."
+            ]
+          },
+          {
+            "id": 40,
+            "option": "Not shared anything explicitly but dropped into conversation during facebook or any other social media group comments",
+            "value": "Not shared anything explicitly but dropped into conversation during facebook or any other social media group comments",
+            "icon": "",
+            "type": "option",
+            "nextIndex": 0,
+            "risk": [
+              "Unintended Disclosure of Sexual Orientation",
+              "Targeted Online Harassment or Bullying",
+              "Unwanted Exposure and Outing",
+              "Discrimination or Repercussions in Professional Settings"
+            ],
+            "klp": [
+              "Be mindful of the context and audience when participating in social media group discussions. Consider the privacy settings of the groups you engage with and the visibility of your comments. Before disclosing any personal information, assess the potential consequences and determine if it aligns with your comfort level. If you prefer to keep your sexual orientation private, avoid explicit or detailed references that may attract unnecessary attention.",
+              "Familiarize yourself with the moderation policies and rules of the social media groups you participate in. If you encounter any instances of harassment or bullying, promptly report the incidents to the group administrators or platform moderators. Consider blocking or muting individuals who engage in abusive behavior. Maintain a strong support network within the online communities you engage with to seek advice, share experiences, and find solidarity.\n",
+              "Consider the potential consequences before making any references to your sexual orientation in public group comments. Be cautious about sharing personal information that may inadvertently lead to your identification. Regularly review your privacy settings on social media platforms to ensure your posts and comments are only visible to the desired audience. If you suspect that your privacy has been compromised or someone has shared your information without consent, take immediate action to address the situation, such as contacting the platform administrators or seeking legal advice if necessary.",
+              "Consider the professional implications before sharing any personal information in social media group comments. Separate your personal and professional online presence by carefully managing your privacy settings and ensuring that your professional networks and contacts are not exposed to sensitive discussions. Be cautious about accepting friend requests or engaging in online conversations with individuals you do not know personally. Maintain a professional online presence by sharing content related to your work or industry expertise, rather than personal matters."
+            ]
+          }
+        ],
+        "template_key": ""
+      }
+    ],
+    "prompt": ""
+  }]
