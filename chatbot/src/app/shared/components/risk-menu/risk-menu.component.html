@@ -131,9 +131,11 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"
-                (cdkDropListDropped)="drop($event)" (cdkDropListExited)="drag($event,'Financial Risk')" style="overflow-y: auto; margin: 0 -23px; 
-                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate">
-                <div class="example-box" *ngFor="let item of keys" cdkDrag>{{item}}</div>
+                (cdkDropListDropped)="drop($event)"  style="overflow-y: auto; margin: 0 -23px; 
+                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate" (cdkDropListExited)="drag($event,'Financial Risk')">
+                <div class="example-box" *ngFor="let item of keys;let i = index" cdkDrag [id]="'FR' + i" >
+                 {{item}}
+                </div>
               </div>
             </mat-expansion-panel>
             <!--Financial Risk tab ends-->

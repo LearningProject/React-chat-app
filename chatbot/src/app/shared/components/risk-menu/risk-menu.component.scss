@@ -666,3 +666,8 @@ span.multiselect-native-select select {
   position:absolute;
   top:25%;
 }
+.selectedMenu{
+  pointer-events: none;
+  background: #f44336;
+  font-weight: bolder;
+}

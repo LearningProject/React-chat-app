@@ -64,7 +64,9 @@ export class RiskMenuComponent {
   riskTag: any;
   openRiskPlayground = false;
   openKLP = false;
+  private isDisabled = false;
  // domain:string='';
+ //previewClass :any = undefined; 
   
   
 
@@ -163,6 +165,7 @@ toppings = new FormControl('');
     if(data){
 this.messages.push({ type: 'user', message: data , domain:this.riskTag});
 this.severityMsg = data;
+//this.previewClass = 'selectedMenu';
     }
 
    })
@@ -197,7 +200,11 @@ this.severityMsg = data;
 
   }
   drag(exited: CdkDragExit<any>,item:any){
-   console.log('dragged',item,exited.item.element.nativeElement.innerText);
+   console.log('dragged',exited);
+   
+  //this.isDisabled = true;
+  // document.getElementById(exited.container.id)?.classList.add('selectedMenu');
+   //document.getElementById(exited?.container.id:'').classList.add('');
    this.riskTag = item;
    this.klpList.push(this.keyLearningPts);
    this.messages.push({type:'user',message:exited.item.element.nativeElement.innerText,domain:item});
@@ -205,9 +212,13 @@ this.severityMsg = data;
    this.disabled = false;
    this.severity = this.severity + 30;
    this.count = this.count + 1;
+   exited.item.element.nativeElement.classList.add('selectedMenu');
+   //exited.item.element.nativeElement.setAttribute('[cdkDragDisabled]',"item.disabled");
+  
   }
 
   drop(event: CdkDragDrop<string[]>) {
+    
    
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -394,6 +405,14 @@ this.severityMsg = data;
   }
   generateRiskWindow(i:number){
  this.step = i;
+  }
+  previewClass(){
+    return 'selectedMenu'
+
+  }
+  getClassOf(item:any){
+    //console.log('item',item);
+    return 'selectedMenu';
   }
   // scrollToBottom() {
   //   setTimeout(() => {
