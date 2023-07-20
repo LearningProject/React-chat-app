@@ -293,6 +293,8 @@
 
         <div class="chat-container col-sm-7" *ngIf="step == 1 "
           [ngStyle]="{'display':!closePersona  ? 'block' : 'none' }">
+          <p style="font-size: large;    padding: 10px 10px;    display: inline-block;" *ngIf="favoriteSeason"> You
+            have selected &nbsp;<b style="color:blueviolet"> {{favoriteSeason}} Transition</b></p>
           <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) [riskType]="favoriteSeason"></app-help-support>
         </div>
         <div class="chat-container col-sm-7" *ngIf="step == 0 || (step == 1 && openRiskPlayground)">
@@ -378,7 +380,7 @@
         font-weight: bold;
         display: inline-flex;'>Persona Detail</p>
           <div *ngFor="let message of data;let i=index" class="message">
-            <p class="persona-card">{{message}}</p>
+            <p class="persona-card" *ngIf="showMessage(message)">{{message}}</p>
           </div>
         </div>
         <div class="persona-detail">

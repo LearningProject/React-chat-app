@@ -381,6 +381,13 @@ this.severityMsg = data;
       if (t.completed === true) {
         this.count = this.count + 1 ;
         this.messages.push({ type: 'user', message: t.name,domain:t.domain });
+        this.keys.forEach((ele,i)=>{
+          if(ele===t.name){
+            console.log('name',ele);
+            document.getElementById('FR0')?.classList.add('selectedMenu');
+          }
+
+        })
         this.klpList.push(this.keyLearningPts);
       }
      
@@ -413,6 +420,13 @@ this.severityMsg = data;
   getClassOf(item:any){
     //console.log('item',item);
     return 'selectedMenu';
+  }
+  showMessage(msg:string){
+    console.log('msg',msg);
+    if(msg === 'Yes' || msg === 'yes'|| msg ==='No' || msg ==='no'){
+      return false;
+    }
+    return true;
   }
   // scrollToBottom() {
   //   setTimeout(() => {
