@@ -373,7 +373,7 @@
       here...</h1>
 
     <mat-dialog-content>
-      <section class="example-section" *ngIf="openStory">
+      <section class="example-section" *ngIf="openStory" style="height:85vh">
         <div class="persona-detail">
           <p style='font-family: Roboto, sans-serif;
         font-size: large;
@@ -383,7 +383,7 @@
             <p class="persona-card" *ngIf="showMessage(message)">{{message}}</p>
           </div>
         </div>
-        <div class="persona-detail">
+        <div class="persona-detail" style="height:65vh;overflow-y: scroll;">
           <p style='font-family: Roboto, sans-serif;
         font-size: large;
         font-weight: bold;

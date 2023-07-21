@@ -27,6 +27,7 @@ export interface Task {
   color: ThemePalette;
   subtasks?: Task[];
   domain?:string;
+  klp:string;
 }
 @Component({
   selector: 'app-risk-menu',
@@ -65,6 +66,12 @@ export class RiskMenuComponent {
   openRiskPlayground = false;
   openKLP = false;
   private isDisabled = false;
+  task :Task = {
+    name: '',
+    completed: false,
+    color: undefined,
+    klp:''
+  };
  // domain:string='';
  //previewClass :any = undefined; 
   
@@ -249,7 +256,8 @@ this.severityMsg = data;
     window.location.reload()
   }
   getRisk(event: any) {
-    console.log('calling');
+    this.task= event;
+    console.log('calling',this.task);
     this.showDialog = true;
     this.openStory = true;
     this.closePersona = true;
@@ -342,18 +350,18 @@ this.severityMsg = data;
   ngOnDestroy() {
     this.klpService.KLP = this.klpList;
   }
-  task: Task = {
-    name: 'Risks based on your persona',
-    completed: false,
-    color: 'primary',
-    subtasks: [
-      {name: 'Unauthorized access to pension accounts', completed: false, color: 'primary',domain:'Financial Risk'},
-      {name: 'Online Dating Scam', completed: false, color: 'primary', domain:'Financial Risk'},
-      {name: 'Online Fraud', completed: false, color: 'primary',domain:'Financial Risk'},
-      {name: 'Identity theft', completed: false, color: 'primary',domain:'Financial Risk'},
-      {name: 'Exposure of Personal Identifiable Information (PII)', completed: false, color: 'primary',domain:'Personal Risk'}
-    ]
-  };
+  // task: Task = {
+  //   name: 'Risks based on your persona',
+  //   completed: false,
+  //   color: 'primary',
+  //   subtasks: [
+  //     {name: 'Unauthorized access to pension accounts', completed: false, color: 'primary',domain:'Financial Risk'},
+  //     {name: 'Online Dating Scam', completed: false, color: 'primary', domain:'Financial Risk'},
+  //     {name: 'Online Fraud', completed: false, color: 'primary',domain:'Financial Risk'},
+  //     {name: 'Identity theft', completed: false, color: 'primary',domain:'Financial Risk'},
+  //     {name: 'Exposure of Personal Identifiable Information (PII)', completed: false, color: 'primary',domain:'Personal Risk'}
+  //   ]
+  // };
 
   allComplete: boolean = false;
 
@@ -379,8 +387,10 @@ this.severityMsg = data;
  
     this.task.subtasks?.forEach((t) => {
       if (t.completed === true) {
+        console.log('value of t is ',t);
         this.count = this.count + 1 ;
         this.messages.push({ type: 'user', message: t.name,domain:t.domain });
+        this.klpList.push(t.klp);
         this.keys.forEach((ele,i)=>{
           if(ele===t.name){
             console.log('name',ele);
@@ -388,7 +398,7 @@ this.severityMsg = data;
           }
 
         })
-        this.klpList.push(this.keyLearningPts);
+        // this.klpList.push(this.keyLearningPts);
       }
      
     })

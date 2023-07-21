@@ -19,10 +19,27 @@ import {
 } from '@angular/cdk/drag-drop';
 import { AlertComponentComponent } from '../alert-component/alert-component.component';
 import { KLPService } from '../../service/klp.service';
+import { ThemePalette } from '@angular/material/core';
 
 export interface Message {
   type: string;
   message: any;
+  id?:number;
+}
+
+// export interface riskKLP{
+//   id:number;
+//   risk:[];
+//   klp:[];
+// }
+
+export interface Task {
+  name: string;
+  completed: boolean;
+  color: ThemePalette;
+  subtasks?: Task[];
+  domain?:string;
+  klp?:string;
 }
 
 @Component({
@@ -39,6 +56,7 @@ export class HelpSupportComponent {
   isOpen = false;
   loading = false;
   messages: Message[] = [];
+  //riskKLP:riskKLP[]=[];
   @Output() riskDetail = new EventEmitter();
   @Output() persona = new EventEmitter();
   chatForm = new FormGroup({
@@ -54,14 +72,14 @@ export class HelpSupportComponent {
   answerList: any;
   questionList: any;
   @Input() riskType: string = '';
+  selectedRisks:any =[];
+  selectedKLP:any=[];
   constructor(private klpService: KLPService, private messageService: MessageService, private httpService: HttpClient, private dialogRef: MatDialog, private zone: NgZone) {
 
   }
   ngAfterViewInit() {
-    console.log('ngAfterViewInit');
   }
   ngOnInit() {
-    console.log('ngOnInit');
     this.klpService.selectedProduct$.subscribe((value) => {
       //  console.log('value is',value);
       // this.data = value;
@@ -76,9 +94,7 @@ export class HelpSupportComponent {
   }
 
   openSupportPopup() {
-    console.log('open button', this.isOpen);
 
-    console.log('this.riskType', this.riskType);
     !this.riskType ?
       alert('Please select risk')
       : this.isOpen = !this.isOpen;
@@ -90,7 +106,6 @@ export class HelpSupportComponent {
           this.riskIndex = i;
 
           Object.keys(this.question[i].questions).forEach((item: any, j) => {
-            console.log('item is', item);
             // console.log(Object.values(this.question[i].questions[item]));
             if (j == 0) {
               this.messages.push({
@@ -99,7 +114,6 @@ export class HelpSupportComponent {
               });
               this.questionList = Object.values(this.question[i].questions);
               //  this.answerList = Object.values(this.question[i].questions[i].optionList);
-              console.log('message', Object.values(this.question[i].questions));
               this.answerList = Object.values(this.question[i].questions);
             }
 
@@ -122,7 +136,6 @@ export class HelpSupportComponent {
     }
   }
   drop(event: CdkDragDrop<string[]>) {
-    console.log(event);
   }
 
   sendMessage() {
@@ -174,18 +187,58 @@ export class HelpSupportComponent {
         } else {
           if (element.includes(ele.message)) {
             this.messages.push(ele);
+            this.callRiskKLP(ele);
+           // console.log('this.messages is',this.messages);
           }
         }
       })
       resolve(1)
     })
   }
+  callRiskKLP(ele:any){
+    let risk :string[] =[];
+   // console.log('ele is',ele);
+    this.answerList[this.intialId - 1]?.optionList.forEach((element: any, i: any) => {
+    //  console.log('element.id',element);
+      if(element.id === ele.id){
+
+
+      
+        if(element.risk.length )
+        {
+          element.risk.forEach((item:string,i:number) => {
+          //  risk.push(item);
+            console.log(risk);
+            console.log('item',item);
+            if (!risk.includes(item)) {
+            //  unique.push(element);
+            this.selectedRisks.push( {name: item, completed: false, color: 'primary',domain:'Financial Risk',klp:element.klp[i]});
+            risk.push(item);
+          }
+           
+          });
+        }
+        // if(element.klp.length){
+        //   element.klp.forEach((klp:string)=> {
+        //     this.selectedKLP.push(klp);
+        //   });
+        // }
+     //  this.selectedriskKLP?.push({risk:element?.risk.substring(1,element.risk.length -1)});
+      }
+
+    });
+   
+
+   console.log('klprisks are ',this.selectedRisks);
+
+  }
   callAnswer(answers: any) {
-    // console.log('answerList is ',    answers[this.intialId].optionList);
+   //  console.log('answerList is testing ',   answers[this.intialId - 1]);
     if (answers)
       answers[this.intialId - 1]?.optionList.forEach((element: any, i: any) => {
-        // console.log('answere is',element.value)
-        this.messages.push({ type: 'user', message: element.value });
+    //    console.log('answere is',element)
+        this.messages.push({ type: 'user', message: element.value, id:element.id });
+     //   this.riskKLP.push({id:element.id,risk:element.risk,klp:element.klp});
         this.isActiveAnswer = false;
       });
 
@@ -197,7 +250,7 @@ export class HelpSupportComponent {
     if (intialVal?.question) {
       this.messages.push({ type: 'client', message: intialVal.question });
       //  this.callAnswer(this.example.evalData[this.intialId].answers);
-      console.log('answerList', this.answerList);
+     // console.log('answerList', this.answerList);
 
       this.intialId = this.intialId + 1;
       this.callAnswer(this.answerList);
@@ -209,9 +262,16 @@ export class HelpSupportComponent {
 
     // 
     this.selectedAnswer = [];
-    const currentMsgToParent = ['Financial Risk->Unauthorized Access', "Scenario: Ex-army individuals may store tax-related documents electronically, such as scanned copies of receipts or tax forms. If these documents are not adequately protected, unauthorized individuals may gain access to them, potentially leading to identity theft or tax fraud.",
-      'Personal Risk->Identity Theft:', ' Scenario: Ex-army individuals managing their own taxes may become targets for identity thieves who seek to steal personal information for fraudulent purposes. This can include using stolen identities to file false tax returns, claim refunds, or obtain financial benefits.'];
-    this.msgToParent(currentMsgToParent);
+    // const currentMsgToParent = ['Financial Risk->Unauthorized Access', "Scenario: Ex-army individuals may store tax-related documents electronically, such as scanned copies of receipts or tax forms. If these documents are not adequately protected, unauthorized individuals may gain access to them, potentially leading to identity theft or tax fraud.",
+    //   'Personal Risk->Identity Theft:', ' Scenario: Ex-army individuals managing their own taxes may become targets for identity thieves who seek to steal personal information for fraudulent purposes. This can include using stolen identities to file false tax returns, claim refunds, or obtain financial benefits.'];
+      const task: Task = {
+        name: 'Risks based on your persona',
+        completed: false,
+        color: 'primary',
+        subtasks: this.selectedRisks
+      };
+   // this.msgToParent(currentMsgToParent);
+   this.msgToParent(task);
     this.personaDetail = [];
     this.openSupportPopup();
     // this.ngOnInit();
