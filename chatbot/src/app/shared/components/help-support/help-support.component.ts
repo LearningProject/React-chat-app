@@ -52,7 +52,6 @@ export interface Riskdata {
 
 export class HelpSupportComponent {
   intialId = 1;
-  private example = avatarJson;
   private question = questionstest;
   private riskData = riskListJson as Riskdata;
   isActiveAnswer = true;
@@ -61,12 +60,7 @@ export class HelpSupportComponent {
   messages: Message[] = [];
   @Output() riskDetail = new EventEmitter();
   @Output() persona = new EventEmitter();
-  chatForm = new FormGroup({
-    message: new FormControl('', [Validators.required]),
-  });
   flipped: boolean[] = [];
-  arr: any = [];
-  @ViewChild('scrollMe') private myScrollContainer: any;
   selectedAnswer: any = [];
   personaDetail: any = [];
   riskIndex: number = -1;
