@@ -17,7 +17,7 @@
 
 
   <div class="klp row" *ngIf="dataList.length">
-    <div class="col-sm-11">
+    <div class="col-sm-11" style="overflow-y: scroll;">
       <h2 style="color: #000; ; font-size:28px;text-align: center;">Key Learning Points</h2>
       <div *ngFor="let message of dataList;let i=index" class="message">
         <!-- <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p> -->

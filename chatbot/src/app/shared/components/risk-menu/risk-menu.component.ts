@@ -143,7 +143,7 @@ export class RiskMenuComponent {
   selected: boolean = false;
 
 
-  step: number | undefined = -1;
+  step=-1;
   Questions: string[] = ['Do you want al-carte based risks?', 'Do you want to go with persona based risks?'];
   ngOnInit() {
   }
