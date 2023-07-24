@@ -1,5 +1,5 @@
 
-import { Component, EventEmitter, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {
   CdkDragDrop,
@@ -43,14 +43,14 @@ export interface Riskdata {
   styleUrls: ['./risk-menu.component.scss']
 })
 export class RiskMenuComponent {
-  private riskData = riskListJson as Riskdata;
+  private riskData= riskListJson as Riskdata;
   @ViewChild('scrollMe') private myScrollContainer: any;
   loading = false;
   messages: Message[] = [];
   security: Message[] = [];
   Prisk: Message[] = [];
   Crisk: Message[] = [];
-  Klearning: Message[] = [];
+
   msg: any;
   val = 20;
   severity: number = 0;
@@ -75,27 +75,39 @@ export class RiskMenuComponent {
   openRiskPlayground = false;
   openKLP = false;
   private isDisabled = false;
+  panelOpenState = false;
   task: Task = {
     name: '',
     completed: false,
     color: undefined,
     klp: ''
   };
+  domainRisks:string[]=[];
+  keys:any=[];
 
 
 
+  constructor(private messageService: MessageService, public dialog: MatDialog, private klpService: KLPService, private router: Router,
+    private cdref: ChangeDetectorRef ) {
+      
+      let obj:any = this.riskData;
+      
+      for (const key in obj) {
+  
+        if (obj[key]) {
+          this.domainRisks.push(key);
+          //this.keys = obj[key];
+        //  this.domainKeys.push({})
+          console.log('key is',key);
+    console.log('obj key is',obj[key]);
+        }
+  
+      }  
+    }
 
-  constructor(private messageService: MessageService, public dialog: MatDialog, private klpService: KLPService, private router: Router) {
-
-    this.Klearning = [{ type: 'client', message: 'Key Learning Point 1' },
-    { type: 'client', message: 'Key Learning Point 2' }, { type: 'client', message: 'Key Learning Point 3' }, { type: 'client', message: 'Key Learning Point 4' },
-    { type: 'client', message: 'Key Learning Point 5' }, { type: 'client', message: 'Key Learning Point 6' },
-    { type: 'client', message: 'Key Learning Point 7' }, { type: 'client', message: 'Key Learning Point 8' },
-    { type: 'client', message: 'Key Learning Point 9' }, { type: 'client', message: 'Key Learning Point 10' }];
-  }
-  panelOpenState = false;
   // title = 'chatbox';
-  keys = ["Unauthorized access to pension accounts",
+
+  keyssss = ["Unauthorized access to pension accounts",
     "Investment risks and market fluctuations",
     "Fraudulent insurance claims",
     "Online Dating Scams",
@@ -141,12 +153,32 @@ export class RiskMenuComponent {
   toppings = new FormControl('');
   toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
   selected: boolean = false;
+ 
 
 
   step=-1;
   Questions: string[] = ['Do you want al-carte based risks?', 'Do you want to go with persona based risks?'];
   ngOnInit() {
+   
+   
+    
+
   }
+  ngAfterViewInit() {
+  
+    
+//  this.cdref.detectChanges();
+   
+ }
+ getKeyRisk(index:any):any{
+let obj:any = this.riskData[index as keyof typeof this.riskData];
+      this.keys = obj;
+
+ }
+ getId(header:string,i:number){
+  return header.split('(')[1].split(')')[0] + i;
+
+ }
   showchat(event: CdkDragDrop<string[]>) {
     this.messages = [];
     this.disabled = false;
@@ -202,17 +234,17 @@ export class RiskMenuComponent {
 
   }
   drag(exited: CdkDragExit<any>, item: any) {
-    // console.log('dragged', exited);
-    this.riskTag = item;
-    this.klpList.push(this.keyLearningPts);
-    this.messages.push({ type: 'user', message: exited.item.element.nativeElement.innerText, domain: item });
-    this.severityMsg = exited.item.element.nativeElement.innerText;
+    setTimeout(() => {
+      this.messages.push({ type: 'user', message: exited?.item?.element?.nativeElement.innerText, domain: item });
+      this.severityMsg = exited.item.element.nativeElement.innerText;
     this.disabled = false;
     this.severity = this.severity + 30;
     this.count = this.count + 1;
     exited.item.element.nativeElement.classList.add('selectedMenu');
   }
-
+    ,600); 
+    
+  }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -382,7 +414,7 @@ export class RiskMenuComponent {
     return ""
   }
 
-  openDomainStory() {
+  openDomainStory(risk:string) {
     const msg = '"Fragile Trust: Guarding the Embers of Identity" follows the story of Sergeant Emily Thompson, a dedicated servicemember transitioning out of the armed forces.\
      As she adjusts to civilian life, she receives alarming news of a potential breach of personal identifiable information (PII) stored within military databases. Fueled by concern for her fellow servicemembers, \
      Sergeant Thompson embarks on a quest to understand the extent of the breach. Collaborating with cybersecurity experts and fellow veterans, she unveils the true scope of the data breach, revealing that sensitive PII is at risk of unauthorized access. \

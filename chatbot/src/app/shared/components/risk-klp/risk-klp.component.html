@@ -1,49 +1,23 @@
-<!-- 
-
 <div class="klp row" *ngIf="dataList.length">
-  <div class="col-sm-11">
+  <div class="col-sm-11" style="overflow-y: scroll;">
     <h2 style="color: #000; ; font-size:28px;text-align: center;">Key Learning Points</h2>
     <div *ngFor="let message of dataList;let i=index" class="message">
-      <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p>
-    </div>
-
-
-
-    <p class="story" style="font-size:18px;margin-top: 15px;">{{riskStory}}</p>
-
-  </div> -->
-
-
-
-
-  <div class="klp row" *ngIf="dataList.length">
-    <div class="col-sm-11" style="overflow-y: scroll;">
-      <h2 style="color: #000; ; font-size:28px;text-align: center;">Key Learning Points</h2>
-      <div *ngFor="let message of dataList;let i=index" class="message">
-        <!-- <p class="klpItems" style="color: blue;">KLP {{i + 1}} : {{message}}</p> -->
-        <div class="accordion" [id]="i">
-          <div class="accordion-item">
-            <h2 class="accordion-header" [id]="'accordion' + i">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#accordion-body' + i" aria-expanded="true" [attr.aria-controls]="'accordion-body' + i">
-                KLP {{i + 1}}
-              </button>
-            </h2>
-            <div [id]="'accordion-body' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'accordion'+ i" [attr.data-bs-parent]="'#' + i">
-              <div class="accordion-body">
-                <strong> {{message}}</strong> 
-              </div>
+      <div class="accordion" [id]="i">
+        <div class="accordion-item">
+          <h2 class="accordion-header" [id]="'accordion' + i">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#accordion-body' + i" aria-expanded="true"
+              [attr.aria-controls]="'accordion-body' + i">
+              KLP {{i + 1}}
+            </button>
+          </h2>
+          <div [id]="'accordion-body' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'accordion'+ i"
+            [attr.data-bs-parent]="'#' + i">
+            <div class="accordion-body">
+              <strong> {{message}}</strong>
             </div>
           </div>
+        </div>
       </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-  

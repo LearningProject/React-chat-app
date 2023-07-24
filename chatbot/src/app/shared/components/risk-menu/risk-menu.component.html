@@ -117,31 +117,34 @@
     <div class="leftmenu row  no-gutters">
       <div class="example-container col-sm-2">
         <h2 style="color: #000; ; font-size:18px">Risk Classification</h2>
-        <mat-accordion>
+        <mat-accordion >
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
             <mat-expansion-panel-header>
               <mat-panel-title class="risk-header">
                 Risk By Domain
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel" *ngFor="let header of domainRisks;let i=index">
               <mat-expansion-panel-header>
-                <mat-panel-title class="risk-header">
-                  Financial Risk-(FR) <img class="financial" />
+                <mat-panel-title class="risk-header" >
+                  {{header}}
+                  
+                  <!-- Financial Risk-(FR)  -->
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"
-                (cdkDropListDropped)="drop($event)" style="overflow-y: auto; margin: 0 -23px; 
-                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate"
-                (cdkDropListExited)="drag($event,'Financial Risk')">
-                <div class="example-box" *ngFor="let item of keys;let i = index" cdkDrag [id]="'FR' + i">
+             <!--  (cdkDropListDropped)="drop($event)" -->
+              <div cdkDropList #todoList="cdkDropList" [cdkDropListData]='getKeyRisk(header)' class="example-list" id="{{header}}"
+                style="overflow-y: auto; margin: 0 -23px; 
+                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate" 
+                (cdkDropListExited)="drag($event,header)">
+                <div class="example-box" *ngFor="let item of keys;let i = index" cdkDrag [id]='getId(header,i)'>
                   {{item}}
                 </div>
               </div>
             </mat-expansion-panel>
             <!--Financial Risk tab ends-->
             <!--Personal Risk tab starts-->
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+            <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
               <mat-expansion-panel-header>
                 <mat-panel-title class="risk-header">
                   Personal Risk-(PR)
@@ -153,10 +156,10 @@
                   height: 300px;">
                 <div class="example-box " *ngFor="let item of securitys;let i = index" cdkDrag [id]="'PR' + i">{{item}}</div>
               </div>
-            </mat-expansion-panel>
+            </mat-expansion-panel> -->
             <!--Personal Risk tab ends-->
             <!--Cyber security Risk tab starts-->
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+            <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
               <mat-expansion-panel-header>
                 <mat-panel-title class="risk-header">
                   CyberSecurity Risk -(CsR)
@@ -167,7 +170,7 @@
                   height: 300px;" (cdkDropListExited)="drag($event,'CyberSecurity Risk')">
                 <div class="example-box" *ngFor="let item of cyber" cdkDrag>{{item}}</div>
               </div>
-            </mat-expansion-panel>
+            </mat-expansion-panel> -->
             <!--Cyber security risk ends-->
           </mat-expansion-panel>
         </mat-accordion>
@@ -280,15 +283,15 @@
               <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
                 Persona</button>
             </div>
-            <div class="col-*"
+            <!-- <div class="col-*"
               [ngClass]='severity < 40 ? "bg-success": severity >40 && severity < 70? "bg-warning":"bg-danger"'>
-              {{severityMsg}}</div>
+              {{severityMsg}}</div> -->
           </div>
-          <div class="row">
+          <!-- <div class="row"> -->
             <!-- <div class="col-*">Severity of Risk :
             </div> -->
-            <div class="col-*"> {{severity < 40 ? "Low" : severity>40 && severity < 70? "Medium" :"High"}}</div>
-            </div>
+            <!-- <div class="col-*"> {{severity < 40 ? "Low" : severity>40 && severity < 70? "Medium" :"High"}}</div> -->
+            <!-- </div> -->
           </div>
         </div>
 
@@ -324,14 +327,15 @@
 
               <!-- </div> -->
             </div>
+            <!--  [cdkDropListConnectedTo]="[todoList]" -->
             <div class="row" cdkDropList [cdkDropListData]="['']" class="chat-list" #doneList="cdkDropList"
-              [cdkDropListConnectedTo]="[todoList]">
+            >
               <!-- <div>(cdkDropListDropped)="showchat($event)" <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
 
               <div class="" *ngFor="let item of messages" cdkDrag [attr.data-text]="item.message">
                 <!-- <mat-icon class="col-*" [ngClass]="item.type == 'user' ? 'user_icon' : 'client_icon'"
                   aria-hidden="false" aria-label="Example face icon" fontIcon="face"></mat-icon> -->
-                <span class="tag generate" (click)="openDomainStory()"
+                <span class="tag generate" (click)="openDomainStory(item.message)"
                   *ngIf="item.type == 'user'">{{item.domain}}</span>
                 <!-- <button type="button" class="btn btn-primary tag">{{riskTag}}</button>  -->
                 <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
@@ -416,6 +420,6 @@
     </mat-dialog-content>
     <mat-dialog-actions align="end">
       <button mat-button mat-dialog-close style="float:right" (click)="submitDialog()" *ngIf="openStory">Submit</button>
-      <button mat-button mat-dialog-close style="float:right" (click)="closeDialog()">Cancel</button>
+      <button mat-button mat-dialog-close style="float:right" (click)="closeDialog()"  *ngIf="!openStory">Cancel</button>
     </mat-dialog-actions>
   </div>

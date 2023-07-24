@@ -14,14 +14,14 @@ export class RiskKlpComponent {
   messages: any;
   riskStory: string = '';
   constructor() {
-    
+
   }
   ngOnInit() {
-   
+
   }
 
   displayStory(param: any) {
-   
+
 
   }
 
