@@ -43,7 +43,7 @@ export interface Riskdata {
   styleUrls: ['./risk-menu.component.scss']
 })
 export class RiskMenuComponent {
-  private riskData= riskListJson as Riskdata;
+  private riskData = riskListJson as Riskdata;
   @ViewChild('scrollMe') private myScrollContainer: any;
   loading = false;
   messages: Message[] = [];
@@ -82,28 +82,28 @@ export class RiskMenuComponent {
     color: undefined,
     klp: ''
   };
-  domainRisks:string[]=[];
-  keys:any=[];
+  domainRisks: string[] = [];
+  keys: any = [];
 
 
 
   constructor(private messageService: MessageService, public dialog: MatDialog, private klpService: KLPService, private router: Router,
-    private cdref: ChangeDetectorRef ) {
-      
-      let obj:any = this.riskData;
-      
-      for (const key in obj) {
-  
-        if (obj[key]) {
-          this.domainRisks.push(key);
-          //this.keys = obj[key];
+    private cdref: ChangeDetectorRef) {
+
+    let obj: any = this.riskData;
+
+    for (const key in obj) {
+
+      if (obj[key]) {
+        this.domainRisks.push(key);
+        //this.keys = obj[key];
         //  this.domainKeys.push({})
-          console.log('key is',key);
-    console.log('obj key is',obj[key]);
-        }
-  
-      }  
+        console.log('key is', key);
+        console.log('obj key is', obj[key]);
+      }
+
     }
+  }
 
   // title = 'chatbox';
 
@@ -153,32 +153,27 @@ export class RiskMenuComponent {
   toppings = new FormControl('');
   toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
   selected: boolean = false;
- 
 
 
-  step=-1;
+
+  step = -1;
   Questions: string[] = ['Do you want al-carte based risks?', 'Do you want to go with persona based risks?'];
   ngOnInit() {
-   
-   
-    
+
+
+
 
   }
-  ngAfterViewInit() {
-  
-    
-//  this.cdref.detectChanges();
-   
- }
- getKeyRisk(index:any):any{
-let obj:any = this.riskData[index as keyof typeof this.riskData];
-      this.keys = obj;
 
- }
- getId(header:string,i:number){
-  return header.split('(')[1].split(')')[0] + i;
+  getKeyRisk(index: any): any {
+    let obj: any = this.riskData[index as keyof typeof this.riskData];
+    this.keys = obj;
 
- }
+  }
+  getId(header: string, i: number) {
+    return header.split('(')[1].split(')')[0] + i;
+
+  }
   showchat(event: CdkDragDrop<string[]>) {
     this.messages = [];
     this.disabled = false;
@@ -234,16 +229,17 @@ let obj:any = this.riskData[index as keyof typeof this.riskData];
 
   }
   drag(exited: CdkDragExit<any>, item: any) {
+
     setTimeout(() => {
       this.messages.push({ type: 'user', message: exited?.item?.element?.nativeElement.innerText, domain: item });
       this.severityMsg = exited.item.element.nativeElement.innerText;
-    this.disabled = false;
-    this.severity = this.severity + 30;
-    this.count = this.count + 1;
-    exited.item.element.nativeElement.classList.add('selectedMenu');
-  }
-    ,600); 
-    
+      this.disabled = false;
+      this.severity = this.severity + 30;
+      this.count = this.count + 1;
+      exited.item.element.nativeElement.classList.add('selectedMenu');
+    }
+      , 600);
+
   }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -414,7 +410,7 @@ let obj:any = this.riskData[index as keyof typeof this.riskData];
     return ""
   }
 
-  openDomainStory(risk:string) {
+  openDomainStory(risk: string) {
     const msg = '"Fragile Trust: Guarding the Embers of Identity" follows the story of Sergeant Emily Thompson, a dedicated servicemember transitioning out of the armed forces.\
      As she adjusts to civilian life, she receives alarming news of a potential breach of personal identifiable information (PII) stored within military databases. Fueled by concern for her fellow servicemembers, \
      Sergeant Thompson embarks on a quest to understand the extent of the breach. Collaborating with cybersecurity experts and fellow veterans, she unveils the true scope of the data breach, revealing that sensitive PII is at risk of unauthorized access. \
