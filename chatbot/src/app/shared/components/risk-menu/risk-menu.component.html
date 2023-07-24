@@ -20,7 +20,7 @@
   padding-top: 26px;"> Risk Playground </h1>
   <div>
     <!-- Default dropleft button -->
-    
+
     <div class="btn-group dropright">
       <button type="button" class="btn trans dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
@@ -62,15 +62,15 @@
 {{step}}
 <div class=" example-card" *ngIf="step == -1">
   <div class="selectStep">
-  <label id="example-radio-group-label">Select Your Choice..!</label>
-  
-    
-      <!-- <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
+    <label id="example-radio-group-label">Select Your Choice..!</label>
+
+
+    <!-- <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
         Do you want ala-carte based risks assesment?</button>
       <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
         Do you want to go with persona based risks assesment?</button> -->
 
-    
+
     <!-- <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="step">
       <mat-radio-button class="example-radio-button" *ngFor="let question of Questions;let i = index" [value]="i">
         {{question}}
@@ -78,33 +78,31 @@
     </mat-radio-group> -->
   </div>
   <div class="container-fluid assesment">
-  <div class="col-md-6 mb-10" style="text-align: center;">
-    <div class="bg-light bg-opacity-50 rounded-3 p-10 mx-md-5 h-md-100">
-        <div class="d-flex flex-center w-60px h-60px rounded-3 bg-light-info bg-opacity-90 mb-10"
-            style="margin: auto;">
-            <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
-            <!-- <img src="assets/images/leaving-armed-force.png" /> -->
-            <!--end::Svg Icon-->
+    <div class="col-md-6 mb-10" style="text-align: center;">
+      <div class="bg-light bg-opacity-50 rounded-3 p-10 mx-md-5 h-md-100">
+        <div class="d-flex flex-center w-60px h-60px rounded-3 bg-light-info bg-opacity-90 mb-10" style="margin: auto;">
+          <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
+          <!-- <img src="assets/images/leaving-armed-force.png" /> -->
+          <!--end::Svg Icon-->
         </div>
         <h1 class="mb-5">Do you want ala-carte based risks assesment?</h1>
         <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
           Click Here</button>
+      </div>
     </div>
-</div>
-<div class="col-md-6 mb-10" style="text-align: center;">
-  <div class="bg-light bg-opacity-50 rounded-3 p-10 mx-md-5 h-md-100">
-      <div class="d-flex flex-center w-60px h-60px rounded-3 bg-light-info bg-opacity-90 mb-10"
-          style="margin: auto;">
+    <div class="col-md-6 mb-10" style="text-align: center;">
+      <div class="bg-light bg-opacity-50 rounded-3 p-10 mx-md-5 h-md-100">
+        <div class="d-flex flex-center w-60px h-60px rounded-3 bg-light-info bg-opacity-90 mb-10" style="margin: auto;">
           <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->lay
           <!-- <img src="assets/images/leaving-armed-force.png" /> -->
           <!--end::Svg Icon-->
+        </div>
+        <h1 class="mb-5">Do you want to go with persona based risks assesment?</h1>
+        <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
+          Click here</button>
       </div>
-      <h1 class="mb-5">Do you want to go with persona based risks assesment?</h1>
-      <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
-       Click here</button>
+    </div>
   </div>
-</div>
-</div>
 
 </div>
 <div class="example-card" *ngIf="step == 0 || 1 ">
@@ -131,10 +129,11 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="keys" class="example-list"
-                (cdkDropListDropped)="drop($event)"  style="overflow-y: auto; margin: 0 -23px; 
-                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate" (cdkDropListExited)="drag($event,'Financial Risk')">
-                <div class="example-box" *ngFor="let item of keys;let i = index" cdkDrag [id]="'FR' + i" >
-                 {{item}}
+                (cdkDropListDropped)="drop($event)" style="overflow-y: auto; margin: 0 -23px; 
+                height: 300px;" [cdkDropListEnterPredicate]="noReturnPredicate"
+                (cdkDropListExited)="drag($event,'Financial Risk')">
+                <div class="example-box" *ngFor="let item of keys;let i = index" cdkDrag [id]="'FR' + i">
+                  {{item}}
                 </div>
               </div>
             </mat-expansion-panel>
@@ -150,7 +149,7 @@
                 (cdkDropListExited)="drag($event,'Personal Risk')" [cdkDropListEnterPredicate]="noReturnPredicate"
                 style="overflow-y: auto;
                   height: 300px;">
-                <div class="example-box "  *ngFor="let item of securitys" cdkDrag>{{item}}</div>
+                <div class="example-box " *ngFor="let item of securitys;let i = index" cdkDrag [id]="'PR' + i">{{item}}</div>
               </div>
             </mat-expansion-panel>
             <!--Personal Risk tab ends-->
@@ -274,10 +273,10 @@
         <div class="risk-severity">
           <div class="row mb-2">
             <div class="col-*">Choose your preference
-            <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
-            Ala-Carte</button>
-            <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
-            Persona</button>
+              <button mat-raised-button color="primary" class="selectRisk" (click)="generateRiskWindow(0)">
+                Ala-Carte</button>
+              <button mat-raised-button color="accent" class="selectRisk" (click)="generateRiskWindow(1)">
+                Persona</button>
             </div>
             <div class="col-*"
               [ngClass]='severity < 40 ? "bg-success": severity >40 && severity < 70? "bg-warning":"bg-danger"'>
@@ -295,7 +294,8 @@
           [ngStyle]="{'display':!closePersona  ? 'block' : 'none' }">
           <p style="font-size: large;    padding: 10px 10px;    display: inline-block;" *ngIf="favoriteSeason"> You
             have selected &nbsp;<b style="color:blueviolet"> {{favoriteSeason}} Transition</b></p>
-          <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event) [riskType]="favoriteSeason"></app-help-support>
+          <app-help-support (riskDetail)=getRisk($event) (persona)=getPersona($event)
+            [riskType]="favoriteSeason"></app-help-support>
         </div>
         <div class="chat-container col-sm-7" *ngIf="step == 0 || (step == 1 && openRiskPlayground)">
           <div style="padding-top: 13px;">
@@ -347,11 +347,15 @@
             <div class="footer">
               <!-- <button mat-raised-button="primary" class="example-button-row" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story
               </button> -->
-              <button mat-raised-button color="primary" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story</button>
+              <button mat-raised-button color="primary" (click)="submitRisk()" style="float:right"
+                [disabled]="disabled">Generate story</button>
             </div>
           </div>
-          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;"><p style="color: rgb(201, 17, 106);">
-            <button mat-raised-button color="primary" class="generate" (click)="navigateWithState()">Explore Key Learning Points</button></p>
+          <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;">
+            <p style="color: rgb(201, 17, 106);">
+              <button mat-raised-button color="primary" class="generate" (click)="navigateWithState()">Explore Key
+                Learning Points</button>
+            </p>
           </div>
 
           <!-- <app-klp ></app-klp>  -->
@@ -383,7 +387,7 @@
             <p class="persona-card" *ngIf="showMessage(message)">{{message}}</p>
           </div>
         </div>
-        <div class="persona-detail" style="height:65vh;overflow-y: scroll;">
+        <div class="persona-detail" style="height:59vh;overflow-y: scroll;">
           <p style='font-family: Roboto, sans-serif;
         font-size: large;
         font-weight: bold;
@@ -399,7 +403,7 @@
               <li *ngFor="let subtask of task.subtasks">
                 <mat-checkbox [(ngModel)]="subtask.completed" [color]="subtask.color"
                   (ngModelChange)="updateAllComplete()">
-                  {{subtask.name}}
+                  {{subtask.name}} -- <b style="color:red">{{subtask.domain}}</b>
                 </mat-checkbox>
               </li>
             </ul>

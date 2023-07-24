@@ -4,6 +4,7 @@ import { MessageService } from '../../service/message.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import * as avatarJson from '../../Json/avatar.json';
+import  riskListJson from '../../Json/riskList.json';
 import * as questionstest from '../../Json/questionstest.json';
 import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -42,16 +43,28 @@ export interface Task {
   klp?:string;
 }
 
+export interface Riskdata
+{
+  "Financial Risk-(FR)": string[];
+  "Personal Risk-(PR)":  string[];
+  "CyberSecurity Risk -(CsR)":  string[];
+  "Social Risk-(SR)":  string[];
+  "Mental Risk-(MR)":  string[];
+}
+
+
 @Component({
   selector: 'app-help-support',
   templateUrl: './help-support.component.html',
   styleUrls: ['./help-support.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class HelpSupportComponent {
   intialId = 1;
   private example = avatarJson;
   private question = questionstest;
+  private riskData= riskListJson as Riskdata;
   isActiveAnswer = true;
   isOpen = false;
   loading = false;
@@ -94,6 +107,9 @@ export class HelpSupportComponent {
   }
 
   openSupportPopup() {
+   //n console.log('this.riskList',this.riskList);
+    //this.riskList.
+  
 
     !this.riskType ?
       alert('Please select risk')
@@ -197,7 +213,7 @@ export class HelpSupportComponent {
   }
   callRiskKLP(ele:any){
     let risk :string[] =[];
-   // console.log('ele is',ele);
+  //  console.log('ele is',ele);
     this.answerList[this.intialId - 1]?.optionList.forEach((element: any, i: any) => {
     //  console.log('element.id',element);
       if(element.id === ele.id){
@@ -206,13 +222,41 @@ export class HelpSupportComponent {
       
         if(element.risk.length )
         {
+          let riskVal:string='';
+          // Object.values(this.riskList).forEach((ele,k)=>{
+          //   console.log('value of risk is',ele);
+            // for(let i =0 ; i< Object.values(ele).length;i++){
+            //  console.log('Object',Object.values(ele)[i]);
+            //  console.log('element  is',ele);
+              
+            //  if(Object.values(ele)[i] == ele){
+            //   riskVal=Object.keys(ele)[k];
+            //   console.log('riskVal is',riskVal);
+            //  }
+           // }
+
+            
+        //    console.log('ele',Object.values(ele));
+      //    })
+         
           element.risk.forEach((item:string,i:number) => {
           //  risk.push(item);
-            console.log(risk);
-            console.log('item',item);
+          //  console.log(risk);
+          //  // console.log('item',item);
+          //  Object.values(this.riskList).forEach((ele,k)=>{
+          //   console.log('value of risk is',ele);})
+     
+
+
+         
+          
+
             if (!risk.includes(item)) {
+             // console.log('foundkey',foundKey);
             //  unique.push(element);
-            this.selectedRisks.push( {name: item, completed: false, color: 'primary',domain:'Financial Risk',klp:element.klp[i]});
+            const riskDomain = this.findKeyByValue(this.riskData, item);
+           // console.log('riskDomain is',riskDomain);
+            this.selectedRisks.push( {name: item, completed: false, color: 'primary',domain:riskDomain,klp:element.klp[i]});
             risk.push(item);
           }
            
@@ -229,7 +273,7 @@ export class HelpSupportComponent {
     });
    
 
-   console.log('klprisks are ',this.selectedRisks);
+  // console.log('klprisks are ',this.selectedRisks);
 
   }
   callAnswer(answers: any) {
@@ -237,12 +281,26 @@ export class HelpSupportComponent {
     if (answers)
       answers[this.intialId - 1]?.optionList.forEach((element: any, i: any) => {
     //    console.log('answere is',element)
+    
         this.messages.push({ type: 'user', message: element.value, id:element.id });
      //   this.riskKLP.push({id:element.id,risk:element.risk,klp:element.klp});
         this.isActiveAnswer = false;
       });
 
   }
+  // Function to find the key containing the value "Impulsive Sharing"
+  findKeyByValue(obj: any, value: string):string {
+    for (const key in obj) {
+
+      if (obj[key] &&(obj[key].includes(value))) {
+        return key;
+      }
+
+    
+    }
+    return ""
+  }
+
   callQuestion(_questionId: this) {
     const intialVal = this.questionList[this.intialId];
     //  const intialVal = this.example.evalData[this.intialId] ? this.example.evalData[this.intialId].question : this.submitData();
