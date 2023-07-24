@@ -638,8 +638,7 @@
             "type": "option",
             "nextIndex": 2,
             "risk": [
-              "Difficult to leave fellow service members and organisation",
-              "Accustomed to military schedules and facing lack of discipline in civilian life"
+              
             ],
             "klp": []
           },
@@ -650,11 +649,7 @@
             "icon": "",
             "type": "option",
             "nextIndex": 2,
-            "risk": [
-              "It was incredibly hard going from that military bubble to civi street because literally grown there",
-              "Difficult to leave fellow service members and organisation",
-              "Accustomed to military schedules and facing lack of discipline in civilian life"
-            ],
+            "risk": [],
             "klp": []
           },
           {
@@ -665,10 +660,6 @@
             "type": "option",
             "nextIndex": 2,
             "risk": [
-              "It was incredibly hard going from that military bubble to civi street because literally grown there",
-              "Loose close friends",
-              "Difficult to leave fellow service members and organisation",
-              "Accustomed to military schedules and facing lack of discipline in civilian life"
             ],
             "klp": []
           },
@@ -679,12 +670,7 @@
             "icon": "",
             "type": "option",
             "nextIndex": 2,
-            "risk": [
-              "It was incredibly hard going from that military bubble to civi street because literally grown there",
-              "Loose close friends",
-              "Difficult to leave fellow service members and organisation",
-              "Accustomed to military schedules and facing lack of discipline in civilian life"
-            ],
+            "risk": [],
             "klp": []
           }
         ]
@@ -1151,9 +1137,9 @@
             "type": "option",
             "nextIndex": 8,
             "risk": [
-              "Phishing Emails",
-              " Job Scams",
-              " Social Engineering Attacks"
+              "Phishing Scams",
+              "Job Scams",
+              "Social Engineering Attacks"
             ],
             "klp": [
               "Be wary of unsolicited emails and verify the authenticity of the sender before opening any attachments or clicking on links. Avoid providing sensitive information over email unless it is from a trusted and verified source.",
