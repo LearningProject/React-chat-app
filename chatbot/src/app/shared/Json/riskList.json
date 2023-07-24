@@ -18,7 +18,8 @@
     "Catfishing or Deceptive Online confidentiality",
     "Online Fraud",
     "Insurance Fraud",
-    "Online Scams and Fraud"]
+    "Online Scams and Fraud",
+    "Cannot afford to pay legal fees"]
     
   ,
     "Personal Risk-(PR)":
@@ -61,6 +62,12 @@
     "Personal Information Exposure",
     "Legal and Personal Safety",
     "Legal and Personal Safety",
+    "Losing relationship with one or more family members",
+    "Digital Assets-Ownership Disputes:",
+    "Being asked to leave family home",
+    "Data Privacy",
+    "Online reputation and image manipulation",
+    "Interfaith Considerations",
     "Outing by Religious Communities" ]
   ,
   
@@ -74,8 +81,8 @@
      "Unauthorized Access to Personal Devices",
      "Not Regularly Reviewing Privacy Settings",
      "Phishing Scams",
-     " Unauthorized Access",
-     " Privacy Concerns"  
+     "Unauthorized Access",
+     "Privacy Concerns"  
   ],
   
     "Social Risk-(SR)":[
@@ -86,7 +93,9 @@
     "Digital estate planning",
     "Privacy breaches",
     "Online harassment and bullying",
+    "Social Media Accounts-Online Harassment",
     "Digital Stalking",
+    "Stalking and Harassment",
     "Shared Online Accounts",
     "Social Network Interconnections",
     "Shared Online Accounts",
@@ -103,11 +112,15 @@
     "Conflict with Religious Teachings",
     "Exposure to Online Religious Extremism",
     "Online Exposure",
+    "Outing by Colleagues",
+    "Professional Repercussions",
     "Unintended Disclosure",
     "Engaging in Unsafe Online Relationships",
     "Not Securing Online Accounts",
     "Psychological Manipulation",
+    "Online Religious Advice or Counseling",
     "Targeted Advertising and Scams",
+    "Social engineering and phishing attempts",
     "Seeking Online Support in Unsafe Spaces"],
   
     "Mental Risk-(MR)":[
@@ -116,8 +129,8 @@
      "Targeted Online Exploitation",
      "Online Harassment and Bullying",
      "Disclosure of Personal Health Information",
-    "Exposure to Inappropriate Content",
-    "Online Harassment and Stigmatization",
-     "Online Stalking or Harassment"]
+     "Exposure to Inappropriate Content",
+     "Online Harassment and Stigmatization",
+     "Online harassment or stalking"]
     }
 
