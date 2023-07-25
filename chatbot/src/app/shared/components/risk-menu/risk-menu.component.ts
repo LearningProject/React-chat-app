@@ -47,6 +47,7 @@ export class RiskMenuComponent {
   @ViewChild('scrollMe') private myScrollContainer: any;
   loading = false;
   messages: Message[] = [];
+  story:Message[]=[];
   security: Message[] = [];
   Prisk: Message[] = [];
   Crisk: Message[] = [];
@@ -296,7 +297,12 @@ export class RiskMenuComponent {
     this.scrollToBottom();
     this.messageService.sendMessage(sentMessage).subscribe((response: any) => {
       this.loading = false;
-      this.messages.push({
+      // this.messages.push({
+      //   type: 'client',
+      //   message: response.message,
+      //   domain: this.riskTag
+      // });
+      this.story.push({
         type: 'client',
         message: response.message,
         domain: this.riskTag
@@ -323,10 +329,13 @@ export class RiskMenuComponent {
     this.showtyping = true;
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        this.messages.push({
+        // this.messages.push({
+        //   type: 'client',
+        //   message: this.klpDetail,
+        // })
+        this.story.push({
           type: 'client',
           message: this.klpDetail,
-          // domain:this.riskTag
         })
         resolve('1'); // pass values
       }, 2000);
@@ -416,7 +425,8 @@ export class RiskMenuComponent {
      Sergeant Thompson embarks on a quest to understand the extent of the breach. Collaborating with cybersecurity experts and fellow veterans, she unveils the true scope of the data breach, revealing that sensitive PII is at risk of unauthorized access. \
      Determined to protect her comrades-in-arms, Sergeant Thompson becomes an advocate for enhanced information security measures. Her efforts lead to the implementation of robust safeguards within the military, empowering servicemembers to protect their identities. Through her resilience, Sergeant Thompson not only rebuilds trust in the military ability to safeguard PII \
      but also becomes a guiding light for others, ensuring the sanctity of their identities and preserving the trust bestowed upon military institutions.'
-    this.messages.push({ type: 'client', message: msg });
+    //this.messages.push({ type: 'client', message: msg });
+    this.story.push({ type: 'client', message: msg });
   }
   generateRiskWindow(i: number) {
     this.step = i;

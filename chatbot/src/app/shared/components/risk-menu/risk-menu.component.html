@@ -341,6 +341,32 @@
                 <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
                 <!-- <div class="happy"></div> -->
               </div>
+              <!-- <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
+                <div class="typing" (click)="navigateWithState()">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+              </div> -->
+
+            </div>
+            <div class="footer">
+              <!-- <button mat-raised-button="primary" class="example-button-row" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story
+              </button> -->
+              <button mat-raised-button color="primary" (click)="submitRisk()" style="float:right"
+                [disabled]="disabled">Generate story</button>
+            </div>
+            <div>
+              <h1 style="color:#000 ; font-size:18px;font-weight: bold;display:inline">Risk Playground "Generated Story" </h1>
+
+             
+            </div>
+            <div class="row"  class="story-list">
+              <!-- <div>(cdkDropListDropped)="showchat($event)" <button style="float:right " (click)="openDialog()">Risk Ingrediant</button></div> -->
+
+              <div class="" *ngFor="let item of story" cdkDrag [attr.data-text]="item.message">
+                <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
+              </div>
               <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
                 <div class="typing" (click)="navigateWithState()">
                   <div class="dot"></div>
@@ -350,12 +376,7 @@
               </div>
 
             </div>
-            <div class="footer">
-              <!-- <button mat-raised-button="primary" class="example-button-row" (click)="submitRisk()" style="float:right" [disabled]="disabled">Generate story
-              </button> -->
-              <button mat-raised-button color="primary" (click)="submitRisk()" style="float:right"
-                [disabled]="disabled">Generate story</button>
-            </div>
+
           </div>
           <div *ngIf='severity>0 || count >0' style="font-size:18px;margin-top:10px;">
             <p style="color: rgb(201, 17, 106);">

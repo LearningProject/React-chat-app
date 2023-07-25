@@ -103,14 +103,27 @@ mat-expansion-panel {
   overflow: hidden;
   display: block;
 }
+.story-list{
+
+   border: solid 1px #ccc;
+   border-radius:6px;
+   min-height:200px;
+   background: white;
+   display: block;
+   padding: 10px;
+   overflow-y: auto;
+   position: relative;
+
+}
 
 .chat-list {
   /* background: #3b414f; */
   border: solid 1px #ccc;
   border-top: none;
   border-bottom: none;
-  min-height: 450px;
-  max-height: 520px;
+  min-height:200px;
+// min-height: 450px;
+  // max-height: 520px;
   background: white;
   // border-radius: 14px 14px 0 0;
 
