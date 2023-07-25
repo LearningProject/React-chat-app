@@ -17,6 +17,7 @@ import { KLPService } from '../../service/klp.service';
 import { NavigationExtras, Router } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 import riskListJson from '../../Json/riskList.json';
+import riskKLPList from '../../Json/riskKLP.List.json';
 export interface Message {
   type: string;
   message: string;
@@ -37,6 +38,8 @@ export interface Riskdata {
   "Social Risk-(SR)": string[];
   "Mental Risk-(MR)": string[];
 }
+
+
 @Component({
   selector: 'app-risk-menu',
   templateUrl: './risk-menu.component.html',
@@ -44,6 +47,7 @@ export interface Riskdata {
 })
 export class RiskMenuComponent {
   private riskData = riskListJson as Riskdata;
+  klpAssociation = riskKLPList;
   @ViewChild('scrollMe') private myScrollContainer: any;
   loading = false;
   messages: Message[] = [];
@@ -192,9 +196,6 @@ export class RiskMenuComponent {
 
   }
   callRiskStory(event: CdkDragDrop<string[]>) {
-    // const sentMessage = event.container.data[0];
-    // console.log('callRiskStory', event.container.data[1].length);
-    //  console.log('callRiskStory', event.container.data);
     event.container.data.forEach((data, i) => {
       if (data) {
         this.messages.push({ type: 'user', message: data, domain: this.riskTag });
@@ -226,7 +227,8 @@ export class RiskMenuComponent {
 
   }
   drag(exited: CdkDragExit<any>, item: any) {
-
+    const risk =  exited?.item?.element?.nativeElement.innerText;
+    const klpList = this.klpAssociation;
     setTimeout(() => {
       this.messages.push({ type: 'user', message: exited?.item?.element?.nativeElement.innerText, domain: item });
       this.severityMsg = exited.item.element.nativeElement.innerText;
@@ -234,6 +236,15 @@ export class RiskMenuComponent {
       this.severity = this.severity + 30;
       this.count = this.count + 1;
       exited.item.element.nativeElement.classList.add('selectedMenu');
+    
+     klpList.forEach((key)=>{
+      if(key.risk === risk){
+        this.klpList.push(key.klp );
+
+      }
+        //console.log(k);
+     })
+     // this.klpList.push(this.keyLearningPts);
     }
       , 600);
 
