@@ -108,6 +108,7 @@ mat-expansion-panel {
    border: solid 1px #ccc;
    border-radius:6px;
    min-height:200px;
+   max-height:200px;
    background: white;
    display: block;
    padding: 10px;
@@ -122,6 +123,7 @@ mat-expansion-panel {
   border-top: none;
   border-bottom: none;
   min-height:200px;
+  max-height:210px;
 // min-height: 450px;
   // max-height: 520px;
   background: white;

@@ -48,9 +48,6 @@ export class RiskMenuComponent {
   loading = false;
   messages: Message[] = [];
   story:Message[]=[];
-  security: Message[] = [];
-  Prisk: Message[] = [];
-  Crisk: Message[] = [];
 
   msg: any;
   val = 20;
@@ -202,7 +199,6 @@ export class RiskMenuComponent {
       if (data) {
         this.messages.push({ type: 'user', message: data, domain: this.riskTag });
         this.severityMsg = data;
-        //this.previewClass = 'selectedMenu';
       }
 
     })
@@ -362,6 +358,7 @@ export class RiskMenuComponent {
       this.router.createUrlTree([`/klp`], navigationExtras));
     window.open(url, '_blank');
   }
+
   ngOnDestroy() {
     this.klpService.KLP = this.klpList;
   }
@@ -386,6 +383,7 @@ export class RiskMenuComponent {
     }
     this.task.subtasks.forEach(t => (t.completed = completed));
   }
+
   submitDialog() {
     this.task.subtasks?.forEach((t, j) => {
       if (t.completed === true) {
@@ -406,15 +404,15 @@ export class RiskMenuComponent {
     } else {
       this.selected = true;
     }
-  } findKeyByValue(obj: any, value: string) {
+  } 
+  
+  findKeyByValue(obj: any, value: string) {
     for (const key in obj) {
       if (obj[key] && (obj[key].includes(value))) {
         // console.log(Object.values(obj).indexOf(key));
         const index: number = obj[key].indexOf(value);
         return [key, index];
       }
-
-
     }
     return ""
   }
@@ -431,14 +429,7 @@ export class RiskMenuComponent {
   generateRiskWindow(i: number) {
     this.step = i;
   }
-  previewClass() {
-    return 'selectedMenu'
 
-  }
-  getClassOf(item: any) {
-    //console.log('item',item);
-    return 'selectedMenu';
-  }
   showMessage(msg: string) {
     // console.log('msg', msg);
     if (msg === 'Yes' || msg === 'yes' || msg === 'No' || msg === 'no') {
