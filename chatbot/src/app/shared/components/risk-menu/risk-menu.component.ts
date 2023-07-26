@@ -89,8 +89,8 @@ export class RiskMenuComponent {
 
 
 
-  constructor(private messageService: MessageService, public dialog: MatDialog, private klpService: KLPService, private router: Router,
-    private cdref: ChangeDetectorRef) {
+  constructor(private messageService: MessageService, public dialog: MatDialog, private klpService: KLPService, private router: Router
+   ) {
 
     let obj: any = this.riskData;
 
@@ -98,10 +98,6 @@ export class RiskMenuComponent {
 
       if (obj[key]) {
         this.domainRisks.push(key);
-        //this.keys = obj[key];
-        //  this.domainKeys.push({})
-        console.log('key is', key);
-        console.log('obj key is', obj[key]);
       }
 
     }
@@ -109,38 +105,9 @@ export class RiskMenuComponent {
 
   // title = 'chatbox';
 
-  keyssss = ["Unauthorized access to pension accounts",
-    "Investment risks and market fluctuations",
-    "Fraudulent insurance claims",
-    "Online Dating Scams",
-    "Unauthorized access to financial information",
-    "Online Financial Transactions",
-    "Falling for Online Scams or Phishing Attempts",
-    "Online Financial Transactions",
-    "Joint Bank Accounts and Finances",
-    "Unauthorized Access",
-    "Identity Theft",
-    "Phishing attempts and scams",
-    "Malicious websites or scams",
-    "Online Purchases",
-    "Catfishing or Deceptive Online confidentiality",
-    "Online Fraud",
-    "Online Scams and Fraud"];
-  securitys = ['Impulsive Sharing', 'Limited Trust and Familiarity', 'Sharing Personal Information Indiscriminately',
-    'Exposure of Personal Identifiable Information (PII)', 'Data breaches and leakage of personal information',
-    'Online reputation management', 'Accumulated Digital Footprint', 'Online reputation and job search', 'Online Targeting and Exploitation:',
-    "Ex-Partner's Actions", 'Privacy Breaches', 'Exposure of personal information', 'Blackmail or Threats', 'Resume and Profile Privacy', 'Fake Job Applications'
-  ];
-  // done = ['Hi, I am your support agent. How can I help you?'];
-  // done = [];
+ 
 
-  cyber = ['Internet of Things (IoT) vulnerabilities', 'Inadequate Cybersecurity Practices', 'Not Regularly Reviewing Privacy Settings',
-    'Phishing Scams', 'Wi-Fi Security', 'Online scams and fraudulent activities',]
-  test = ['Key Learning Point 1', 'Key Learning Point 2', 'Key Learning Point 3', 'Key Learning Point 4', 'Key Learning Point 5', 'Key Learning Point 6', 'Key Learning Point 7',
-    'Key Learning Point 8', 'Key Learning Point 9', 'Key Learning Point 10'];
-  //social = ['risk1'];
-  //keys = Object.keys(this.todo);
-  keyLearningPts = 'Safeguard personal information by using strong, unique passwords for tax-related accounts and enabling two-factor authentication whenever possible. Be cautious of sharing personal information online or over the phone unless it is with trusted and verified sources.';
+  
   klpDetail = 'Title of the Story "Resilient Wings"\
 \n Departure from the Air Force:\
 \nOnce upon a time, in a small town, there lived a young man named Alex. He had always dreamt of serving in the Air Force, soaring through the skies with unwavering pride. At the age of 18, he enlisted in the military and embarked on an extraordinary journey.\
@@ -176,25 +143,25 @@ export class RiskMenuComponent {
     return header.split('(')[1].split(')')[0] + i;
 
   }
-  showchat(event: CdkDragDrop<string[]>) {
-    this.messages = [];
-    this.disabled = false;
-    this.severity = this.severity + 30;
-    this.count = this.count + 1;
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-      this.klpList.push(this.keyLearningPts);
-      this.callRiskStory(event);
-    }
+  // showchat(event: CdkDragDrop<string[]>) {
+  //   this.messages = [];
+  //   this.disabled = false;
+  //   this.severity = this.severity + 30;
+  //   this.count = this.count + 1;
+  //   if (event.previousContainer === event.container) {
+  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+  //   } else {
+  //     transferArrayItem(
+  //       event.previousContainer.data,
+  //       event.container.data,
+  //       event.previousIndex,
+  //       event.currentIndex,
+  //     );
+  //     this.klpList.push(this.keyLearningPts);
+  //     this.callRiskStory(event);
+  //   }
 
-  }
+  // }
   callRiskStory(event: CdkDragDrop<string[]>) {
     event.container.data.forEach((data, i) => {
       if (data) {
@@ -203,8 +170,8 @@ export class RiskMenuComponent {
       }
 
     })
-    this.klpService.setKLP(this.klpList);
-    this.klpService.setProduct('HI');
+    // this.klpService.setKLP(this.klpList);
+    // this.klpService.setProduct('HI');
 
     // important logic 
     // this.showtyping = true;
@@ -249,38 +216,39 @@ export class RiskMenuComponent {
       , 600);
 
   }
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      // console.log('else event', event);
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
-  }
+  // drop(event: CdkDragDrop<string[]>) {
+  //   if (event.previousContainer === event.container) {
+  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+  //   } else {
+  //     // console.log('else event', event);
+  //     transferArrayItem(
+  //       event.previousContainer.data,
+  //       event.container.data,
+  //       event.previousIndex,
+  //       event.currentIndex,
+  //     );
+  //   }
+  // }
 
   /** Predicate function that doesn't allow items to be dropped into a list. */
   noReturnPredicate() {
     return false;
   }
-  scrollToBottom() {
-    setTimeout(() => {
-      try {
-        this.myScrollContainer.nativeElement.scrollTop =
-          this.myScrollContainer.nativeElement.scrollHeight + 500;
-      } catch (err) { }
-    }, 150);
-  }
+  // scrollToBottom() {
+  //   setTimeout(() => {
+  //     try {
+  //       this.myScrollContainer.nativeElement.scrollTop =
+  //         this.myScrollContainer.nativeElement.scrollHeight + 500;
+  //     } catch (err) { }
+  //   }, 150);
+  // }
+
   refresh() {
     window.location.reload()
   }
+
   getRisk(event: any) {
     this.task = event;
-    // console.log('calling', this.task);
     this.showDialog = true;
     this.openStory = true;
     this.closePersona = true;
@@ -292,34 +260,30 @@ export class RiskMenuComponent {
   openRisk(event: any) {
     this.startJourney = event;
   }
-  sendMessage() {
-    const sentMessage = this.chatForm.value.message!;
-    this.loading = true;
-    this.messages.push({
-      type: 'user',
-      message: sentMessage,
-      domain: this.riskTag
-    });
-    this.chatForm.reset();
-    this.scrollToBottom();
-    this.messageService.sendMessage(sentMessage).subscribe((response: any) => {
-      this.loading = false;
-      // this.messages.push({
-      //   type: 'client',
-      //   message: response.message,
-      //   domain: this.riskTag
-      // });
-      this.story.push({
-        type: 'client',
-        message: response.message,
-        domain: this.riskTag
-      });
-      this.scrollToBottom();
-    });
-  }
+
+  // sendMessage() {
+  //   const sentMessage = this.chatForm.value.message!;
+  //   this.loading = true;
+  //   this.messages.push({
+  //     type: 'user',
+  //     message: sentMessage,
+  //     domain: this.riskTag
+  //   });
+  //   this.chatForm.reset();
+  //   this.scrollToBottom();
+  //   this.messageService.sendMessage(sentMessage).subscribe((response: any) => {
+  //     this.loading = false;
+  //     this.story.push({
+  //       type: 'client',
+  //       message: response.message,
+  //       domain: this.riskTag
+  //     });
+  //     this.scrollToBottom();
+  //   });
+  // }
+   
   getPersona(data: any) {
     this.data = data;
-    // console.log('data is from risk ', this.data);
   }
   submitRisk() {
     this.openKLP = true;
@@ -353,11 +317,12 @@ export class RiskMenuComponent {
   openDialog() {
     this.showDialog = true;
   }
+
   closeDialog() {
     this.showDialog = false;
   }
-  navigateWithState() {
 
+  navigateWithState() {
     const queryParams: any = {};
     queryParams.list = this.klpList;
     queryParams.story = this.klpDetail;
@@ -368,10 +333,6 @@ export class RiskMenuComponent {
     const url = this.router.serializeUrl(
       this.router.createUrlTree([`/klp`], navigationExtras));
     window.open(url, '_blank');
-  }
-
-  ngOnDestroy() {
-    this.klpService.KLP = this.klpList;
   }
 
   allComplete: boolean = false;
@@ -420,7 +381,6 @@ export class RiskMenuComponent {
   findKeyByValue(obj: any, value: string) {
     for (const key in obj) {
       if (obj[key] && (obj[key].includes(value))) {
-        // console.log(Object.values(obj).indexOf(key));
         const index: number = obj[key].indexOf(value);
         return [key, index];
       }
@@ -437,12 +397,12 @@ export class RiskMenuComponent {
     //this.messages.push({ type: 'client', message: msg });
     this.story.push({ type: 'client', message: msg });
   }
+
   generateRiskWindow(i: number) {
     this.step = i;
   }
 
   showMessage(msg: string) {
-    // console.log('msg', msg);
     if (msg === 'Yes' || msg === 'yes' || msg === 'No' || msg === 'no') {
       return false;
     }
