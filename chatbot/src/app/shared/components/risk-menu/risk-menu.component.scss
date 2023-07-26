@@ -294,35 +294,18 @@ mat-expansion-panel {
 
 .client:hover {
   content:'\A';
-
-
   background: azure;
   box-shadow: 0 0 3px black;
   margin-top: -10px;
   font-weight: bold;
-  // background-color: red;
   content: attr(data-text);
   white-space: pre;
- // position: relative;
   overflow: visible;
   text-overflow: inherit;
-  //  // background: #40b8ba;
-  //  background: red;
    position: relative;
-  //   left:auto;
-  //    top:auto;
-  // //    width: 80%;
-  // //   max-width: 20rem;
-  //   border: 1px solid #eaebec;
-  //    padding: 0 .5rem;
-  //    box-shadow: 0 2px 4px 0 rgba(0,0,0,.28);
    white-space: pre-line;
      word-wrap: break-word;
-  //    display:block;
-  //   color:black;
   z-index: 99;
-  //    margin-top:-1.25rem;
-  //   padding:20px;
   display:inline-flex;
 }
 
@@ -339,7 +322,6 @@ mat-expansion-panel {
   max-width: 51%;
   text-align: right;
   float: right;
-
   font-family: "Roboto", sans-serif;
   font-size: 17ngupx;
 }

@@ -1,22 +1,6 @@
 import { Component, ViewChild, ChangeDetectionStrategy, EventEmitter, Output, NgZone, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MessageService } from '../../service/message.service';
-import * as avatarJson from '../../Json/avatar.json';
 import riskListJson from '../../Json/riskList.json';
 import * as questionstest from '../../Json/questionstest.json';
-
-
-import {
-  CdkDragDrop,
-  CdkDrag,
-  CdkDropList,
-  CdkDropListGroup,
-  moveItemInArray,
-  transferArrayItem,
-  CdkDragExit,
-} from '@angular/cdk/drag-drop';
-import { AlertComponentComponent } from '../alert-component/alert-component.component';
-import { KLPService } from '../../service/klp.service';
 import { ThemePalette } from '@angular/material/core';
 
 export interface Message {
@@ -70,7 +54,7 @@ export class HelpSupportComponent {
   selectedRisks: any = [];
   selectedKLP: any = [];
 
-  constructor(private messageService: MessageService) { }
+  constructor() { }
 
   ngOnInit() {
     this.messages = [];

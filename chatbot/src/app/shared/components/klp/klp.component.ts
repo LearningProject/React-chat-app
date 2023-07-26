@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { MatTabsModule } from '@angular/material/tabs';
-import { KLPService } from '../../service/klp.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { Location } from '@angular/common';
@@ -24,7 +22,7 @@ export class KLPComponent implements OnInit {
   private history: string[] = [];
   messages: any;
   riskStory: string = '';
-  constructor(private klpService: KLPService, public activatedRoute: ActivatedRoute, private router: Router, private location: Location) {
+  constructor(public activatedRoute: ActivatedRoute, private router: Router, private location: Location) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.history.push(event.urlAfterRedirects);

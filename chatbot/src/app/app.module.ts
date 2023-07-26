@@ -34,16 +34,14 @@ import { ProgressBarComponent } from './shared/components/progress-bar/progress-
 import { KLPComponent } from './shared/components/klp/klp.component';
 //import { KLPComponent } from './shared/component/klp/klp.component'
 import {MatTabsModule} from '@angular/material/tabs';
-import { KLPService } from './shared/service/klp.service';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { RiskKlpComponent } from './shared/components/risk-klp/risk-klp.component';
-import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent, RiskKlpComponent, SpinnerComponent],
+  declarations: [AppComponent, HelpSupportComponent, RiskMenuComponent, AlertComponentComponent,HomeComponent, ProgressBarComponent,KLPComponent, RiskKlpComponent],
   imports: [
     MatCardModule, MatButtonModule,MatDialogModule,MatProgressBarModule,MatTabsModule,MatButtonModule,MatFormFieldModule, MatSelectModule,MatCheckboxModule,
     BrowserModule,MatRadioModule,
@@ -58,7 +56,7 @@ import { SpinnerComponent } from './shared/components/spinner/spinner.component'
     MatBadgeModule,
     MatIconModule,MatFormFieldModule,MatInputModule,CdkDropListGroup, CdkDropList, NgFor, CdkDrag
   ],
-  providers: [KLPService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,17 +3,8 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, ViewChild } from '@a
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {
   CdkDragDrop,
-  CdkDrag,
-  CdkDropList,
-  CdkDropListGroup,
-  moveItemInArray,
-  transferArrayItem,
   CdkDragExit,
 } from '@angular/cdk/drag-drop';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MessageService } from '../../service/message.service';
-import { MatDialog } from '@angular/material/dialog';
-import { KLPService } from '../../service/klp.service';
 import { NavigationExtras, Router } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 import riskListJson from '../../Json/riskList.json';
@@ -51,20 +42,15 @@ export class RiskMenuComponent {
   @ViewChild('scrollMe') private myScrollContainer: any;
   loading = false;
   messages: Message[] = [];
-  story:Message[]=[];
-
+  story: Message[] = [];
   msg: any;
   val = 20;
   severity: number = 0;
   startJourney = true;
   severityMsg: string = '';
-
   klpList: string[] = [];
   openStory = false;
   closePersona = false;
-  chatForm = new FormGroup({
-    message: new FormControl('', [Validators.required]),
-  });
   showtyping = false;
   data = [];
   length: number = 0;
@@ -86,82 +72,45 @@ export class RiskMenuComponent {
   };
   domainRisks: string[] = [];
   keys: any = [];
-
-
-
-  constructor(private messageService: MessageService, public dialog: MatDialog, private klpService: KLPService, private router: Router
-   ) {
-
-    let obj: any = this.riskData;
-
-    for (const key in obj) {
-
-      if (obj[key]) {
-        this.domainRisks.push(key);
-      }
-
-    }
-  }
-
-  // title = 'chatbox';
-
- 
-
-  
   klpDetail = 'Title of the Story "Resilient Wings"\
-\n Departure from the Air Force:\
-\nOnce upon a time, in a small town, there lived a young man named Alex. He had always dreamt of serving in the Air Force, soaring through the skies with unwavering pride. At the age of 18, he enlisted in the military and embarked on an extraordinary journey.\
-\nThe Price of Sacrifice:\
-\nDuring his time in the Air Force, Alex encountered a physical injury that hindered his ability to continue serving. Despite his deep love for his country, he had to make the difficult decision to leave the military at the tender age of 21. The transition was emotionally challenging, as he had to face the reality of leaving behind the life he had always known.\
-\nA Broken Heart:\
-\nIn addition to his military departure, Alex was also going through a heart-wrenching breakup with his long-term partner, Sarah. The strain of distance and the demanding nature of military life had taken its toll on their relationship, leading to an inevitable parting of ways. The combination of leaving the Air Force and the end of a significant relationship left Alex feeling lost and uncertain about his future.\
-\nThe Struggles of Unemployment: \nFinding himself thrust into the civilian world earlier than expected, Alex faced the harsh reality of unemployment. Without a clear career path or support network, he was left grappling with feelings of purposelessness. Despite his dedication and skills acquired in the Air Force, securing a job became a daunting challenge.\
-\nLingering Shadows: \nAs time went by, Alex realized that leaving the Air Force early had left him vulnerable in unexpected ways. His access to military systems or accounts had not been properly terminated, exposing him to potential unauthorized access. Fearing the consequences of this oversight, he decided to take action and protect his privacy.\
-\nA Beacon of Hope:\nDriven by his resilience and determination, Alex sought assistance to rectify the issue. He updated his resume and online profiles, emphasizing his skills, discipline, and adaptability gained from his military experience. While navigating the treacherous waters of unemployment, he remained vigilant against phishing emails, carefully scrutinizing every communication that came his way.';
+  \n Departure from the Air Force:\
+  \nOnce upon a time, in a small town, there lived a young man named Alex. He had always dreamt of serving in the Air Force, soaring through the skies with unwavering pride. At the age of 18, he enlisted in the military and embarked on an extraordinary journey.\
+  \nThe Price of Sacrifice:\
+  \nDuring his time in the Air Force, Alex encountered a physical injury that hindered his ability to continue serving. Despite his deep love for his country, he had to make the difficult decision to leave the military at the tender age of 21. The transition was emotionally challenging, as he had to face the reality of leaving behind the life he had always known.\
+  \nA Broken Heart:\
+  \nIn addition to his military departure, Alex was also going through a heart-wrenching breakup with his long-term partner, Sarah. The strain of distance and the demanding nature of military life had taken its toll on their relationship, leading to an inevitable parting of ways. The combination of leaving the Air Force and the end of a significant relationship left Alex feeling lost and uncertain about his future.\
+  \nThe Struggles of Unemployment: \nFinding himself thrust into the civilian world earlier than expected, Alex faced the harsh reality of unemployment. Without a clear career path or support network, he was left grappling with feelings of purposelessness. Despite his dedication and skills acquired in the Air Force, securing a job became a daunting challenge.\
+  \nLingering Shadows: \nAs time went by, Alex realized that leaving the Air Force early had left him vulnerable in unexpected ways. His access to military systems or accounts had not been properly terminated, exposing him to potential unauthorized access. Fearing the consequences of this oversight, he decided to take action and protect his privacy.\
+  \nA Beacon of Hope:\nDriven by his resilience and determination, Alex sought assistance to rectify the issue. He updated his resume and online profiles, emphasizing his skills, discipline, and adaptability gained from his military experience. While navigating the treacherous waters of unemployment, he remained vigilant against phishing emails, carefully scrutinizing every communication that came his way.';
 
   toppings = new FormControl('');
   toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
   selected: boolean = false;
-
-
-
   step = -1;
   Questions: string[] = ['Do you want al-carte based risks?', 'Do you want to go with persona based risks?'];
-  ngOnInit() {
 
-
-
-
+  constructor(private router: Router) {
+    let obj: any = this.riskData;
+    for (const key in obj) {
+      if (obj[key]) {
+        this.domainRisks.push(key);
+      }
+    }
   }
+
+  ngOnInit() { }
 
   getKeyRisk(index: any): any {
     let obj: any = this.riskData[index as keyof typeof this.riskData];
     this.keys = obj;
 
   }
+
   getId(header: string, i: number) {
     return header.split('(')[1].split(')')[0] + i;
 
   }
-  // showchat(event: CdkDragDrop<string[]>) {
-  //   this.messages = [];
-  //   this.disabled = false;
-  //   this.severity = this.severity + 30;
-  //   this.count = this.count + 1;
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     transferArrayItem(
-  //       event.previousContainer.data,
-  //       event.container.data,
-  //       event.previousIndex,
-  //       event.currentIndex,
-  //     );
-  //     this.klpList.push(this.keyLearningPts);
-  //     this.callRiskStory(event);
-  //   }
 
-  // }
   callRiskStory(event: CdkDragDrop<string[]>) {
     event.container.data.forEach((data, i) => {
       if (data) {
@@ -170,8 +119,6 @@ export class RiskMenuComponent {
       }
 
     })
-    // this.klpService.setKLP(this.klpList);
-    // this.klpService.setProduct('HI');
 
     // important logic 
     // this.showtyping = true;
@@ -194,7 +141,7 @@ export class RiskMenuComponent {
 
   }
   drag(exited: CdkDragExit<any>, item: any) {
-    const risk =  exited?.item?.element?.nativeElement.innerText;
+    const risk = exited?.item?.element?.nativeElement.innerText;
     const klpList = this.klpAssociation;
     setTimeout(() => {
       this.messages.push({ type: 'user', message: exited?.item?.element?.nativeElement.innerText, domain: item });
@@ -203,45 +150,21 @@ export class RiskMenuComponent {
       this.severity = this.severity + 30;
       this.count = this.count + 1;
       exited.item.element.nativeElement.classList.add('selectedMenu');
-    
-     klpList.forEach((key)=>{
-      if(key.risk === risk){
-        this.klpList.push(key.klp );
+      klpList.forEach((key) => {
+        if (key.risk === risk) {
+          this.klpList.push(key.klp);
 
-      }
-        //console.log(k);
-     })
-     // this.klpList.push(this.keyLearningPts);
+        }
+      })
     }
       , 600);
 
   }
-  // drop(event: CdkDragDrop<string[]>) {
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     // console.log('else event', event);
-  //     transferArrayItem(
-  //       event.previousContainer.data,
-  //       event.container.data,
-  //       event.previousIndex,
-  //       event.currentIndex,
-  //     );
-  //   }
-  // }
 
   /** Predicate function that doesn't allow items to be dropped into a list. */
   noReturnPredicate() {
     return false;
   }
-  // scrollToBottom() {
-  //   setTimeout(() => {
-  //     try {
-  //       this.myScrollContainer.nativeElement.scrollTop =
-  //         this.myScrollContainer.nativeElement.scrollHeight + 500;
-  //     } catch (err) { }
-  //   }, 150);
-  // }
 
   refresh() {
     window.location.reload()
@@ -261,27 +184,6 @@ export class RiskMenuComponent {
     this.startJourney = event;
   }
 
-  // sendMessage() {
-  //   const sentMessage = this.chatForm.value.message!;
-  //   this.loading = true;
-  //   this.messages.push({
-  //     type: 'user',
-  //     message: sentMessage,
-  //     domain: this.riskTag
-  //   });
-  //   this.chatForm.reset();
-  //   this.scrollToBottom();
-  //   this.messageService.sendMessage(sentMessage).subscribe((response: any) => {
-  //     this.loading = false;
-  //     this.story.push({
-  //       type: 'client',
-  //       message: response.message,
-  //       domain: this.riskTag
-  //     });
-  //     this.scrollToBottom();
-  //   });
-  // }
-   
   getPersona(data: any) {
     this.data = data;
   }
@@ -300,10 +202,6 @@ export class RiskMenuComponent {
     this.showtyping = true;
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        // this.messages.push({
-        //   type: 'client',
-        //   message: this.klpDetail,
-        // })
         this.story.push({
           type: 'client',
           message: this.klpDetail,
@@ -376,8 +274,8 @@ export class RiskMenuComponent {
     } else {
       this.selected = true;
     }
-  } 
-  
+  }
+
   findKeyByValue(obj: any, value: string) {
     for (const key in obj) {
       if (obj[key] && (obj[key].includes(value))) {
