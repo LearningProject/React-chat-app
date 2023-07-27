@@ -13,6 +13,7 @@ export interface Message {
   type: string;
   message: string;
   domain?: string;
+  id?: number;
 }
 export interface Task {
   name: string;
@@ -83,6 +84,11 @@ export class RiskMenuComponent {
   \nLingering Shadows: \nAs time went by, Alex realized that leaving the Air Force early had left him vulnerable in unexpected ways. His access to military systems or accounts had not been properly terminated, exposing him to potential unauthorized access. Fearing the consequences of this oversight, he decided to take action and protect his privacy.\
   \nA Beacon of Hope:\nDriven by his resilience and determination, Alex sought assistance to rectify the issue. He updated his resume and online profiles, emphasizing his skills, discipline, and adaptability gained from his military experience. While navigating the treacherous waters of unemployment, he remained vigilant against phishing emails, carefully scrutinizing every communication that came his way.';
 
+  story2 = '"Fragile Trust: Guarding the Embers of Identity" follows the story of Sergeant Emily Thompson, a dedicated servicemember transitioning out of the armed forces.\
+  As she adjusts to civilian life, she receives alarming news of a potential breach of personal identifiable information (PII) stored within military databases. Fueled by concern for her fellow servicemembers, \
+  Sergeant Thompson embarks on a quest to understand the extent of the breach. Collaborating with cybersecurity experts and fellow veterans, she unveils the true scope of the data breach, revealing that sensitive PII is at risk of unauthorized access. \
+  Determined to protect her comrades-in-arms, Sergeant Thompson becomes an advocate for enhanced information security measures. Her efforts lead to the implementation of robust safeguards within the military, empowering servicemembers to protect their identities. Through her resilience, Sergeant Thompson not only rebuilds trust in the military ability to safeguard PII \
+  but also becomes a guiding light for others, ensuring the sanctity of their identities and preserving the trust bestowed upon military institutions.'
   toppings = new FormControl('');
   toppingList: string[] = ['Relationship Breakdown', 'Leaving Armed Force', 'Serious Illness', 'LGBTQ+'];
   selected: boolean = false;
@@ -103,13 +109,12 @@ export class RiskMenuComponent {
   getKeyRisk(index: any): any {
     let obj: any = this.riskData[index as keyof typeof this.riskData];
     this.keys = obj;
-
   }
 
   getId(header: string, i: number) {
     return header.split('(')[1].split(')')[0] + i;
-
   }
+
 
   callRiskStory(event: CdkDragDrop<string[]>) {
     event.container.data.forEach((data, i) => {
@@ -132,14 +137,9 @@ export class RiskMenuComponent {
     //   }, 500);
     // });
     // imp logic ends
-
-
-
-
-
-
-
   }
+
+  /** Function that push risk in playground area */
   drag(exited: CdkDragExit<any>, item: any) {
     const risk = exited?.item?.element?.nativeElement.innerText;
     const klpList = this.klpAssociation;
@@ -187,6 +187,7 @@ export class RiskMenuComponent {
   getPersona(data: any) {
     this.data = data;
   }
+
   submitRisk() {
     this.openKLP = true;
     this.length = this.messages.length * 50;
@@ -195,6 +196,24 @@ export class RiskMenuComponent {
       this.showtyping = false;
     })
 
+  }
+  highlightStory(event: any) {
+    console.log('event is ', event);
+    var risks = document.getElementsByClassName("user");
+    for (var i = 0; i < risks.length; i++) {
+      if (i == event - 1) {
+        risks[i].classList.add('highlight');
+      }
+    }
+  }
+
+  removeHighlightedStory(event: any) {
+    var risks = document.getElementsByClassName("user");
+    for (var i = 0; i < risks.length; i++) {
+      if (i == event - 1) {
+        risks[i].classList.remove('highlight');
+      }
+    }
   }
 
   showTyping() {
@@ -205,7 +224,13 @@ export class RiskMenuComponent {
         this.story.push({
           type: 'client',
           message: this.klpDetail,
-        })
+          id: 1
+        });
+        this.story.push({
+          type: 'client',
+          message: this.story2,
+          id: 2
+        });
         resolve('1'); // pass values
       }, 2000);
     });

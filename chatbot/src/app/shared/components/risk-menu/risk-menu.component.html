@@ -250,7 +250,7 @@
             <div class="" *ngFor="let item of messages" cdkDrag [attr.data-text]="item.message">
               <span class="tag generate" (click)="openDomainStory(item.message)"
                 *ngIf="item.type == 'user'">{{item.domain}}</span>
-              <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
+              <div class="chat-box message col-sm-8" [ngClass]="item.type" > {{item.message}}</div>
             </div>
           </div>
           <div class="footer">
@@ -264,8 +264,8 @@
 
           </div>
           <div class="row" class="story-list">
-            <div class="" *ngFor="let item of story" cdkDrag [attr.data-text]="item.message">
-              <div class="chat-box message col-sm-8" [ngClass]="item.type"> {{item.message}}</div>
+            <div class="" *ngFor="let item of story,let i=index" cdkDrag [attr.data-text]="item.message">
+              <div class="chat-box message col-sm-8" [ngClass]="item.type" (mouseenter)="highlightStory(item?.id)" (mouseleave)="removeHighlightedStory(item?.id)"> {{item.message}}</div>
             </div>
             <div class="chat-bubble" *ngIf="showtyping" [ngStyle]="{'top': length + 'px'}">
               <div class="typing" (click)="navigateWithState()">
