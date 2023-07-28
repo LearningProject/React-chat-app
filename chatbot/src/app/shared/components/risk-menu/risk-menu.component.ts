@@ -199,6 +199,7 @@ export class RiskMenuComponent {
     })
 
   }
+  /* highlighted risk with story */
   highlightStory(event: any) {
     console.log('event is ', event);
     var risks = document.getElementsByClassName("user");
@@ -208,7 +209,7 @@ export class RiskMenuComponent {
       }
     }
   }
-
+/* highlighted remove risk with story */
   removeHighlightedStory(event: any) {
     var risks = document.getElementsByClassName("user");
     for (var i = 0; i < risks.length; i++) {
