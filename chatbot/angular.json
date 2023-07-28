@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash"
+           ],
             "outputPath": "dist/chatbot",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -64,7 +67,8 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
+         
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

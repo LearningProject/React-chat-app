@@ -1,4 +1,5 @@
 .klp{
+  
   height:873px;
   overflow-y: scroll;
   padding:20px;
@@ -21,6 +22,9 @@
    // display: flex;
 
 }
+#pdfTable{
+  font-variant: normal !important;  -webkit-font-variant: normal !important; font-variant-ligatures: none !important;  -webkit-font-variant-ligatures: none !important; 
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -41,6 +45,7 @@
   background: #555;
 }
 .story{
+  font-variant: normal !important;  -webkit-font-variant: normal !important; font-variant-ligatures: none !important;  -webkit-font-variant-ligatures: none !important; 
   white-space: pre-line;
   display: inline-flex;
 }

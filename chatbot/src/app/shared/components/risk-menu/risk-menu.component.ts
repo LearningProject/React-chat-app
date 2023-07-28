@@ -9,6 +9,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 import riskListJson from '../../Json/riskList.json';
 import riskKLPList from '../../Json/riskKLP.List.json';
+
 export interface Message {
   type: string;
   message: string;
@@ -73,6 +74,7 @@ export class RiskMenuComponent {
   };
   domainRisks: string[] = [];
   keys: any = [];
+
   klpDetail = 'Title of the Story "Resilient Wings"\
   \n Departure from the Air Force:\
   \nOnce upon a time, in a small town, there lived a young man named Alex. He had always dreamt of serving in the Air Force, soaring through the skies with unwavering pride. At the age of 18, he enlisted in the military and embarked on an extraordinary journey.\
